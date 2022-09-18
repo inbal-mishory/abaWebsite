@@ -1,0 +1,35 @@
+.catalogs-list {
+  max-width: 60vw;
+  padding: 24px 0;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+h3 {
+  text-align: right;
+  font-weight: bolder;
+}
+
+.catalog-list {
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  grid-template-rows: auto;
+}
+
+.catalog-details {
+  max-width: 300px;
+}
+
+.catalog-item {
+  display: flex;
+  text-align: right;
+  gap: .2rem
+}
+
+.catalog-text {
+  display: flex;
+  flex-direction: column;
+}

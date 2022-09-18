@@ -1,18 +1,13 @@
 <div>
   <nav class="navbar navbar-expand navbar-dark bg-dark">
-    <a href="#" class="navbar-brand">bezKoder</a>
+    <div class="navbar-brand"></div>
     <div class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a routerLink="tutorials" class="nav-link">Tutorials</a>
-      </li>
-      <li class="nav-item">
-        <a routerLink="add" class="nav-link">Add</a>
+        <a routerLink="catalogs" class="nav-link">קטלוגים</a>
       </li>
     </div>
   </nav>
 
-  <div class="container mt-3">
-    <h2>{{ title }}</h2>
-    <router-outlet></router-outlet>
-  </div>
+  <router-outlet></router-outlet>
+
 </div>

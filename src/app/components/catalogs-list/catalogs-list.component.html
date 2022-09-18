@@ -1,0 +1,26 @@
+<div class="catalogs-list row">
+  <div>
+    <h3>קטלוגים</h3>
+    <ul class="catalog-list">
+      <li class="catalog-item" *ngFor="let catalog of catalogs; let i = index"
+                                  [class.active]="i == currentIndex"
+                                  (click)="setActiveCatalog(catalog, i)">
+        <div>
+          <mat-icon>
+            import_contacts
+          </mat-icon>
+        </div>
+        <div class="catalog-text">
+          <h4>{{ catalog.title }}</h4> <span>{{catalog.gallery}}</span>
+          שפה: {{catalog.language}}
+        </div>
+      </li>
+    </ul>
+  </div>
+<!--  <div *ngIf="currentCatalog" class="catalog-details">-->
+<!--      <app-catalog-details-->
+<!--        (refreshList)="refreshList()"-->
+<!--        [catalog]="currentCatalog"-->
+<!--      ></app-catalog-details>-->
+<!--  </div>-->
+</div>

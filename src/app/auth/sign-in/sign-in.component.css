@@ -1,0 +1,57 @@
+.signin-wrapper {
+  background: #e6e971;
+  width: 760px;
+  margin: 12px auto;
+  border-radius: 24px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+h3 {
+  text-align: center;
+  font-weight: 700 !important;
+  font-size: 28px !important;
+  color: #d5ee6b;
+  text-shadow: 1px 1px 4px black;
+  width: 100%;
+}
+
+.content {
+  display: flex;
+  gap: 24px;
+  width: 500px
+}
+
+.authBlock {
+  display: flex;
+  flex-direction: column;
+  gap:6px
+}
+
+.formGroup {
+  display:flex;
+  flex-direction: column;
+}
+
+label {
+  font-weight: bold;
+}
+
+input[type=text], input[type=password] {
+  padding: 6px;
+  border: solid 1px green;
+  border-radius: 6px;
+  margin:6px 0;
+}
+
+.btn.btnPrimary, .btn.googleBtn {
+  background: #606200;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 12px;
+}

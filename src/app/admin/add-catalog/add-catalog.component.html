@@ -1,0 +1,67 @@
+<h3>הוספת קטלוג</h3>
+<mat-dialog-content class="mat-typography">
+  <form *ngIf="addCatalogForm" [formGroup]="addCatalogForm">
+    <div class="submit-form">
+      <div class="text-center">
+        <img [src]="imgSrc" width="350px" height="250px" (click)="fileUploader.click()">
+      </div>
+      <div class="column">
+        <mat-form-field>
+          <mat-label>כותרת</mat-label>
+          <input formControlName="title" class="form-control" name="title" placeholder="הכנס כותרת" type="text" matInput />
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>תיאור</mat-label>
+          <input formControlName="description" class="form-control" name="description" placeholder="הכנס תיאור" type="text" matInput />
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>אומן</mat-label>
+          <input formControlName="artist" class="form-control" name="artist" placeholder="הכנס אומן" type="text" matInput />
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>גלרייה</mat-label>
+          <input formControlName="gallery" class="form-control" name="gallery" placeholder="הכנס gallery" type="text" matInput />
+        </mat-form-field>
+      </div>
+      <div class="column">
+        <div>
+          <input type="file" accept="image/*" #fileUploader formControlName="imgUrl" (change)="showPreview($event)" placeholder="upload file"/>
+        </div>
+        <div>
+          <button
+            class="btn btn-success btn-sm"
+            (click)="upload()">
+            Upload
+          </button>
+        </div>
+        <mat-form-field>
+          <mat-label>שפה</mat-label>
+          <input formControlName="language" class="form-control" name="year" placeholder="הכנס שנה" type="text" matInput />
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>urlEnglish</mat-label>
+          <input formControlName="urlEnglish" class="form-control" name="urlEnglish" placeholder="הכנס urlEnglish" type="text" matInput />
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>urlHeb</mat-label>
+          <input formControlName="urlHeb" class="form-control" name="urlHeb" placeholder="הכנס אומן" type="text" matInput />
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>שנה</mat-label>
+          <input formControlName="year" class="form-control" name="year" placeholder="הכנס year" type="text" matInput />
+        </mat-form-field>
+      </div>
+    </div>
+  </form>
+<!--  <div class="upload">-->
+<!--    <app-upload-file></app-upload-file>-->
+<!--    <button (click)="saveCatalog()" class="btn btn-success">הוספה</button>-->
+<!--  </div>-->
+  <div *ngIf="submitted">
+    <h4>You submitted successfully!</h4>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button type="submit" mat-button class="btn btn-success" [disabled]="!addCatalogForm?.valid" (click)="saveCat(addCatalogForm?.value)">הוספה</button>
+  <button mat-button [mat-dialog-close]="true">סגור</button>
+</mat-dialog-actions>

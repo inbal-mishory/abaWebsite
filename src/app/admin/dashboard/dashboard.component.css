@@ -1,0 +1,18 @@
+.container {
+  width: 98vw;
+  margin: 0 auto;
+}
+
+h3 {
+  font-size: 32px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 12px;
+}
+
+.btn-add {
+  background: #3d6657;
+  color: #fff;
+  font-weight: bold;
+  width: 12em
+}

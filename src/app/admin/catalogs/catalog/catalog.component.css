@@ -1,0 +1,14 @@
+.catalog-details {
+  max-width: 300px;
+}
+
+.catalog-item {
+  display: flex;
+  text-align: right;
+  gap: .2rem
+}
+
+.catalog-text {
+  display: flex;
+  flex-direction: column;
+}

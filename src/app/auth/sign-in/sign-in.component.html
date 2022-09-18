@@ -1,0 +1,35 @@
+<div class="signin-wrapper" fxLayout="column">
+  <h3>Sign In</h3>
+  <div class="content">
+    <div class="authBlock">
+      <div class="formGroup">
+        <label>User Name</label>
+        <input type="text" matInput class="formControl" placeholder="Username" #userName>
+      </div>
+      <div class="formGroup">
+        <label>User Password</label>
+        <input type="password" matInput class="formControl" placeholder="Password" #userPassword>
+      </div>
+      <!-- Calling SignIn Api from AuthService -->
+      <div class="formGroup">
+        <button class="btn btnPrimary" (click)="authService.SignIn(userName.value, userPassword.value)">Log in</button>
+      </div>
+    </div>
+    <div class="redirectToLogin">
+      <!-- Calling GoogleAuth Api from AuthService -->
+      <div class="formGroup">
+        <h4 class="orInner">Or</h4>
+      </div>
+      <div class="formGroup">
+        <button type="button" class="btn googleBtn" (click)="authService.GoogleAuth()">
+          <i class="fab fa-google-plus-g"></i>
+          Log in with Google
+        </button>
+      </div>
+      <div class="forgotPassword">
+        <span routerLink="/forgot-password">Forgot Password?</span>
+      </div>
+<!--      <span>Don't have an account?<span class="redirect" routerLink="/register-user"> Sign Up</span></span>-->
+    </div>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+<div class="actions">
+  <button (click)="openAddDialog()" class="btn-add">
+    הוסף קטלוג
+  </button>
+</div>
+<div class="catalogs-list">
+  <ul class="catalog-list">
+    <ng-container *ngFor="let catalog of catalogs; let i = index">
+      <app-catalog [catalog]="catalog" (openEditCat)="openEditCatalogDialog(catalog)" (deleteCat)="deleteDialog(catalog.catalog_id)"></app-catalog>
+    </ng-container>
+  </ul>
+</div>

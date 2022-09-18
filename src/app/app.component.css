@@ -2,3 +2,17 @@
   text-align: center;
   margin: 25px auto;
 }
+
+.navbar-nav {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-brand {
+  display: flex;
+  background: url('../assets/images/logo_figure.png') no-repeat, url('../assets/images/logo_text.png') no-repeat;
+  width: 170px;
+  height: 90px;
+  background-size: 52px 90px , 70%;
+  background-position: top right, left center;
+}

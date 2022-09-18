@@ -1,2 +1,56 @@
 /* You can add global styles to this file, and also import other style files */
-@import "~bootstrap/dist/css/bootstrap.css";
+* {
+  direction: rtl;
+}
+
+html, body { height: 100%; }
+
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; overflow-x: hidden }
+
+.bg-dark {
+  background: #262626;
+  display: flex;
+  width: 100%;
+}
+
+.bg-dark a {
+  color: #fff;
+}
+
+.list-group {
+  text-align: right;
+}
+
+.mat-typography h4 {
+  font-weight: 600;
+}
+
+.mat-list-base .mat-list-item .mat-list-item-content {
+  flex-direction: column !important;
+}
+
+.mat-form-field {
+  text-align: revert !important;
+}
+
+.mat-dialog-container {
+  padding: 0 !important;
+  overflow: hidden !important;
+}
+
+.mat-dialog-actions {
+  min-height: 23% !important;
+}
+
+.mat-form-field-flex {
+  width: 220px !important;
+}
+
+button {
+  border: none;
+  padding: 12px;
+  margin: 12px;
+  border-radius: 12px;
+  font-size: 16px;
+  cursor: pointer;
+}
