@@ -1,18 +1,18 @@
 .container {
   width: 98vw;
   margin: 0 auto;
+  padding: 24px;
 }
 
-h3 {
-  font-size: 32px;
-  font-weight: bold;
-  text-align: center;
-  margin-top: 12px;
+.admin-actions {
+  width: 80vw;
+  margin: 0 auto;
+  display: flex;
+  gap: 1em;
 }
 
-.btn-add {
-  background: #3d6657;
-  color: #fff;
+.btn {
+  background: #D0E3F0;
+  color: #222;
   font-weight: bold;
-  width: 12em
 }

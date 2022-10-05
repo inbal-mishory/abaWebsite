@@ -1,4 +1,8 @@
 <div class="container">
-  <h3>קטלוגים</h3>
-  <app-catalogs></app-catalogs>
+  <div class="admin-actions">
+    <a routerLink="catalogs" class="btn mat-button">קטלוגים</a>
+    <a routerLink="books" class="btn mat-button">ספרים</a>
+    <a routerLink="critiques" class="btn mat-button">ביקורת תערוכות</a>
+  </div>
+  <router-outlet></router-outlet>
 </div>

@@ -1,24 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
+/*@import url(https://fonts.googleapis.com/earlyaccess/alefhebrew.css);*/
+@import url(https://fonts.googleapis.com/icon?family=Material+Icons);
 * {
   direction: rtl;
 }
 
-html, body { height: 100%; }
+html, body { height: 100%; font-family: 'Alef', sans-serif; font-size: 16px;}
 
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; overflow-x: hidden }
+body { margin: 0; overflow-x: hidden; }
 
-.bg-dark {
-  background: #262626;
-  display: flex;
-  width: 100%;
-}
 
-.bg-dark a {
-  color: #fff;
+.material-icons{
+  font-family: 'Material Icons' !important;
 }
 
 .list-group {
   text-align: right;
+}
+
+.mat-typography,
+.mat-typography div,
+.mat-typography h1, .mat-typography h2,
+.mat-typography h3, .mat-typography h4{
+  font-family: 'Alef', sans-serif;
 }
 
 .mat-typography h4 {
@@ -26,7 +30,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; overflow-x:
 }
 
 .mat-list-base .mat-list-item .mat-list-item-content {
-  flex-direction: column !important;
+  align-items: flex-start !important;
 }
 
 .mat-form-field {

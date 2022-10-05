@@ -15,8 +15,8 @@ import {FilesService} from "../services/files.service";
 import {AngularFireStorageModule} from "@angular/fire/compat/storage";
 import {MatCheckboxModule} from "@angular/material/checkbox";
 import {FlexLayoutModule} from "@angular/flex-layout";
-import {AppModule} from "../app.module";
-
+import {CritiquesComponent} from "./critiques/critiques.component";
+import { BooksComponent } from './books/books.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +25,9 @@ import {AppModule} from "../app.module";
     AddCatalogComponent,
     EditCatalogComponent,
     UploadFileComponent,
-    CatalogComponent
+    CatalogComponent,
+    CritiquesComponent,
+    BooksComponent
   ],
     imports: [
         CommonModule,

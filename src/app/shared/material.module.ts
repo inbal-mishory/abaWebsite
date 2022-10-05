@@ -6,6 +6,7 @@ import {MatInputModule} from "@angular/material/input";
 import {MatListModule} from "@angular/material/list";
 import {MatIconModule} from "@angular/material/icon";
 import {MatSnackBarModule} from "@angular/material/snack-bar";
+import {MatAutocompleteModule} from "@angular/material/autocomplete";
 
 @NgModule({
   imports: [
@@ -15,7 +16,8 @@ import {MatSnackBarModule} from "@angular/material/snack-bar";
     MatInputModule,
     MatListModule,
     MatIconModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatAutocompleteModule
   ],
   exports: [
     MatDialogModule,
@@ -24,7 +26,8 @@ import {MatSnackBarModule} from "@angular/material/snack-bar";
     MatInputModule,
     MatListModule,
     MatIconModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatAutocompleteModule
   ],
   // providers: [{provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: {floatLabel: 'always'}}]
 })

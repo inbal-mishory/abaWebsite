@@ -5,28 +5,36 @@ import {AddCatalogComponent} from "./add-catalog/add-catalog.component";
 import {EditCatalogComponent} from "./edit-catalog/edit-catalog.component";
 import {AuthChildrenGuard} from "../shared/guard/auth-children.guard";
 import {RouterModule, Routes} from "@angular/router";
+import {CritiquesComponent} from "./critiques/critiques.component";
+import {BooksComponent} from "./books/books.component";
 
 const routes: Routes = [
   {
     path: '',
     canActivateChild: [AuthChildrenGuard],
     component: DashboardComponent,
-  },
-  {
-    path: 'dashboard',
-    component: DashboardComponent
-  },
-  {
-    path: 'catalogs',
-    component: CatalogsComponent
-  },
-  {
-    path: 'add-catalog',
-    component: AddCatalogComponent
-  },
-  {
-    path: 'edit-catalog',
-    component: EditCatalogComponent
+    children: [
+      {
+        path: 'catalogs',
+        component: CatalogsComponent
+      },
+      {
+        path: 'add-catalog',
+        component: AddCatalogComponent
+      },
+      {
+        path: 'edit-catalog',
+        component: EditCatalogComponent
+      },
+      {
+        path: 'critiques',
+        component: CritiquesComponent
+      },
+      {
+        path: 'books',
+        component: BooksComponent
+      }
+    ]
   }
 ];
 

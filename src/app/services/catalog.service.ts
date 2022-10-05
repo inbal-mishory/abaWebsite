@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
 import { Catalog } from '../models/catalog.model';
-import {collection, doc} from "@angular/fire/firestore";
 import {AngularFireDatabase, AngularFireList} from "@angular/fire/compat/database";
-import {Observable} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -19,12 +17,12 @@ export class CatalogService {
     console.log(this.catalogsRef);
   }
 
-  getCatalogList() {
-    this.catalogsList = this.afdb.list('Catalogs');
+  getAllCatalogs(): AngularFirestoreCollection<Catalog> {
+    return this.catalogsRef;
   }
 
-  getAll(): AngularFirestoreCollection<Catalog> {
-    return this.catalogsRef;
+  getCatalogNames(catalogs: Catalog[]): any {
+    return catalogs.flatMap((catalog) => catalog.title)
   }
 
   create(catalog: Catalog): any {

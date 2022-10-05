@@ -1,0 +1,13 @@
+<div class="critiques-list" fxLayout="column">
+  <h3>בקורת תערוכות</h3>
+  <mat-list class="catalog-list" *ngIf="critiques$ | async as critiques">
+    <mat-list-item class="catalog-item" *ngFor="let critique of critiques;">
+      <mat-icon mat-list-icon>article</mat-icon>
+      <div class="catalog-text">
+        <h4>{{ critique?.title }}</h4> <span>{{critique?.museum}} {{critique?.date | date: 'dd/MM/yyyy' }}</span>
+        <p *ngIf="critique?.artist">{{critique.artist}}</p>
+        <a *ngIf="critique.article" href="{{critique.article}}" target="_blank">מאמר</a>
+      </div>
+    </mat-list-item>
+  </mat-list>
+</div>

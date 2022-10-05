@@ -7,13 +7,12 @@
   width: 250px;
 }
 
-.catalogs-list {
-  width: 92vw;
-  padding: 24px 0;
-  display: flex;
-  flex-direction: column;
-  /*justify-content: space-between;*/
-  margin: 0 auto;
+.catalog-list {
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  grid-template-rows: auto;
 }
 
 h3 {
@@ -29,20 +28,14 @@ h4 {
   cursor: pointer;
   display: inline-block;
 }
+
 h4:hover {
   color: #606200;
-}
-
-.catalog-list {
-  list-style-type: none;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 32px;
-  grid-template-rows: auto;
 }
 
 .catalog-item {
   display: flex;
   text-align: right;
-  gap: .2rem
+  gap: 1rem;
+  font-size: 14px;
 }

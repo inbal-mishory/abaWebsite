@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {AddCatalogComponent} from "../add-catalog/add-catalog.component";
 import {MatDialog} from "@angular/material/dialog";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-dashboard',
@@ -9,15 +9,15 @@ import {MatDialog} from "@angular/material/dialog";
 })
 export class DashboardComponent implements OnInit {
 
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog, public router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
   }
 
 
-
-
-
-
-
+  goTo(target: string) {
+    console.log(target);
+    // @ts-ignore
+    this.router.navigate(['/' + target]);
+  }
 }

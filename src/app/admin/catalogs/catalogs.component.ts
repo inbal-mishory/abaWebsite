@@ -1,5 +1,5 @@
 import {ChangeDetectionStrategy, ChangeDetectorRef, Component, Inject, OnInit} from '@angular/core';
-import {map} from "rxjs/operators";
+import {map, tap} from "rxjs/operators";
 import {CatalogService} from "../../services/catalog.service";
 import {Catalog} from "../../models/catalog.model";
 import {MatDialog} from "@angular/material/dialog";
@@ -52,17 +52,16 @@ export class CatalogsComponent implements OnInit {
   }
 
   retrieveCatalogs(): void {
-    this.catalogService.getAll().snapshotChanges().pipe(
+    this.catalogs$ = this.catalogService.getAllCatalogs().snapshotChanges().pipe(
       map(changes =>
         changes.map(c =>
           ({ catalog_id: c.payload.doc.id, ...c.payload.doc.data() })
-        )
-      )
-    ).subscribe(data => {
-      console.log(data);
-      this.catalogs = data;
-      console.log(this.catalogs);
-    });
+        ),
+      ),
+      tap(data => {
+        data.sort((first:any, second:any) => 0 - (first.year < second.year ? -1 : 1));
+      })
+    );
   }
 
   openEditCatalogDialog(catalog: Catalog) {

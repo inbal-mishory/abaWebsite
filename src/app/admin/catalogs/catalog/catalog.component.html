@@ -1,14 +1,12 @@
-<li class="catalog-item">
-    <div class="catalog-image">
-      <img *ngIf="catalog?.imgUrl" src="{{catalog?.imgUrl}}" alt="img" width="160">
-    </div>
-    <div class="catalog-text" (click)="onOpenEditCat({catalog})">
-      <h4>{{ catalog?.title }}</h4> <span>{{catalog?.gallery}} {{catalog?.year}}</span>
-      <p>שפה: {{catalog?.language}}</p>
-    </div>
-    <div class="delete-btn">
-      <button (click)="deleteCatalog(catalog?.catalog_id)" mat-icon-button>
-        <mat-icon>delete</mat-icon> מחיקה
-      </button>
-    </div>
-</li>
+<div class="catalog-image">
+  <img *ngIf="catalog?.imgUrl" src="{{catalog?.imgUrl}}" alt="img" width="160">
+</div>
+<div class="catalog-text" (click)="onOpenEditCat({catalog})">
+  <h4>{{ catalog?.title }}</h4> <span>{{catalog?.gallery}} {{catalog?.year}}</span>
+  <p *ngIf="catalog?.language">שפה: {{catalog?.language}}</p>
+  <div class="actions">
+    <button (click)="deleteCatalog(catalog?.catalog_id)" mat-icon-button>
+      <mat-icon>delete</mat-icon><span class="delete-btn"> מחיקה</span>
+    </button>
+  </div>
+</div>
