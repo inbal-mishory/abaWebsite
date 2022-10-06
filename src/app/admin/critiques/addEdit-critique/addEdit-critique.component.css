@@ -1,0 +1,41 @@
+:host {
+  height: 480px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.mat-dialog-title {
+  background: #687231;
+  color: #222;
+  text-align: center;
+  padding: 6px;
+}
+
+mat-dialog-content.mat-dialog-content.mat-typography {
+  margin: 0;
+  padding: 0 12px 12px 12px;
+}
+
+form {
+  display: flex;
+  gap: 35px;
+  flex-wrap: wrap;
+  height: 100%;
+  font-size: 18px;
+}
+.actions {
+  display: flex;
+  gap: 6px;
+}
+.btn {
+  min-width: 16ch;
+  background: pink;
+}
+
+.btn-success {
+  background: #46a35e;
+}
+
+.date-input {
+  /*padding-inline-start: 38px;*/
+}

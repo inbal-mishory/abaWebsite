@@ -1,26 +1,32 @@
 export class Critique {
-  // id?: string | undefined;
+  id?: string | undefined;
   title: string;
-  imgUrl?: string;
   artist?: string;
+  curator?: string;
   museum: string;
-  date: any;
+  paper: string;
+  date: string;
   article?: string;
 
-  constructor(data: ICritique) {
-    this.title = data.title
-    this.artist = data.artist
-    this.museum = data.museum
-    this.date = data.date
-    this.article = data.article
+  constructor(data: any) {
+    this.id = data.id;
+    this.title = data.title;
+    this.artist = data.artist;
+    this.curator = data.curator;
+    this.paper = data.paper;
+    this.museum = data.museum;
+    this.date = data.date;
+    this.article = data.article;
   }
 }
 
 export interface ICritique {
   title: string;
-  imgUrl?: string;
+  id: string;
   artist?: string;
+  curator?: string;
+  paper: string;
   museum: string;
-  date: any;
+  date: string;
   article?: string;
 }

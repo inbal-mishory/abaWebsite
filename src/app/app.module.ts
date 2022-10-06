@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import {LOCALE_ID, NgModule} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {AngularFireModule, FIREBASE_OPTIONS} from '@angular/fire/compat';
@@ -24,7 +24,7 @@ import {Ng2SearchPipeModule} from "ng2-search-filter";
     HomeComponent,
     CatalogsListComponent,
     ConfirmModalComponent,
-    CritiqueListComponent,
+    CritiqueListComponent
   ],
   imports: [
     BrowserModule,

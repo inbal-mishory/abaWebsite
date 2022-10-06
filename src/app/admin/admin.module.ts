@@ -6,8 +6,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { CatalogsComponent } from './catalogs/catalogs.component';
 import { CatalogComponent } from './catalogs/catalog/catalog.component';
 import {MaterialModule} from "../shared/material.module";
-import {AddCatalogComponent} from "./add-catalog/add-catalog.component";
-import {EditCatalogComponent} from "./edit-catalog/edit-catalog.component";
+import {AddCatalogComponent} from "./catalogs/add-catalog/add-catalog.component";
+import {EditCatalogComponent} from "./catalogs/edit-catalog/edit-catalog.component";
 import {ReactiveFormsModule} from "@angular/forms";
 import { UploadFileComponent } from './upload-file/upload-file.component';
 import {FileUploadService} from "../services/file-upload.service";
@@ -17,6 +17,7 @@ import {MatCheckboxModule} from "@angular/material/checkbox";
 import {FlexLayoutModule} from "@angular/flex-layout";
 import {CritiquesComponent} from "./critiques/critiques.component";
 import { BooksComponent } from './books/books.component';
+import {AddEditCritiqueComponent} from "./critiques/addEdit-critique/addEdit-critique.component";
 
 @NgModule({
   declarations: [
@@ -27,18 +28,19 @@ import { BooksComponent } from './books/books.component';
     UploadFileComponent,
     CatalogComponent,
     CritiquesComponent,
-    BooksComponent
+    BooksComponent,
+    AddEditCritiqueComponent
   ],
-    imports: [
-        CommonModule,
-        MaterialModule,
-        AdminRoutingModule,
-        ReactiveFormsModule,
-        HttpClientModule,
-        AngularFireStorageModule,
-        MatCheckboxModule,
-        FlexLayoutModule
-    ],
+  imports: [
+    CommonModule,
+    MaterialModule,
+    AdminRoutingModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    AngularFireStorageModule,
+    MatCheckboxModule,
+    FlexLayoutModule
+  ],
   providers: [FileUploadService, FilesService]
 })
 export class AdminModule { }

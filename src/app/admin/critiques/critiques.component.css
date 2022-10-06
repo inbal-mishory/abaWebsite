@@ -1,0 +1,30 @@
+.critiques-container {
+  width: 96vw;
+  padding: 24px 0;
+  margin: 0 auto;
+}
+
+mat-list.mat-list.mat-list-base.critiques-list {
+  gap: 1em;
+  display: flex;
+  flex-direction: column;
+}
+
+span.mat-list-item-content {
+  align-items: flex-start;
+  height: max-content;
+}
+
+.critique-item {
+  height:200px;
+}
+
+.actions {
+  width: 60vw;
+  display: flex;
+  gap: 6px;
+}
+
+.btn {
+  background: pink;
+}

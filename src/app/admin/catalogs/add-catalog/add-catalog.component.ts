@@ -1,12 +1,12 @@
 import {Component, EventEmitter, Inject, OnInit, Output} from '@angular/core';
-import { Catalog } from '../../models/catalog.model';
-import {CatalogService} from "../../services/catalog.service";
+import { Catalog } from '../../../models/catalog.model';
+import {CatalogService} from "../../../services/catalog.service";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 import {AngularFireStorage} from "@angular/fire/compat/storage";
-import {FileUploadService} from "../../services/file-upload.service";
+import {FileUploadService} from "../../../services/file-upload.service";
 import firebase from "firebase/compat";
-import {FileUpload} from "../../models/file.model";
+import {FileUpload} from "../../../models/file.model";
 
 @Component({
   selector: 'app-add-catalog',

@@ -4,8 +4,10 @@
     <mat-list-item class="catalog-item" *ngFor="let critique of critiques;">
       <mat-icon mat-list-icon>article</mat-icon>
       <div class="catalog-text">
-        <h4>{{ critique?.title }}</h4> <span>{{critique?.museum}} {{critique?.date | date: 'dd/MM/yyyy' }}</span>
-        <p *ngIf="critique?.artist">{{critique.artist}}</p>
+        <h4>{{ critique?.title }}<span>, {{critique.paper}}</span><span *ngIf="critique?.date">, {{critique.date}}</span></h4>
+        <p>
+          <span *ngIf="critique?.museum">{{critique?.museum}}</span>, <span *ngIf="critique?.artist">{{critique.artist}}</span>
+        </p>
         <a *ngIf="critique.article" href="{{critique.article}}" target="_blank">מאמר</a>
       </div>
     </mat-list-item>

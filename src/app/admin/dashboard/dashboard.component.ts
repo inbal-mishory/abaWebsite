@@ -13,11 +13,4 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
-
-  goTo(target: string) {
-    console.log(target);
-    // @ts-ignore
-    this.router.navigate(['/' + target]);
-  }
 }

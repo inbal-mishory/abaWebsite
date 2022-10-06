@@ -1,9 +1,9 @@
-import {ChangeDetectionStrategy, ChangeDetectorRef, Component, Inject, OnInit} from '@angular/core';
+import {ChangeDetectorRef, Component, Inject, OnInit} from '@angular/core';
 import {map, tap} from "rxjs/operators";
 import {CatalogService} from "../../services/catalog.service";
 import {Catalog} from "../../models/catalog.model";
 import {MatDialog} from "@angular/material/dialog";
-import {EditCatalogComponent} from "../edit-catalog/edit-catalog.component";
+import {EditCatalogComponent} from "./edit-catalog/edit-catalog.component";
 import {FileUploadService} from "../../services/file-upload.service";
 import {HttpClient} from "@angular/common/http";
 import {environment} from "../../../environments/environment";
@@ -12,7 +12,7 @@ import {ConfirmModalComponent} from "../../shared/modals/confirm.modal/confirm.m
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {AngularFirestore} from "@angular/fire/compat/firestore";
 import {Observable} from "rxjs";
-import {AddCatalogComponent} from "../add-catalog/add-catalog.component";
+import {AddCatalogComponent} from "./add-catalog/add-catalog.component";
 
 @Component({
   selector: 'app-catalogs',

@@ -7,6 +7,8 @@ import {MatListModule} from "@angular/material/list";
 import {MatIconModule} from "@angular/material/icon";
 import {MatSnackBarModule} from "@angular/material/snack-bar";
 import {MatAutocompleteModule} from "@angular/material/autocomplete";
+import {MAT_DATE_FORMATS, MAT_DATE_LOCALE, MatNativeDateModule} from "@angular/material/core";
+import {MatDatepickerModule} from "@angular/material/datepicker";
 
 @NgModule({
   imports: [
@@ -17,7 +19,9 @@ import {MatAutocompleteModule} from "@angular/material/autocomplete";
     MatListModule,
     MatIconModule,
     MatSnackBarModule,
-    MatAutocompleteModule
+    MatAutocompleteModule,
+    MatNativeDateModule,
+    MatDatepickerModule
   ],
   exports: [
     MatDialogModule,
@@ -27,8 +31,12 @@ import {MatAutocompleteModule} from "@angular/material/autocomplete";
     MatListModule,
     MatIconModule,
     MatSnackBarModule,
-    MatAutocompleteModule
+    MatAutocompleteModule,
+    MatNativeDateModule,
+    MatDatepickerModule
   ],
-  // providers: [{provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: {floatLabel: 'always'}}]
+  // providers: [
+  //
+  // ]
 })
 export class MaterialModule { }

@@ -1,6 +1,6 @@
 import {Component, OnInit, Input, Output, EventEmitter, Inject} from '@angular/core';
-import { CatalogService } from "../../services/catalog.service";
-import {Catalog} from "../../models/catalog.model";
+import { CatalogService } from "../../../services/catalog.service";
+import {Catalog} from "../../../models/catalog.model";
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 
@@ -34,7 +34,6 @@ export class EditCatalogComponent implements OnInit {
 
   ngOnChanges(): void {
     this.message = '';
-    // this.currentCatalog = { ...this.catalog };
   }
 
   initForm() {
@@ -51,26 +50,13 @@ export class EditCatalogComponent implements OnInit {
         urlEnglish: this.item.urlEnglish ? this.item.urlEnglish : '',
         urlHeb: this.item.urlHeb ? this.item.urlHeb : '',
         year: this.item.year ? this.item.year : '',
-        published: this.item.published ? this.item.published : ''
+        published: this.item.published ? this.item.published : false
       });
     }
   }
 
-  updatePublished(status: boolean): void {
-    if (this.currentCatalog.catalog_id) {
-      this.catalogService.update(this.currentCatalog.catalog_id, { published: status })
-      .then(() => {
-        this.currentCatalog.published = status;
-        this.message = 'The status was updated successfully!';
-      })
-      .catch(err => console.log(err));
-    }
-  }
-
   updateCatalog(data?: any): void {
-    // const data = this.editCatalogForm?.getRawValue();
     const catalog = data.value;
-
     this.catalogService.update(catalog.catalog_id, {...catalog})
                         .then(() => {
                           console.log('done update?');

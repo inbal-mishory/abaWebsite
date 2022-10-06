@@ -14,7 +14,15 @@ export class CritiqueService {
     this.critiquesRef = db.collection(this.dbPath);
   }
 
-  getAllCritiques(): AngularFirestoreCollection<ICritique> {
+  getAllCritiques(): any {
     return this.critiquesRef;
+  }
+
+  createCritique(critique: ICritique): any {
+    return this.critiquesRef.add({ ...critique });
+  }
+
+  updateCritique(id: string, data: any): Promise<void> {
+    return this.critiquesRef.doc(id).update(data);
   }
 }

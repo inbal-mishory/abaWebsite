@@ -3,6 +3,7 @@
 @import url(https://fonts.googleapis.com/icon?family=Material+Icons);
 * {
   direction: rtl;
+  box-sizing: border-box;
 }
 
 html, body { height: 100%; font-family: 'Alef', sans-serif; font-size: 16px;}
@@ -33,6 +34,10 @@ body { margin: 0; overflow-x: hidden; }
   align-items: flex-start !important;
 }
 
+.mat-list-base .mat-list-item.mat-list-item-with-avatar {
+  height: max-content !important;
+}
+
 .mat-form-field {
   text-align: revert !important;
 }
@@ -48,6 +53,18 @@ body { margin: 0; overflow-x: hidden; }
 
 .mat-form-field-flex {
   width: 220px !important;
+}
+
+mat-date-range-picker.mat-datepicker-content {
+  direction: ltr !important;
+}
+
+.mat-list-base .mat-list-item.critique-item {
+  min-height: 120px;
+}
+
+.mat-form-field .mat-form-field-flex {
+  flex-wrap: wrap;
 }
 
 button {
