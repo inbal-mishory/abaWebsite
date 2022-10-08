@@ -14,14 +14,15 @@ import Timestamp = firebase.firestore.Timestamp;
 export class CritiqueListComponent implements OnInit {
   critiques?: ICritique[];
   critiques$?: Observable<Critique[]> | undefined;
+  displayedColumns: string[] = ['title', 'museum', 'artist', 'date'];
+  term!: string;
   constructor(private critiqueService: CritiqueService) { }
 
   ngOnInit(): void {
     this.critiques$ = this.critiqueService.getAllCritiques().snapshotChanges().pipe(
       map((changes: any) =>
         changes.map((c: any) => {
-          let newCritique = {id: c.payload.doc.id, ...c.payload.doc.data()};
-          return newCritique;
+          return {id: c.payload.doc.id, ...c.payload.doc.data()};
         }),
       ),
       tap(console.log)

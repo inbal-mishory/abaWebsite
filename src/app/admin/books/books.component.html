@@ -1,1 +1,27 @@
-<p>books works!</p>
+<div class="actions">
+  <h3>ספרים</h3>
+  <button (click)="openCreateBook()" class="btn-add">
+    הוסף ספר
+  </button>
+</div>
+<div class="books-container">
+  <ul class="books-list" *ngIf="books">
+    <li class="book-item" fxLayout="row" *ngFor="let book of books;">
+      <div class="book-cover">
+        <img *ngIf="book?.cover" src="{{book?.cover}}" alt="img" width="160">
+      </div>
+      <div class="book-details">
+        <h3>{{book.title}}</h3>
+        <p>{{book.publisher}}, {{book.publication_year}}</p>
+        <div class="actions">
+          <button class="btn" (click)="deleteDialog(book.id)" mat-button>
+            <mat-icon>delete</mat-icon><span class="delete-btn"> מחיקה</span>
+          </button>
+          <button class="btn" mat-button (click)="openEditBook(book)">
+            <mat-icon>edit</mat-icon><span class="edit-btn"> עריכה</span>
+          </button>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>

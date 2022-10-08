@@ -1,15 +1,46 @@
 <div class="critiques-list" fxLayout="column">
   <h3>בקורת תערוכות</h3>
-  <mat-list class="catalog-list" *ngIf="critiques$ | async as critiques">
-    <mat-list-item class="catalog-item" *ngFor="let critique of critiques;">
-      <mat-icon mat-list-icon>article</mat-icon>
-      <div class="catalog-text">
-        <h4>{{ critique?.title }}<span>, {{critique.paper}}</span><span *ngIf="critique?.date">, {{critique.date}}</span></h4>
-        <p>
-          <span *ngIf="critique?.museum">{{critique?.museum}}</span>, <span *ngIf="critique?.artist">{{critique.artist}}</span>
-        </p>
-        <a *ngIf="critique.article" href="{{critique.article}}" target="_blank">מאמר</a>
-      </div>
-    </mat-list-item>
-  </mat-list>
+  <div class="search">
+    <form class="example-form">
+      <input type="text" class="search-input"
+             matInput
+             name="search"
+             placeholder="חפש בקורת"
+             [(ngModel)]="term">
+    </form>
+  </div>
+  <ng-container *ngIf="critiques$ | async as critiques">
+    <table mat-table [dataSource]="critiques" class="critiques-table mat-elevation-z4">
+      <ng-container matColumnDef="title">
+        <th mat-header-cell *matHeaderCellDef>כותרת</th>
+        <td mat-cell *matCellDef="let critique"> {{critique.title}} </td>
+      </ng-container>
+      <ng-container matColumnDef="museum">
+        <th mat-header-cell *matHeaderCellDef>מוזיאון/גלריה</th>
+        <td mat-cell *matCellDef="let critique"> {{critique.museum}} </td>
+      </ng-container>
+      <ng-container matColumnDef="artist">
+        <th mat-header-cell *matHeaderCellDef>אמן</th>
+        <td mat-cell *matCellDef="let critique"> {{critique.artist}} </td>
+      </ng-container>
+      <ng-container matColumnDef="date">
+        <th mat-header-cell *matHeaderCellDef>תאריך</th>
+        <td mat-cell *matCellDef="let critique"> {{critique.date}} </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns | filter: term;"></tr>
+    </table>
+  </ng-container>
+<!--  <mat-list class="catalog-list" *ngIf="critiques$ | async as critiques">-->
+<!--    <mat-list-item class="catalog-item" *ngFor="let critique of critiques;">-->
+<!--      <mat-icon mat-list-icon>article</mat-icon>-->
+<!--      <div class="catalog-text">-->
+<!--        <h4>{{ critique?.title }}<span>, {{critique.paper}}</span><span *ngIf="critique?.date">, {{critique.date}}</span></h4>-->
+<!--        <p>-->
+<!--          <span *ngIf="critique?.museum">{{critique?.museum}}</span>, <span *ngIf="critique?.artist">{{critique.artist}}</span>-->
+<!--        </p>-->
+<!--        <a *ngIf="critique.article" href="{{critique.article}}" target="_blank">מאמר</a>-->
+<!--      </div>-->
+<!--    </mat-list-item>-->
+<!--  </mat-list>-->
 </div>

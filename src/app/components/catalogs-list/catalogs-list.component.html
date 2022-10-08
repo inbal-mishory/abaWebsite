@@ -2,7 +2,7 @@
   <h3>קטלוגים</h3>
   <div class="search">
     <form class="example-form">
-      <input type="text"
+      <input type="text" class="search-input"
              matInput
              name="search"
              placeholder="Search catalogs"
@@ -10,15 +10,17 @@
     </form>
   </div>
   <ul class="catalog-list" *ngIf="catalogs$ | async as catalogs">
-    <li class="catalog-item" *ngFor="let catalog of catalogs | filter: term">
+    <li class="catalog-item" *ngFor="let catalog of catalogs | filter: term; let i = index">
       <div class="catalog-image">
         <img *ngIf="catalog?.imgUrl" src="{{catalog?.imgUrl}}" alt="img" width="160">
       </div>
       <div class="catalog-text">
         <h4>{{ catalog.title }}</h4> <span>{{catalog.gallery}} {{catalog?.year}}</span>
         <p>{{catalog.artist}}</p>
-<!--        <span *ngIf="catalog.language">שפה: {{catalog.language}}</span>-->
       </div>
     </li>
   </ul>
+  <div class="no-results">
+    אין תוצאות
+  </div>
 </div>

@@ -18,6 +18,7 @@ import {FlexLayoutModule} from "@angular/flex-layout";
 import {CritiquesComponent} from "./critiques/critiques.component";
 import { BooksComponent } from './books/books.component';
 import {AddEditCritiqueComponent} from "./critiques/addEdit-critique/addEdit-critique.component";
+import { AddEditBookComponent } from './books/add-edit-book/add-edit-book.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import {AddEditCritiqueComponent} from "./critiques/addEdit-critique/addEdit-cri
     CatalogComponent,
     CritiquesComponent,
     BooksComponent,
-    AddEditCritiqueComponent
+    AddEditCritiqueComponent,
+    AddEditBookComponent
   ],
   imports: [
     CommonModule,

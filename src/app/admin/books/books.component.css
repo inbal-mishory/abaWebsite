@@ -1,0 +1,43 @@
+.books-container {
+  width: 92vw;
+  margin: 24px auto;
+}
+
+.book-cover {
+  /*width: 250px;*/
+}
+
+.books-list {
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  grid-template-rows: auto;
+}
+
+h3 {
+  font-weight: bolder;
+  font-size: 24px;
+}
+
+h4 {
+  text-align: right;
+  font-weight: bolder;
+  font-size: 20px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+h4:hover {
+  color: #606200;
+}
+
+.book-item {
+  display: flex;
+  text-align: right;
+  gap: 1rem;
+}
+
+.btn-add {
+  font-family: 'Rubik', sans-serif;
+}

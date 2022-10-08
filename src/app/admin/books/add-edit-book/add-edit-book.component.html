@@ -1,0 +1,46 @@
+<div class="mat-dialog-title">
+  <h3 *ngIf="!isEdit" mat-dialog-title>הוספת ספר</h3>
+  <h3 *ngIf="isEdit" mat-dialog-title>עריכת ספר</h3>
+</div>
+<mat-dialog-content>
+  <form *ngIf="editBookForm" [formGroup]="editBookForm">
+  <div class="form-controls">
+    <mat-form-field appearance="fill">
+      <mat-label>כותרת</mat-label>
+      <input matInput formControlName="title" class="form-control" name="title" placeholder="הכנס כותרת" />
+      <mat-error *ngIf="editBookForm.controls['title'].errors?.['require']">
+        Required field
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>עטיפה</mat-label>
+      <input matInput formControlName="cover" class="form-control" name="cover" placeholder="הכנס עטיפה" />
+      <mat-error *ngIf="editBookForm.controls['cover'].errors?.['require']">
+        Required field
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>מוציא לאור</mat-label>
+      <input matInput formControlName="publisher" class="form-control" name="publisher" placeholder="הכנס מוציא לאור" />
+      <mat-error *ngIf="editBookForm.controls['publisher'].errors?.['require']">
+        Required field
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>שנת הוצאה לאור</mat-label>
+      <input matInput formControlName="publication_year" class="form-control" name="publication_year" placeholder="הכנס gallery" />
+      <mat-error *ngIf="editBookForm.controls['publication_year'].errors?.['require']">
+        Required field
+      </mat-error>
+    </mat-form-field>
+  </div>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button type="submit" class="badge badge-success" (click)="updateBook()">
+    Update
+  </button>
+  <button type="submit" class="badge badge-success" (click)="createBook()">
+    create
+  </button>
+</mat-dialog-actions>

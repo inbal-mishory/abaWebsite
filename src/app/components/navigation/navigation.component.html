@@ -1,0 +1,14 @@
+<nav class="navbar navbar-expand navbar-dark bg-dark">
+  <div class="navbar-brand"></div>
+  <ul class="navbar-nav mr-auto">
+    <li class="nav-item">
+      <a routerLink="catalogs" [ngClass]="{'nav-link': true, 'active' : isActive('catalogs')}">קטלוגים</a>
+    </li>
+    <li class="nav-item">
+      <a routerLink="books" [ngClass]="{'nav-link': true, 'active' : isActive('books')}">ספרים</a>
+    </li>
+    <li class="nav-item">
+      <a routerLink="critique" [ngClass]="{'nav-link': true, 'active' : isActive('critique')}">ביקורת תערוכות</a>
+    </li>
+  </ul>
+</nav>

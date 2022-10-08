@@ -21,10 +21,6 @@ export class CatalogService {
     return this.catalogsRef;
   }
 
-  getCatalogNames(catalogs: Catalog[]): any {
-    return catalogs.flatMap((catalog) => catalog.title)
-  }
-
   create(catalog: Catalog): any {
     return this.catalogsRef.add({ ...catalog });
   }

@@ -13,13 +13,19 @@
 }
 
 .btn {
-  background: #64a4ce;
+  border: 1px solid #64a4ce;
   color: #222;
   font-weight: bold;
   padding: 8px 6px;
   border-radius: 6px;
-  font-size: 18px;
   min-width: 20ch;
+  min-height: 4ch;
+  line-height: 23px;
   text-align: center;
+  font-size: 18px;
   text-decoration: none;
+  font-family: 'Rubik', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

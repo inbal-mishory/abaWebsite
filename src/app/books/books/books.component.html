@@ -1,1 +1,14 @@
-<p>books works!</p>
+<div class="books-container">
+  <h3>ספרים</h3>
+  <ul class="book-list" *ngIf="books">
+    <li class="book-item" fxLayout="row" *ngFor="let book of books;">
+      <div class="book-cover">
+        <img *ngIf="book?.cover" src="{{book?.cover}}" alt="img" width="160">
+      </div>
+      <div class="book-details">
+        <h4>{{book.title}}</h4>
+        <p>{{book.publisher}}, {{book.publication_year}}</p>
+      </div>
+    </li>
+  </ul>
+</div>

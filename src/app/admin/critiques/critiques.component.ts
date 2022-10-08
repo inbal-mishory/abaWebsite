@@ -2,13 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import {Critique, ICritique} from "../../models/critique.model";
 import {Observable} from "rxjs";
 import {CritiqueService} from "../../services/critique.service";
-import {map, tap} from "rxjs/operators";
+import {map} from "rxjs/operators";
 import {MatDialog} from "@angular/material/dialog";
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {environment} from "../../../environments/environment";
 import { AddEditCritiqueComponent} from "./addEdit-critique/addEdit-critique.component";
 import firebase from "firebase/compat";
-import Timestamp = firebase.firestore.Timestamp;
 
 @Component({
   selector: 'app-critiques',

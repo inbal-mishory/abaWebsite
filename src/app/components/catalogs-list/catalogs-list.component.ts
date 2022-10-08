@@ -1,8 +1,8 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import { CatalogService } from 'src/app/services/catalog.service';
-import {map, startWith, tap, filter} from 'rxjs/operators';
+import {map, takeUntil, tap} from 'rxjs/operators';
 import { Catalog } from 'src/app/models/catalog.model';
-import {Observable} from "rxjs";
+import {Observable, Subject} from "rxjs";
 import {FormControl} from "@angular/forms";
 
 @Component({
@@ -16,6 +16,7 @@ export class CatalogsListComponent implements OnInit, OnDestroy{
   title = '';
   term!: string;
   catalogs$?: Observable<Catalog[]>;
+  destroy$: Subject<boolean> = new Subject<boolean>();
   control = new FormControl(null);
   options?: string[];
   filteredOptions?: Observable<string[]>;
@@ -28,7 +29,8 @@ export class CatalogsListComponent implements OnInit, OnDestroy{
   }
 
   ngOnDestroy() {
-    this.catalogs$?.subscribe()
+    this.destroy$.next(true);
+    this.destroy$.unsubscribe();
   }
 
   refreshList(): void {
@@ -38,6 +40,7 @@ export class CatalogsListComponent implements OnInit, OnDestroy{
 
   retrieveCatalogs(): void {
     this.catalogs$ = this.catalogService.getAllCatalogs().snapshotChanges().pipe(
+      takeUntil(this.destroy$),
       map(changes =>
         changes.map(c =>
           ({ catalog_id: c.payload.doc.id, ...c.payload.doc.data() })

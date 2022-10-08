@@ -9,15 +9,20 @@ h3 {
   margin: 0 auto;
 }
 h4 {
-  margin-bottom: 5px;
+  margin-bottom: 6px;
 }
-mat-list.mat-list.mat-list-base.catalog-list {
-  gap: 1em;
-  display: flex;
-  flex-direction: column;
+.search {
+  margin-bottom: 16px;
 }
 
-span.mat-list-item-content {
-  align-items: flex-start;
-  height: max-content;
+.search input {
+  box-shadow: 2px 3px 6px #55555594;
+}
+
+input::placeholder {
+  font-size: 14px;
+}
+
+.critiques-table {
+  width:90%
 }
