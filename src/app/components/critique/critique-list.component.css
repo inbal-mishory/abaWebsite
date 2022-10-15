@@ -4,8 +4,8 @@ h3 {
   font-size: 24px;
 }
 .critiques-list {
-  width: 96vw;
-  padding: 24px 0;
+  width: 100%;
+  padding: 1em;
   margin: 0 auto;
 }
 h4 {
@@ -16,7 +16,7 @@ h4 {
 }
 
 .search input {
-  box-shadow: 2px 3px 6px #55555594;
+  /*box-shadow: 2px 3px 6px #55555594;*/
 }
 
 input::placeholder {
@@ -24,5 +24,53 @@ input::placeholder {
 }
 
 .critiques-table {
-  width:90%
+  display: flex;
+  flex-direction: column;
+  max-height: 500px;
+  min-width: 300px;
+}
+
+.mat-table {
+  overflow: auto;
+  max-height: 500px;
+}
+
+.mobile-label {
+  display: none;
+}
+
+.mat-column-museum {
+  min-width: 25%;
+}
+
+@media(max-width: 600px) {
+  .mobile-label {
+    width: 110px;
+    display: inline-block;
+    font-weight: bold;
+    padding-right: 12px;
+  }
+
+  .mat-header-row {
+    display: none;
+  }
+
+  .mat-row {
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .mat-cell {
+    line-height: 1.6em;
+    align-items: flex-start;
+  }
+
+  .mat-cell span:nth-last-of-type(2) {
+    min-width: 120px;
+    word-wrap: break-word;
+  }
+
+  mat-cell:last-of-type {
+    padding: revert;
+  }
 }

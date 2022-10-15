@@ -2,8 +2,20 @@
   text-align: center;
   margin: 25px auto;
 }
+.bg-dark {
+  background: #262626;
+  display: flex;
+  width: 100%;
+  padding: 6px;
+}
 
-.navbar-nav {
+nav.navbar {
+  width: 85vw;
+  margin: 0 auto;
+  display: flex;
+}
+
+ul.navbar-nav {
   display: flex;
   align-items: center;
   padding-inline-start: 0;
@@ -23,12 +35,6 @@
   background-position: top right, left center;
 }
 
-.bg-dark {
-  background: #262626;
-  display: flex;
-  width: 100%;
-  padding: 6px;
-}
 
 a.nav-link {
   color: #fff;

@@ -1,7 +1,14 @@
+:host {
+  width:100%
+}
 .critiques-container {
-  width: 96vw;
-  padding: 24px 0;
+  width: 100%;
+  padding: 24px 0 0 24px;
   margin: 0 auto;
+}
+
+.critiques-title {
+  font-size: 28px;
 }
 
 mat-list.mat-list.mat-list-base.critiques-list {
@@ -20,11 +27,27 @@ span.mat-list-item-content {
 }
 
 .actions {
-  width: 60vw;
   display: flex;
   gap: 6px;
 }
 
+.actions:first-of-type {
+  /*padding-top: 6px;*/
+}
+
+.btn-add {
+  background: #d3daaa;
+  font-weight: bold;
+  color: #343919;
+}
+
 .btn {
   background: pink;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.edit-btn {
+  background: #d3daaa;
+  color: #343919;
 }

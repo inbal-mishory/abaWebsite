@@ -2,45 +2,53 @@
   <h3>בקורת תערוכות</h3>
   <div class="search">
     <form class="example-form">
-      <input type="text" class="search-input"
-             matInput
-             name="search"
-             placeholder="חפש בקורת"
-             [(ngModel)]="term">
+      <mat-form-field>
+        <input type="text" class="search-input"
+               matInput
+               (keyup)="applyFilter($event)"
+               placeholder="חפש בקורת"
+               [(ngModel)]="term">
+      </mat-form-field>
     </form>
   </div>
-  <ng-container *ngIf="critiques$ | async as critiques">
-    <table mat-table [dataSource]="critiques" class="critiques-table mat-elevation-z4">
+  <ng-container *ngIf="dataSource">
+    <mat-table #table [dataSource]="dataSource" class="critiques-table mat-elevation-z4" [class.isMobile]="isMobile">
       <ng-container matColumnDef="title">
-        <th mat-header-cell *matHeaderCellDef>כותרת</th>
-        <td mat-cell *matCellDef="let critique"> {{critique.title}} </td>
+        <mat-header-cell *matHeaderCellDef>כותרת</mat-header-cell>
+        <mat-cell *matCellDef="let critique">
+          <span class="mobile-label">כותרת:</span>
+          <span>{{critique.title}}</span>
+        </mat-cell>
       </ng-container>
       <ng-container matColumnDef="museum">
-        <th mat-header-cell *matHeaderCellDef>מוזיאון/גלריה</th>
-        <td mat-cell *matCellDef="let critique"> {{critique.museum}} </td>
+        <mat-header-cell *matHeaderCellDef>מוזיאון/גלריה</mat-header-cell>
+        <mat-cell *matCellDef="let critique">
+          <span class="mobile-label">מוזיאון/גלריה:</span>
+          <span>{{critique.museum}}</span> </mat-cell>
       </ng-container>
       <ng-container matColumnDef="artist">
-        <th mat-header-cell *matHeaderCellDef>אמן</th>
-        <td mat-cell *matCellDef="let critique"> {{critique.artist}} </td>
+        <mat-header-cell *matHeaderCellDef>אמן</mat-header-cell>
+        <mat-cell *matCellDef="let critique">
+          <span class="mobile-label">אמן:</span>
+          <span>{{critique.artist}}</span> </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="article">
+        <mat-header-cell *matHeaderCellDef>מאמר</mat-header-cell>
+        <mat-cell *matCellDef="let critique">
+          <span class="mobile-label">מאמר:</span>
+          <a *ngIf="critique.article" href="{{critique.article}}">קישור להורדה</a> </mat-cell>
       </ng-container>
       <ng-container matColumnDef="date">
-        <th mat-header-cell *matHeaderCellDef>תאריך</th>
-        <td mat-cell *matCellDef="let critique"> {{critique.date}} </td>
+        <mat-header-cell *matHeaderCellDef>תאריך</mat-header-cell>
+        <mat-cell *matCellDef="let critique">
+          <span class="mobile-label">תאריך:</span>
+          <span>{{critique.date}}</span> </mat-cell>
       </ng-container>
-      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns | filter: term;"></tr>
-    </table>
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns | filter: term;"></mat-row>
+    </mat-table>
+    <div *ngIf="displayNoRecords" class="no-results">
+      <h3>אין תוצאות</h3>
+    </div>
   </ng-container>
-<!--  <mat-list class="catalog-list" *ngIf="critiques$ | async as critiques">-->
-<!--    <mat-list-item class="catalog-item" *ngFor="let critique of critiques;">-->
-<!--      <mat-icon mat-list-icon>article</mat-icon>-->
-<!--      <div class="catalog-text">-->
-<!--        <h4>{{ critique?.title }}<span>, {{critique.paper}}</span><span *ngIf="critique?.date">, {{critique.date}}</span></h4>-->
-<!--        <p>-->
-<!--          <span *ngIf="critique?.museum">{{critique?.museum}}</span>, <span *ngIf="critique?.artist">{{critique.artist}}</span>-->
-<!--        </p>-->
-<!--        <a *ngIf="critique.article" href="{{critique.article}}" target="_blank">מאמר</a>-->
-<!--      </div>-->
-<!--    </mat-list-item>-->
-<!--  </mat-list>-->
 </div>

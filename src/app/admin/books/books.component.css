@@ -1,6 +1,7 @@
 .books-container {
-  width: 92vw;
-  margin: 24px auto;
+  width: 100%;
+  margin: 0 auto;
+  padding: 1em;
 }
 
 .book-cover {
@@ -17,7 +18,7 @@
 
 h3 {
   font-weight: bolder;
-  font-size: 24px;
+  font-size: 28px;
 }
 
 h4 {
@@ -38,6 +39,22 @@ h4:hover {
   gap: 1rem;
 }
 
+.actions {
+  display: flex;
+  gap: .5em;
+}
+
 .btn-add {
-  font-family: 'Rubik', sans-serif;
+  background: #d3daaa;
+  font-weight: bold;
+  color: #343919;
+}
+
+.btn {
+  background: pink;
+}
+
+.edit-btn {
+  background: #d3daaa;
+  color: #343919;
 }

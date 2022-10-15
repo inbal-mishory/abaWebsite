@@ -1,7 +1,8 @@
 <h3 *ngIf="!isEdit" mat-dialog-title>הוספת בקורת</h3>
 <h3 *ngIf="isEdit" mat-dialog-title>עריכת בקורת</h3>
 <mat-dialog-content class="mat-typography">
-  <form *ngIf="addCritiqueForm" [formGroup]="addCritiqueForm">
+  <ng-container *ngIf="addCritiqueForm">
+    <form [formGroup]="addCritiqueForm">
       <mat-form-field>
         <mat-label>כותרת</mat-label>
         <input formControlName="title" class="form-control" name="title" placeholder="הכנס כותרת" type="text" matInput />
@@ -26,7 +27,8 @@
         <mat-label>תאריך</mat-label>
         <input formControlName="date" class="date-input" matInput/>
       </mat-form-field>
-  </form>
+    </form>
+  </ng-container>
 </mat-dialog-content>
 <mat-dialog-actions align="end">
   <button *ngIf="!isEdit" type="submit" mat-button class="btn btn-success" (click)="saveCritique(addCritiqueForm?.value)">הוספה</button>

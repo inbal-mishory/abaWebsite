@@ -19,6 +19,7 @@ import {CritiquesComponent} from "./critiques/critiques.component";
 import { BooksComponent } from './books/books.component';
 import {AddEditCritiqueComponent} from "./critiques/addEdit-critique/addEdit-critique.component";
 import { AddEditBookComponent } from './books/add-edit-book/add-edit-book.component';
+import {Ng2SearchPipeModule} from "ng2-search-filter";
 
 @NgModule({
   declarations: [
@@ -33,16 +34,17 @@ import { AddEditBookComponent } from './books/add-edit-book/add-edit-book.compon
     AddEditCritiqueComponent,
     AddEditBookComponent
   ],
-  imports: [
-    CommonModule,
-    MaterialModule,
-    AdminRoutingModule,
-    ReactiveFormsModule,
-    HttpClientModule,
-    AngularFireStorageModule,
-    MatCheckboxModule,
-    FlexLayoutModule
-  ],
+    imports: [
+        CommonModule,
+        MaterialModule,
+        AdminRoutingModule,
+        ReactiveFormsModule,
+        HttpClientModule,
+        AngularFireStorageModule,
+        MatCheckboxModule,
+        FlexLayoutModule,
+        Ng2SearchPipeModule
+    ],
   providers: [FileUploadService, FilesService]
 })
 export class AdminModule { }

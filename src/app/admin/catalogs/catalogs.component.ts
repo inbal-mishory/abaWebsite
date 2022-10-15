@@ -47,7 +47,6 @@ export class CatalogsComponent implements OnInit {
       res.data[-1].catalog_id = res.id;
       this.catalogs = res.data;
       console.log('Created new item successfully!', res);
-      // console.log(res);
     });
   }
 

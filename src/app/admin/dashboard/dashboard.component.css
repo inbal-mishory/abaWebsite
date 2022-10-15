@@ -1,15 +1,21 @@
+h2.admin-title  {
+  font-size: 3em;
+  text-align: center;
+  padding-top: 1em;
+}
 .container {
-  width: 98vw;
+  width: 85vw;
   margin: 0 auto;
   padding: 24px;
 }
 
 .admin-actions {
-  width: 80vw;
+  width: 100%;
   margin: 0 auto;
   display: flex;
   gap: 1em;
   justify-content: space-evenly;
+  margin-bottom: 1em;
 }
 
 .btn {

@@ -1,5 +1,5 @@
+<h3>ספרים</h3>
 <div class="actions">
-  <h3>ספרים</h3>
   <button (click)="openCreateBook()" class="btn-add">
     הוסף ספר
   </button>
@@ -17,7 +17,7 @@
           <button class="btn" (click)="deleteDialog(book.id)" mat-button>
             <mat-icon>delete</mat-icon><span class="delete-btn"> מחיקה</span>
           </button>
-          <button class="btn" mat-button (click)="openEditBook(book)">
+          <button class="edit-btn" mat-button (click)="openEditBook(book)">
             <mat-icon>edit</mat-icon><span class="edit-btn"> עריכה</span>
           </button>
         </div>

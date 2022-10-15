@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {map, tap} from "rxjs/operators";
 import {Critique, ICritique} from "../../models/critique.model";
-import {Observable, Subject} from "rxjs";
+import {Observable} from "rxjs";
 import {CritiqueService} from "../../services/critique.service";
-import firebase from "firebase/compat";
-import Timestamp = firebase.firestore.Timestamp;
+import {MatTableDataSource} from "@angular/material/table";
 
 @Component({
   selector: 'app-critique',
@@ -13,21 +12,35 @@ import Timestamp = firebase.firestore.Timestamp;
 })
 export class CritiqueListComponent implements OnInit {
   critiques?: ICritique[];
-  critiques$?: Observable<Critique[]> | undefined;
-  displayedColumns: string[] = ['title', 'museum', 'artist', 'date'];
+  dataSource?: MatTableDataSource<Element>;
+  // critiques$?: Observable<Critique[]> | undefined;
+  displayedColumns: string[] = ['title', 'museum', 'artist', 'article', 'date'];
   term!: string;
+  isMobile = false;
+  displayNoRecords = false;
   constructor(private critiqueService: CritiqueService) { }
 
   ngOnInit(): void {
-    this.critiques$ = this.critiqueService.getAllCritiques().snapshotChanges().pipe(
+    this.critiqueService.getAllCritiques().snapshotChanges().pipe(
       map((changes: any) =>
         changes.map((c: any) => {
           return {id: c.payload.doc.id, ...c.payload.doc.data()};
         }),
       ),
       tap(console.log)
-    );
+    ).subscribe((res: any) => {
+      this.isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+      console.log(this.isMobile);
+      this.dataSource = new MatTableDataSource<Element>(res);
+    });
   }
 
 
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    // @ts-ignore
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+    // @ts-ignore
+    this.displayNoRecords = this.dataSource.filteredData.length === 0;
+  }
 }

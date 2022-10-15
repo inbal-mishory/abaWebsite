@@ -1,6 +1,11 @@
 .catalogs-container {
-  width: 92vw;
-  margin: 24px auto;
+  width: 100%;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.catalogs-title {
+  text-align: right;
 }
 
 .catalog-image {
@@ -39,3 +44,10 @@ h4:hover {
   gap: 1rem;
   font-size: 14px;
 }
+
+.btn-add {
+  background: #d3daaa;
+  font-weight: bold;
+  color: #343919;
+}
+

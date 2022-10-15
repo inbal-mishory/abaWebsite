@@ -17,7 +17,6 @@ import {FlexLayoutModule} from "@angular/flex-layout";
 import {ConfirmModalComponent} from "./shared/modals/confirm.modal/confirm.modal.component";
 import { CritiqueListComponent } from './components/critique/critique-list.component';
 import {Ng2SearchPipeModule} from "ng2-search-filter";
-import {MY_DATE_FORMATS} from "./core/my-date-formats";
 import {MomentDateModule} from "@angular/material-moment-adapter";
 import { NavigationComponent } from './components/navigation/navigation.component';
 
@@ -49,7 +48,7 @@ import { NavigationComponent } from './components/navigation/navigation.componen
     { provide: FIREBASE_OPTIONS, useValue: environment.firebase },
     { provide: LOCALE_ID, useValue: 'he-IL'}
   ],
-  exports: [FlexLayoutModule],
+  exports: [FlexLayoutModule, Ng2SearchPipeModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
