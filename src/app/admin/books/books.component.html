@@ -13,6 +13,7 @@
       <div class="book-details">
         <h3>{{book.title}}</h3>
         <p>{{book.publisher}}, {{book.publication_year}}</p>
+        <a *ngIf="book?.article" target="_blank" href="{{book.article}}">בקורת על הספר</a>
         <div class="actions">
           <button class="btn" (click)="deleteDialog(book.id)" mat-button>
             <mat-icon>delete</mat-icon><span class="delete-btn"> מחיקה</span>

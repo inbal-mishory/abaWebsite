@@ -1,3 +1,15 @@
+.search {
+  margin-bottom: 16px;
+}
+
+.search input {
+
+}
+
+input::placeholder {
+  font-size: 14px;
+}
+
 .books-container {
   width: 100%;
   margin: 0 auto;
@@ -5,8 +17,8 @@
   height: calc(100vh - 100px);
 }
 
-.book-cover {
-  /*width: 250px;*/
+.book-cover img {
+  max-height: 205px;
 }
 
 .books-list {
@@ -19,13 +31,13 @@
 
 h3 {
   font-weight: bolder;
-  font-size: 26px;
+  font-size: 34px;
 }
 
 h4 {
   text-align: right;
   font-weight: bolder;
-  font-size: 24px;
+  font-size: 22px;
   cursor: pointer;
   display: inline-block;
 }
@@ -41,5 +53,7 @@ h4:hover {
 }
 
 .book-details {
-  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }

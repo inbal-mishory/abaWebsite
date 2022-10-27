@@ -5,6 +5,7 @@ import {AuthChildrenGuard} from "../shared/guard/auth-children.guard";
 import {RouterModule, Routes} from "@angular/router";
 import {CritiquesComponent} from "./critiques/critiques.component";
 import {BooksComponent} from "./books/books.component";
+import {StorageComponent} from "./storage/storage.component";
 
 const routes: Routes = [
   {
@@ -23,6 +24,10 @@ const routes: Routes = [
       {
         path: 'books',
         component: BooksComponent
+      },
+      {
+        path: 'storage',
+        component: StorageComponent
       }
     ]
   }

@@ -19,6 +19,7 @@ import { CritiqueListComponent } from './components/critique/critique-list.compo
 import {Ng2SearchPipeModule} from "ng2-search-filter";
 import {MomentDateModule} from "@angular/material-moment-adapter";
 import { NavigationComponent } from './components/navigation/navigation.component';
+import {AngularFireStorageModule} from "@angular/fire/compat/storage";
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { NavigationComponent } from './components/navigation/navigation.componen
     AngularFirestoreModule,
     provideFirestore(() => getFirestore()),
     provideStorage(() => getStorage()),
+    AngularFireStorageModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
     Ng2SearchPipeModule,

@@ -18,7 +18,7 @@
 
 h3 {
   font-weight: bolder;
-  font-size: 28px;
+  font-size: 24px;
 }
 
 h4 {
@@ -33,10 +33,25 @@ h4:hover {
   color: #606200;
 }
 
+ul.books-list {
+  display: grid;
+  gap: 1.25em;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding-inline-start: 0;
+}
+
 .book-item {
+  align-items: center;
+  line-height: 20px;
+  padding: 0.5em;
+  gap: 1em;
+}
+
+.book-details {
   display: flex;
-  text-align: right;
-  gap: 1rem;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
 }
 
 .actions {

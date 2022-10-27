@@ -17,7 +17,7 @@
   box-sizing: border-box;
 }
 
-html, body { height: 100%; font-family: 'Frank Ruhl Libre', sans-serif; font-weight: bold; font-size: 16px;}
+html, body { height: 100%; font-family: 'Frank Ruhl Libre', sans-serif; font-weight: 500; font-size: 16px;}
 
 body { margin: 0; overflow-x: hidden; }
 
@@ -80,8 +80,9 @@ mat-date-range-picker.mat-datepicker-content {
 }
 
 .mat-table {
-  background: #eff6fa59;
+  /* background: #eff6fa59; */
   width: 100%;
+  box-shadow: none;
 }
 
 .mat-header-cell {
@@ -100,6 +101,8 @@ mat-date-range-picker.mat-datepicker-content {
   padding: 6px 0;
 }
 
+.mat-cell:first-of-type
+
 input.mat-input-element.search-input {
   border-radius: 4px 4px 0 0;
   background: #0000000a;
@@ -112,8 +115,9 @@ input.mat-input-element.search-input {
   box-shadow: none !important;
 }
 
-mat-cell:first-of-type, mat-header-cell:first-of-type, mat-footer-cell:first-of-type {
-  padding: 0 12px 0 0!important;
+.mat-header-cell:first-of-type, .mat-cell:first-of-type, .mat-footer-cell:first-of-type {
+  padding-left: 0 !important;
+  padding-right: 12px !important;
 }
 
 .mat-input-element.search-input::placeholder {

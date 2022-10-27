@@ -31,12 +31,12 @@ export class BooksComponent implements OnInit {
   getBooks(): void {
     this.bookService.getAllBooks().snapshotChanges().pipe(
       map(changes =>
-        changes.map(c =>
-          ({ id: c.payload.doc.id, ...c.payload.doc.data() })
+        changes.map(book =>
+          ({ ...book.payload.doc.data(), id: book.payload.doc.id })
         ),
       ),
       tap(data => {
-        data.sort((first:any, second:any) => 0 - (first.year < second.year ? -1 : 1));
+        data.sort((first:any, second:any) => 0 - (first.year > second.year ? -1 : 1));
       })
     ).subscribe((res) => this.books = res);
   }
@@ -50,8 +50,7 @@ export class BooksComponent implements OnInit {
         isEdit: true
       }
     });
-    dialogRef.afterClosed().subscribe((res) => {
-      console.log(res);
+    dialogRef.afterClosed().subscribe(() => {
       this.getBooks();
     })
   }
@@ -65,13 +64,12 @@ export class BooksComponent implements OnInit {
         isEdit: false
       }
     });
-    dialogRef.afterClosed().subscribe((res) => {
-      console.log(res);
+    dialogRef.afterClosed().subscribe(() => {
       this.getBooks();
     })
   }
 
-  deleteDialog(id: any) {
+  deleteDialog(id: string) {
     const data = {
       id: id,
       name: 'Delete Book'

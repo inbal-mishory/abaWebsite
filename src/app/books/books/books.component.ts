@@ -10,6 +10,7 @@ import {IBook} from "../../models/book.model";
 })
 export class BooksComponent implements OnInit {
   books?:IBook[];
+  term!: string;
   constructor(private bookService: BooksService) { }
 
   ngOnInit(): void {
@@ -27,6 +28,14 @@ export class BooksComponent implements OnInit {
         data.sort((first:any, second:any) => 0 - (first.year < second.year ? -1 : 1));
       })
     ).subscribe((res) => this.books = res);
+  }
+
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    // @ts-ignore
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+    // @ts-ignore
+    this.displayNoRecords = this.dataSource.filteredData.length === 0;
   }
 
 }

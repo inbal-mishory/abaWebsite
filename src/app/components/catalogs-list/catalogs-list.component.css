@@ -9,7 +9,19 @@
 h3 {
   text-align: right;
   font-weight: bolder;
-  font-size: 24px;
+  font-size: 32px;
+}
+
+.search {
+  margin-bottom: 16px;
+}
+
+.search input {
+  /*box-shadow: 2px 3px 6px #55555594;*/
+}
+
+input::placeholder {
+  font-size: 14px;
 }
 
 .catalog-list {

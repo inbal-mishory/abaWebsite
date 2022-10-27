@@ -65,10 +65,19 @@ export class CritiquesComponent implements OnInit {
         // @ts-ignore
         changes.map((c: any) => {
           let payloadDoc = c.payload.doc;
-          let newCritique = {id: payloadDoc.id, ...payloadDoc.data()};
+          let newCritique = {...payloadDoc.data()};
+          newCritique.id = payloadDoc.id;
           return newCritique;
         }),
       )
     )
+  }
+
+  applyFilter(event: Event) {
+    // const filterValue = (event.target as HTMLInputElement).value;
+    // // @ts-ignore
+    // this.dataSource.filter = filterValue.trim().toLowerCase();
+    // // @ts-ignore
+    // this.displayNoRecords = this.dataSource.filteredData.length === 0;
   }
 }

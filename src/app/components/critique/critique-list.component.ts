@@ -26,8 +26,7 @@ export class CritiqueListComponent implements OnInit {
         changes.map((c: any) => {
           return {id: c.payload.doc.id, ...c.payload.doc.data()};
         }),
-      ),
-      tap(console.log)
+      )
     ).subscribe((res: any) => {
       this.isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
       console.log(this.isMobile);
@@ -38,9 +37,7 @@ export class CritiqueListComponent implements OnInit {
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
-    // @ts-ignore
     this.dataSource.filter = filterValue.trim().toLowerCase();
-    // @ts-ignore
     this.displayNoRecords = this.dataSource.filteredData.length === 0;
   }
 }

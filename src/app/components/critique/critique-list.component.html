@@ -3,11 +3,8 @@
   <div class="search">
     <form class="example-form">
       <mat-form-field>
-        <input type="text" class="search-input"
-               matInput
-               (keyup)="applyFilter($event)"
-               placeholder="חפש בקורת"
-               [(ngModel)]="term">
+        <input type="text" class="search-input" name="search" #input
+               matInput (keyup)="applyFilter($event)" placeholder="חפש" [(ngModel)]="term">
       </mat-form-field>
     </form>
   </div>

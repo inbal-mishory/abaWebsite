@@ -14,8 +14,7 @@ export class AuthService {
   userData: any;
   constructor( public afs: AngularFirestore, public afAuth: AngularFireAuth, public router: Router,
                public ngZone: NgZone) {
-    /* Saving user data in localstorage when
-    logged in and setting up null when logged out */
+    /* Saving user data in localstorage when logged in */
     this.afAuth.authState.subscribe((user) => {
       if (user) {
         this.userData = user;
@@ -34,9 +33,10 @@ export class AuthService {
       .then((result) => {
         this.SetUserData(result.user);
         this.afAuth.authState.subscribe((user) => {
-          if (user) {
-            this.router.navigate(['admin']);
-          }
+          this.router.navigate(['admin']);
+          // if (user) {
+          //
+          // }
         });
       })
       .catch((error) => {

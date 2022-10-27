@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { BooksRoutingModule } from './books-routing.module';
 import {MaterialModule} from "../shared/material.module";
 import { BooksComponent } from './books/books.component';
+import {FormsModule} from '@angular/forms'
 
 
 @NgModule({
@@ -11,6 +12,7 @@ import { BooksComponent } from './books/books.component';
   ],
   imports: [
     CommonModule,
+    FormsModule,
     MaterialModule,
     BooksRoutingModule
   ]

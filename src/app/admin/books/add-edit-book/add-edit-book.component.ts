@@ -30,7 +30,9 @@ export class AddEditBookComponent implements OnInit {
         id: this.data.details.id ? this.data.details.id : '',
         cover: [this.data.details.cover ? this.data.details.cover : '', [Validators.required]],
         publisher: [this.data.details.publisher ? this.data.details.publisher : '', [Validators.required]],
-        publication_year: this.data.details.publication_year ? this.data.details.publication_year : '',
+        publication_year: [this.data.details.year ? this.data.details.year : ''],
+        article: this.data.details.article ? this.data.details.article : '',
+        link: this.data.details.link ? this.data.details.link : '',
       });
     }
   }
@@ -44,10 +46,8 @@ export class AddEditBookComponent implements OnInit {
     .catch(err => console.log(err));
   }
 
-  createBook() {
-    const book = this.editBookForm?.getRawValue();
-    this.booksService.createBook(book).subscribe((book: any) => {
-      console.log('back rom create', book);
+  createBook(book: IBook): void {
+    this.booksService.createBook(book).then(() => {
       this.dialogRef.close({data: book});
     });
   }

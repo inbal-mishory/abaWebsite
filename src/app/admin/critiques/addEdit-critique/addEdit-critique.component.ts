@@ -39,8 +39,8 @@ export class AddEditCritiqueComponent implements OnInit {
   }
 
   saveCritique(critique: any): void {
-      this.critiqueService.createCritique(critique).subscribe((critique: any) => {
-        this.dialogRef.close({data: this.critiqueList});
+      this.critiqueService.createCritique(critique).then((res) => {
+        this.dialogRef.close({data: this.critiqueList, id: res.id})
       });
   }
 
