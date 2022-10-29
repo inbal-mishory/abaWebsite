@@ -6,6 +6,7 @@ import {SignInComponent} from "./auth/sign-in/sign-in.component";
 import {AuthService} from "./services/auth.service";
 import {AuthGuard} from "./shared/guard/auth.guard";
 import {CritiqueListComponent} from "./components/critique/critique-list.component";
+import { ArticlesComponent } from './components/articles/articles.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -25,14 +26,9 @@ const routes: Routes = [
       (b) => b.BooksModule
     )
   },
-  {
-    path: 'critique',
-    component: CritiqueListComponent
-  },
-  {
-    path: 'auth',
-    component: SignInComponent
-  }
+  { path: 'critique', component: CritiqueListComponent },
+  { path: 'articles', component: ArticlesComponent },
+  { path: 'auth', component: SignInComponent }
 ];
 
 @NgModule({

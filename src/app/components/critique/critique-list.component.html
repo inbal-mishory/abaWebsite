@@ -1,12 +1,11 @@
+<!--suppress TypeScriptUnresolvedVariable -->
 <div class="critiques-list" fxLayout="column">
   <h3>בקורת תערוכות</h3>
   <div class="search">
-    <form class="example-form">
       <mat-form-field>
-        <input type="text" class="search-input" name="search" #input
-               matInput (keyup)="applyFilter($event)" placeholder="חפש" [(ngModel)]="term">
+        <input type="text" #input class="search-input" name="search"
+               matInput (keyup)="doFilter(input.value)" placeholder="חפש">
       </mat-form-field>
-    </form>
   </div>
   <ng-container *ngIf="dataSource">
     <mat-table #table [dataSource]="dataSource" class="critiques-table mat-elevation-z4" [class.isMobile]="isMobile">
@@ -42,9 +41,10 @@
           <span>{{critique.date}}</span> </mat-cell>
       </ng-container>
       <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-      <mat-row *matRowDef="let row; columns: displayedColumns | filter: term;"></mat-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
     </mat-table>
-    <div *ngIf="displayNoRecords" class="no-results">
+
+    <div *ngIf="listLength === 0" class="no-results">
       <h3>אין תוצאות</h3>
     </div>
   </ng-container>

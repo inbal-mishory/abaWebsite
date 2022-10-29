@@ -20,6 +20,7 @@ import {Ng2SearchPipeModule} from "ng2-search-filter";
 import {MomentDateModule} from "@angular/material-moment-adapter";
 import { NavigationComponent } from './components/navigation/navigation.component';
 import {AngularFireStorageModule} from "@angular/fire/compat/storage";
+import { ArticlesComponent } from './components/articles/articles.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import {AngularFireStorageModule} from "@angular/fire/compat/storage";
     CatalogsListComponent,
     ConfirmModalComponent,
     CritiqueListComponent,
-    NavigationComponent
+    NavigationComponent,
+    ArticlesComponent
   ],
   imports: [
     BrowserModule,

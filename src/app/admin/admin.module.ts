@@ -21,6 +21,8 @@ import {AddEditCritiqueComponent} from "./critiques/addEdit-critique/addEdit-cri
 import { AddEditBookComponent } from './books/add-edit-book/add-edit-book.component';
 import {Ng2SearchPipeModule} from "ng2-search-filter";
 import { StorageComponent } from './storage/storage.component';
+import { ArticlesComponent } from './articles/articles.component';
+import { AddEditArticleComponent } from './articles/add-edit-article/add-edit-article.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { StorageComponent } from './storage/storage.component';
     BooksComponent,
     AddEditCritiqueComponent,
     AddEditBookComponent,
-    StorageComponent
+    StorageComponent,
+    ArticlesComponent,
+    AddEditArticleComponent
   ],
     imports: [
         CommonModule,

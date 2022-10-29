@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {map, tap} from "rxjs/operators";
-import {Critique, ICritique} from "../../models/critique.model";
-import {Observable} from "rxjs";
+import {map} from "rxjs/operators";
+import { ICritique} from "../../models/critique.model";
 import {CritiqueService} from "../../services/critique.service";
 import {MatTableDataSource} from "@angular/material/table";
 
@@ -12,8 +11,8 @@ import {MatTableDataSource} from "@angular/material/table";
 })
 export class CritiqueListComponent implements OnInit {
   critiques?: ICritique[];
-  dataSource?: MatTableDataSource<Element>;
-  // critiques$?: Observable<Critique[]> | undefined;
+  dataSource?: MatTableDataSource<ICritique[]>;
+  listLength?: number;
   displayedColumns: string[] = ['title', 'museum', 'artist', 'article', 'date'];
   term!: string;
   isMobile = false;
@@ -30,14 +29,13 @@ export class CritiqueListComponent implements OnInit {
     ).subscribe((res: any) => {
       this.isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
       console.log(this.isMobile);
-      this.dataSource = new MatTableDataSource<Element>(res);
+      this.dataSource = new MatTableDataSource<ICritique[]>(res);
     });
   }
 
 
-  applyFilter(event: Event) {
-    const filterValue = (event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue.trim().toLowerCase();
-    this.displayNoRecords = this.dataSource.filteredData.length === 0;
+  public doFilter = (value: any) => {
+    this.dataSource.filter = value.trim();
+    this.listLength = this.dataSource.filteredData.length;
   }
 }

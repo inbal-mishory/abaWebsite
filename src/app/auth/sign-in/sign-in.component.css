@@ -39,6 +39,7 @@ h3 {
 
 label {
   font-weight: bold;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
 input[type=text], input[type=password] {

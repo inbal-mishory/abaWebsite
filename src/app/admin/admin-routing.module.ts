@@ -6,6 +6,7 @@ import {RouterModule, Routes} from "@angular/router";
 import {CritiquesComponent} from "./critiques/critiques.component";
 import {BooksComponent} from "./books/books.component";
 import {StorageComponent} from "./storage/storage.component";
+import { ArticlesComponent } from './articles/articles.component';
 
 const routes: Routes = [
   {
@@ -20,6 +21,10 @@ const routes: Routes = [
       {
         path: 'critiques',
         component: CritiquesComponent
+      },
+      {
+        path: 'articles',
+        component: ArticlesComponent
       },
       {
         path: 'books',

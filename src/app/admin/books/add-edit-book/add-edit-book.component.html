@@ -29,13 +29,10 @@
     <mat-form-field>
       <mat-label>שנת הוצאה לאור</mat-label>
       <input matInput formControlName="publication_year" class="form-control" name="publication_year" placeholder="הכנס שנת הוצאה" />
-      <mat-error *ngIf="editBookForm.controls['publication_year'].errors?.['require']">
-        Required field
-      </mat-error>
     </mat-form-field>
     <mat-form-field>
       <mat-label>מאמר</mat-label>
-      <input matInput formControlName="publisher" class="form-control" name="article" placeholder="הכנס מאמר" />
+      <input matInput formControlName="article" class="form-control" name="article" placeholder="הכנס מאמר" />
     </mat-form-field>
     <mat-form-field>
       <mat-label>קישור</mat-label>

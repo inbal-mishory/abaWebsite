@@ -1,6 +1,5 @@
 import {ChangeDetectorRef, Component, Inject, OnInit} from '@angular/core';
 import {IBook} from "../../models/book.model";
-import {Observable} from "rxjs";
 import {MatDialog} from "@angular/material/dialog";
 import {FileUploadService} from "../../services/file-upload.service";
 import {HttpClient} from "@angular/common/http";

@@ -30,7 +30,7 @@ export class AddEditBookComponent implements OnInit {
         id: this.data.details.id ? this.data.details.id : '',
         cover: [this.data.details.cover ? this.data.details.cover : '', [Validators.required]],
         publisher: [this.data.details.publisher ? this.data.details.publisher : '', [Validators.required]],
-        publication_year: [this.data.details.year ? this.data.details.year : ''],
+        publication_year: [this.data.details.publication_year ? this.data.details.publication_year : ''],
         article: this.data.details.article ? this.data.details.article : '',
         link: this.data.details.link ? this.data.details.link : '',
       });
