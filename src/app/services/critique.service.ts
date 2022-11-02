@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import {AngularFirestore, AngularFirestoreCollection} from "@angular/fire/compat/firestore";
 import {AngularFireDatabase} from "@angular/fire/compat/database";
 import {ICritique} from "../models/critique.model";
+import {DataSource} from "@angular/cdk/collections";
+import {Observable} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +16,7 @@ export class CritiqueService {
     this.critiquesRef = db.collection(this.dbPath);
   }
 
-  getAllCritiques(): any {
+  getAllCritiques(): AngularFirestoreCollection<ICritique> {
     return this.critiquesRef;
   }
 

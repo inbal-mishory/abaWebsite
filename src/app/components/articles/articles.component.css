@@ -1,0 +1,77 @@
+h3 {
+  text-align: right;
+  font-weight: bolder;
+  font-size: 32px;
+}
+.articles-container {
+  width: 100%;
+  padding: 1em;
+  margin: 0 auto;
+}
+
+h4 {
+  margin-bottom: 6px;
+}
+.search {
+  margin-bottom: 16px;
+}
+
+.search input {
+  /*box-shadow: 2px 3px 6px #55555594;*/
+}
+
+input::placeholder {
+  font-size: 14px;
+}
+
+.critiques-table {
+  display: flex;
+  flex-direction: column;
+  max-height: none;
+  min-width: 300px;
+}
+
+.mat-table {
+  overflow: auto;
+  max-height: none;
+}
+
+.mobile-label {
+  display: none;
+}
+
+.mat-column-museum {
+  min-width: 25%;
+}
+
+@media(max-width: 600px) {
+  .mobile-label {
+    width: 110px;
+    display: inline-block;
+    font-weight: bold;
+    padding-right: 12px;
+  }
+
+  .mat-header-row {
+    display: none;
+  }
+
+  .mat-row {
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .mat-cell {
+    line-height: 1.6em;
+    align-items: flex-start;
+  }
+
+  .mat-cell span:nth-last-of-type(2) {
+    min-width: 120px;
+    word-wrap: break-word;
+  }
+
+  mat-cell:last-of-type {
+    padding: revert;
+  }
+}

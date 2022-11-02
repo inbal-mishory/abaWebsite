@@ -5,7 +5,7 @@ export class Critique {
   curator?: string;
   museum: string;
   paper: string;
-  date: string;
+  date: Date | string;
   article?: string;
 
   constructor(data: any) {
@@ -27,6 +27,6 @@ export interface ICritique {
   curator?: string;
   paper: string;
   museum: string;
-  date: string;
+  date: Date | string;
   article?: string;
 }
