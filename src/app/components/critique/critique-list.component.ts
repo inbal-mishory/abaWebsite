@@ -15,7 +15,7 @@ import {map, shareReplay, tap} from "rxjs";
 export class CritiqueListComponent implements OnInit {
   sortedData: MatTableDataSource<any>;
   listLength?: number;
-  displayedColumns: string[] = ['title', 'museum', 'artist', 'article', 'date'];
+  displayedColumns: string[] = ['title', 'museum', 'artist', 'paper', 'article', 'date'];
   isMobile = false;
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
@@ -48,13 +48,6 @@ export class CritiqueListComponent implements OnInit {
   }
 
 
-
-  doFilter(string: any) {
-    this.sortedData.filter = string.target.value;
-    // // @ts-ignore
-    // this.listLength = this.sortedData.length;
-  }
-
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.sortedData.filter = filterValue;
@@ -64,31 +57,4 @@ export class CritiqueListComponent implements OnInit {
   trackByUid(index, item) {
     return item.uid
   }
-
-  sortData(sort: Sort) {
-    // @ts-ignore
-    const data = this.sortedData;
-    if (!sort.active || sort.direction === '') {
-      // @ts-ignore
-      this.sortedData = data;
-      return;
-    }
-
-    // @ts-ignore
-    this.sortedData = data.sort((a, b) => {
-      const isAsc = sort.direction === 'asc';
-      switch (sort.active) {
-        case 'date':
-          return compare(a.date, b.date, isAsc);
-        case 'title':
-          return compare(a.title, b.title, isAsc);
-        default:
-          return 0;
-      }
-    });
-  }
-}
-
-function compare(a: number | string, b: number | string, isAsc: boolean) {
-  return (a < b ? -1 : 1) * (isAsc ? 1 : -1);
 }

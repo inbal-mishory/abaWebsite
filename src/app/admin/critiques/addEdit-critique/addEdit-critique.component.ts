@@ -27,7 +27,7 @@ export class AddEditCritiqueComponent implements OnInit {
   initForm() {
     this.addCritiqueForm = this.formBuilder.group({
       title: [this.data?.details?.title ? this.data.details.title : '', [Validators.required]],
-      curator: [this.data?.details?.curator ? this.data.details.curator : '', [Validators.required]],
+      curator: this.data?.details?.curator ? this.data.details.curator : '',
       artist: this.data?.details?.artist ? this.data.details.artist : '',
       gallery: [this.data?.details?.gallery ? this.data.details.gallery : '', [Validators.required]],
       museum: this.data?.details?.museum ? this.data.details.museum : '',

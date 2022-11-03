@@ -11,7 +11,7 @@ import {MatPaginator} from "@angular/material/paginator";
   styleUrls: ['./articles.component.css']
 })
 export class ArticlesComponent implements OnInit {
-  displayedColumns: string[] = ['title', 'publication', 'link', 'date'];
+  displayedColumns: string[] = ['title', 'publication', 'link']; //, 'date'
   sortedData: MatTableDataSource<any>;
   isMobile = false;
   listLength: number;

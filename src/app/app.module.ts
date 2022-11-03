@@ -23,6 +23,7 @@ import { ArticlesComponent } from './components/articles/articles.component';
 import {MatPaginatorModule} from "@angular/material/paginator";
 import localHe from '@angular/common/locales/he';
 import {registerLocaleData} from "@angular/common";
+import { AboutComponent } from './components/about/about.component';
 registerLocaleData(localHe);
 
 @NgModule({
@@ -33,7 +34,8 @@ registerLocaleData(localHe);
     ConfirmModalComponent,
     CritiqueListComponent,
     NavigationComponent,
-    ArticlesComponent
+    ArticlesComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,

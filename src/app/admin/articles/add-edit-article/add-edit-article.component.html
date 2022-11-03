@@ -2,8 +2,8 @@
   <h3 *ngIf="!isEdit" mat-dialog-title>הוספת מאמר</h3>
   <h3 *ngIf="isEdit" mat-dialog-title>עריכת מאמר</h3>
 </div>
-<mat-dialog-content>
-<form *ngIf="editArticleForm" [formGroup]="editArticleForm">
+<mat-dialog-content *ngIf="editArticleForm">
+<form  [formGroup]="editArticleForm">
   <div class="form-controls">
     <mat-form-field appearance="fill">
       <mat-label>כותרת</mat-label>
@@ -17,8 +17,8 @@
       <input matInput formControlName="link" class="form-control" name="link" placeholder="הכנס קישור" />
     </mat-form-field>
     <mat-form-field>
-      <mat-label>מוציא לאור</mat-label>
-      <input matInput formControlName="publication" class="form-control" name="publication" placeholder="הוצאה" />
+      <mat-label>עיתון</mat-label>
+      <input matInput formControlName="publication" class="form-control" name="publication" placeholder="עיתון" />
       <mat-error *ngIf="editArticleForm.controls['publication'].errors?.['require']">
         Required field
       </mat-error>

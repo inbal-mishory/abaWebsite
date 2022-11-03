@@ -2,7 +2,7 @@
   width: 85vw;
   margin: 0 auto;
   padding-right: 6px;
-  border-right: 2px solid #1E475C;
+  border-right: thin solid #1E475C;
   min-height: calc(100vh - 102px);
   height: max-content;
 }

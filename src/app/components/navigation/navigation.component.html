@@ -1,6 +1,8 @@
 <div class="bg-dark">
 <nav class="navbar navbar-expand navbar-dark">
-  <div class="navbar-brand"></div>
+  <div class="navbar-brand">
+    <a href="/"><img src="../../../assets/images/logo_text.png" alt="ויזואליק לוגו" title="ויזואליק לוגו"/></a>
+  </div>
   <ul class="navbar-nav mr-auto">
     <li class="nav-item">
       <a routerLink="catalogs" [ngClass]="{'nav-link': true, 'active' : isActive('catalogs')}">קטלוגים</a>
@@ -13,6 +15,9 @@
     </li>
     <li class="nav-item">
       <a routerLink="articles" [ngClass]="{'nav-link': true, 'active' : isActive('articles')}">מאמרים</a>
+    </li>
+    <li class="nav-item">
+      <a routerLink="about" [ngClass]="{'nav-link': true, 'active' : isActive('about')}">אודות</a>
     </li>
   </ul>
 </nav>

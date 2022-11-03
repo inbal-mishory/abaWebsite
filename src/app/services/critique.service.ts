@@ -27,4 +27,8 @@ export class CritiqueService {
   updateCritique(id: string, data: any): Promise<void> {
     return this.critiquesRef.doc(id).update(data);
   }
+
+  delete(id: string): Promise<void> {
+    return this.critiquesRef.doc(id).delete();
+  }
 }

@@ -23,16 +23,14 @@ export class AddEditArticleComponent implements OnInit {
   }
 
   initForm(): void {
-    if (this.data) {
-      console.log(this.data);
-      this.editArticleForm = this.formBuilder.group({
-        title: [this.data.details.title ? this.data.details.title : '', [Validators.required]],
-        id: this.data.details.id ? this.data.details.id : '',
-        publication: [this.data.details.publication ? this.data.details.publication : '', [Validators.required]],
-        date: this.data.details.date ? this.data.details.date : '',
-        link: this.data.details.link ? this.data.details.link : '',
-      });
-    }
+    console.log('init');
+    this.editArticleForm = this.formBuilder.group({
+      title: [this.data?.details?.title ? this.data.details.title : '', [Validators.required]],
+      id: this.data?.details?.id ? this.data.details.id : '',
+      publication: [this.data?.details?.publication ? this.data.details.publication : '', [Validators.required]],
+      date: this.data?.details?.date ? this.data.details.date : '',
+      link: this.data?.details?.link ? this.data.details.link : '',
+    });
   }
 
   updateBook() {

@@ -5,27 +5,31 @@
     <form [formGroup]="addCritiqueForm">
       <mat-form-field>
         <mat-label>כותרת</mat-label>
-        <input formControlName="title" class="form-control" name="title" placeholder="הכנס כותרת" type="text" matInput />
+        <input formControlName="title" class="form-control" name="title" placeholder="כותרת" type="text" matInput />
       </mat-form-field>
       <mat-form-field>
         <mat-label>אוצר</mat-label>
-        <input formControlName="curator" class="form-control" name="curator" placeholder="הכנס אוצר" type="text" matInput />
+        <input formControlName="curator" class="form-control" name="curator" placeholder="אוצר" type="text" matInput />
       </mat-form-field>
       <mat-form-field>
         <mat-label>אומן</mat-label>
-        <input formControlName="artist" class="form-control" name="artist" placeholder="הכנס אומן" type="text" matInput />
+        <input formControlName="artist" class="form-control" name="artist" placeholder="אומן" type="text" matInput />
       </mat-form-field>
       <mat-form-field>
         <mat-label>מוזיאון</mat-label>
-        <input formControlName="museum" class="form-control" name="museum" placeholder="הכנס מוזיאון" type="text" matInput />
+        <input formControlName="museum" class="form-control" name="museum" placeholder="מוזיאון/גלריה" type="text" matInput />
       </mat-form-field>
       <mat-form-field>
         <mat-label>מאמר</mat-label>
-        <input formControlName="article" class="form-control" name="article" placeholder="הכנס מאמר" type="text" matInput />
+        <input formControlName="article" class="form-control" name="article" placeholder="מאמר" type="text" matInput />
       </mat-form-field>
       <mat-form-field>
         <mat-label>תאריך</mat-label>
         <input formControlName="date" class="date-input" matInput/>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>עיתון</mat-label>
+        <input matInput formControlName="paper" class="form-control" name="paper" placeholder="עיתון" />
       </mat-form-field>
     </form>
   </ng-container>

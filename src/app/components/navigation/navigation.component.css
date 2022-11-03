@@ -28,11 +28,18 @@ ul.navbar-nav {
 
 .navbar-brand {
   display: flex;
-  background: url('../../../assets/images/logo_figure.png') no-repeat, url('../../../assets/images/logo_text.png') no-repeat;
+  background: url('../../../assets/images/logo_figure.png') no-repeat;
   width: 170px;
   height: 90px;
-  background-size: 52px 90px , 70%;
-  background-position: top right, left center;
+  background-size: 52px 90px;
+  background-position: top right .5em;
+  padding-right: 60px;
+  align-items: center;
+}
+
+.navbar-brand img {
+  height:46px;
+  object-fit: contain;
 }
 
 

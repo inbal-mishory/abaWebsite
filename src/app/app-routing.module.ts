@@ -7,6 +7,7 @@ import {AuthService} from "./services/auth.service";
 import {AuthGuard} from "./shared/guard/auth.guard";
 import {CritiqueListComponent} from "./components/critique/critique-list.component";
 import { ArticlesComponent } from './components/articles/articles.component';
+import {AboutComponent} from "./components/about/about.component";
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -28,6 +29,7 @@ const routes: Routes = [
   },
   { path: 'critique', component: CritiqueListComponent },
   { path: 'articles', component: ArticlesComponent },
+  { path: 'about', component: AboutComponent },
   { path: 'auth', component: SignInComponent }
 ];
 

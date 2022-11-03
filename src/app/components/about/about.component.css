@@ -1,0 +1,15 @@
+h3 {
+  text-align: right;
+  font-weight: bolder;
+  font-size: 32px;
+}
+.about-container {
+  width: 100%;
+  padding: 1em;
+  margin: 0 auto;
+}
+
+p {
+  font-size: 18px;
+  line-height: 36px;
+}

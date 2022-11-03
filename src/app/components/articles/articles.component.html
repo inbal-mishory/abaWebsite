@@ -31,21 +31,22 @@
           </ng-container>
         </mat-cell>
       </ng-container>
-      <ng-container matColumnDef="date">
-        <mat-header-cell *matHeaderCellDef>תאריך</mat-header-cell>
-        <mat-cell *matCellDef="let article">
-          <ng-container *ngIf="article.date">
-            <span class="mobile-label">תאריך:</span>
-            <span>{{article.date | date: 'dd/MM/yyyy'}}</span>
-          </ng-container>
-        </mat-cell>
-      </ng-container>
+<!--      <ng-container matColumnDef="date">-->
+<!--        <mat-header-cell *matHeaderCellDef>תאריך</mat-header-cell>-->
+<!--        <mat-cell *matCellDef="let article">-->
+<!--          <ng-container *ngIf="article.date">-->
+<!--            <span class="mobile-label">תאריך:</span>-->
+<!--            <span>{{article.date | date: 'dd/MM/yyyy'}}</span>-->
+<!--          </ng-container>-->
+<!--        </mat-cell>-->
+<!--      </ng-container>-->
       <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
       <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
     </mat-table>
-    <mat-paginator [length]="200" [pageSizeOptions]="[10, 50, 100]" aria-label="Select page"></mat-paginator>
+<!--    <mat-paginator [length]="200" [pageSizeOptions]="[10, 50, 100]" aria-label="Select page"></mat-paginator>-->
     <div *ngIf="listLength === 0" class="no-results">
       <h3>אין תוצאות</h3>
     </div>
   </ng-container>
+  <p></p>
 </div>

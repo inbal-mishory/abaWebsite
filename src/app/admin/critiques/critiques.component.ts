@@ -7,6 +7,7 @@ import {MatDialog} from "@angular/material/dialog";
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {environment} from "../../../environments/environment";
 import { AddEditCritiqueComponent} from "./addEdit-critique/addEdit-critique.component";
+import {ConfirmModalComponent} from "../../shared/modals/confirm.modal/confirm.modal.component";
 
 @Component({
   selector: 'app-critiques',
@@ -17,7 +18,7 @@ export class CritiquesComponent implements OnInit {
   critiques?: ICritique[];
   critiques$?: Observable<Critique[]>;
   public baseUrl = environment.firebase.databaseURL;
-  displayedColumns: string[] = ['title', 'museum', 'artist', 'article', 'date', 'פעולות'];
+  displayedColumns: string[] = ['title', 'museum', 'artist', 'article', 'date', 'paper', 'actions'];
   term!: string;
   constructor(private critiqueService: CritiqueService, private dialog: MatDialog, private _snackBar: MatSnackBar,) { }
 
@@ -73,11 +74,39 @@ export class CritiquesComponent implements OnInit {
     )
   }
 
-  applyFilter(event: Event) {
-    // const filterValue = (event.target as HTMLInputElement).value;
-    // // @ts-ignore
-    // this.dataSource.filter = filterValue.trim().toLowerCase();
-    // // @ts-ignore
-    // this.displayNoRecords = this.dataSource.filteredData.length === 0;
+  deleteDialog(id: any) {
+    const data = {
+      id: id,
+      name: 'Delete Critique'
+    }
+    const dialogRef = this.dialog.open(ConfirmModalComponent, {
+      width: '25vw',
+      height: '25vh',
+      data
+    } );
+
+    dialogRef.afterClosed().subscribe((res) => {
+      if (res) {
+        this.deleteCritique(data);
+      } else {
+        console.log('something went wrong')
+      }
+    });
+  }
+
+  deleteCritique(critique: any) {
+    this.critiqueService.delete(critique.id).then((res) => {
+      console.log('what is ', res);
+      this.openSnackBar();
+    }).catch((err) => {
+      console.log(err);
+    });
+  }
+
+  openSnackBar(): void {
+    this._snackBar.open('Critique deleted successfully', 'close', {
+      horizontalPosition: "center",
+      verticalPosition: "top",
+    });
   }
 }
