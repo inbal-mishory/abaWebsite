@@ -27,6 +27,13 @@ const routes: Routes = [
       (b) => b.BooksModule
     )
   },
+  {
+    path: 'todo-boards',
+    canActivate: [AuthGuard],
+    loadChildren: () => import('./todo-boards/todo-boards.module').then(
+      (b) => b.TodoBoardsModule
+    )
+  },
   { path: 'critique', component: CritiqueListComponent },
   { path: 'articles', component: ArticlesComponent },
   { path: 'about', component: AboutComponent },

@@ -101,8 +101,6 @@ mat-date-range-picker.mat-datepicker-content {
   padding: 6px 0;
 }
 
-.mat-cell:first-of-type
-
 input.mat-input-element.search-input {
   border-radius: 4px 4px 0 0;
   background: #0000000a;
@@ -122,6 +120,23 @@ input.mat-input-element.search-input {
 
 .mat-input-element.search-input::placeholder {
   font-size: 16px;
+}
+
+.task-modal .mat-dialog-container, .task-modal .mat-dialog-content, .task-modal .mat-dialog-actions {
+  background-color: #424242 !important;
+}
+
+.mat-button-toggle {
+  background-color: #424242;
+}
+
+.mat-button-toggle-checked.mat-button-toggle-appearance-standard {
+  color: #fff;
+}
+
+.mat-button-toggle-checked {
+  background-color: #212121;
+  color: rgba(255,255,255,.7);
 }
 
 button {
