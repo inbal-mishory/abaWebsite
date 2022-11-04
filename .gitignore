@@ -13,6 +13,8 @@ yarn-error.log
 
 # IDEs and editors
 .idea/
+.vscode/
+.firebase/
 .project
 .classpath
 .c9/
@@ -36,6 +38,7 @@ yarn-error.log
 /libpeerconnection.log
 testem.log
 /typings
+package-lock.json
 
 # System files
 .DS_Store
