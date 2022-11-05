@@ -59,7 +59,6 @@ export class EditCatalogComponent implements OnInit {
     const catalog = data.value;
     this.catalogService.update(catalog.catalog_id, {...catalog})
                         .then(() => {
-                          console.log('done update?');
                           this.dialogRef.close({data: catalog });
                         })
                         .catch(err => console.log(err));

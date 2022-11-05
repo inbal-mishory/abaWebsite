@@ -28,10 +28,10 @@
 opacity: 0.5;
 }
 
-.blue { background: #71deff; color: black; }
-.green { background: #36e9b6; color: black;  }
-.yellow { background: #ffcf44; color: black; }
+.blue { background: #75BDD1; color: black; }
+.green { background: #78C247; color: black;  }
+.yellow { background: #FFD449; color: black; }
 .purple { background: #b15cff; }
-.red { background: #e74a4a; }
+.red { background: #EA5D5D; }
 
 .gray { background: gray; text-decoration: line-through; }

@@ -24,7 +24,6 @@ export class AddEditBookComponent implements OnInit {
 
   initForm() {
     if (this.data) {
-      console.log(this.data.details);
       this.editBookForm = this.formBuilder.group({
         title: [this.data.details.title ? this.data.details.title : '', [Validators.required]],
         id: this.data.details.id ? this.data.details.id : '',
@@ -40,7 +39,6 @@ export class AddEditBookComponent implements OnInit {
   updateBook() {
     const book = this.editBookForm?.getRawValue();
     this.booksService.updateBook(book.id, book).then(() => {
-      console.log('done update?');
       this.dialogRef.close({data: book });
     })
     .catch(err => console.log(err));

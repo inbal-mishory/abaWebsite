@@ -46,7 +46,6 @@ export class AddEditCritiqueComponent implements OnInit {
 
   updateCritique(critique: any) {
     this.critiqueService.updateCritique(critique.id, critique).then(() => {
-        console.log('done update?');
         this.dialogRef.close({data: critique });
       })
       .catch(err => console.log(err));

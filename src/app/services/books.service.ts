@@ -13,7 +13,6 @@ export class BooksService {
   booksRef: AngularFirestoreCollection<IBook>;
   constructor(private db: AngularFirestore) {
     this.booksRef = db.collection(this.dbPath);
-    console.log(this.booksRef);
   }
 
   getAllBooks(): AngularFirestoreCollection<IBook> {

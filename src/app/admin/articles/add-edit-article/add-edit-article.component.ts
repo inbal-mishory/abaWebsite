@@ -23,7 +23,6 @@ export class AddEditArticleComponent implements OnInit {
   }
 
   initForm(): void {
-    console.log('init');
     this.editArticleForm = this.formBuilder.group({
       title: [this.data?.details?.title ? this.data.details.title : '', [Validators.required]],
       id: this.data?.details?.id ? this.data.details.id : '',
@@ -36,7 +35,6 @@ export class AddEditArticleComponent implements OnInit {
   updateBook() {
     const article = this.editArticleForm?.getRawValue();
     this.articleService.updateArticle(article.id, article).then(() => {
-      console.log('done update?');
       this.dialogRef.close({data: article });
     })
       .catch(err => console.log(err));

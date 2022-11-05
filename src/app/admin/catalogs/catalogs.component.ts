@@ -46,7 +46,6 @@ export class CatalogsComponent implements OnInit {
     dialogRef.afterClosed().subscribe((res) => {
       res.data[-1].catalog_id = res.id;
       this.catalogs = res.data;
-      console.log('Created new item successfully!', res);
     });
   }
 
@@ -92,7 +91,6 @@ export class CatalogsComponent implements OnInit {
     } );
 
     dialogRef.afterClosed().subscribe((res) => {
-      // console.log(`Dialog result: ${result}`);
       if (res) {
         this.deleteCatalog(data);
       } else {
@@ -103,7 +101,6 @@ export class CatalogsComponent implements OnInit {
 
   deleteCatalog(catalog: any) {
     this.catalogService.delete(catalog.id).then((res) => {
-      console.log('what is ', res);
       this.openSnackBar();
     }).catch((err) => {
       console.log(err);

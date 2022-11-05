@@ -1,0 +1,10 @@
+.modal-task-container {
+  padding: 24px;
+  direction: ltr;
+}
+.content {
+  overflow: hidden;
+  height: auto;
+  padding: 20px;
+  width: 100%;
+}

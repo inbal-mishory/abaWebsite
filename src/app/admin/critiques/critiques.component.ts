@@ -34,10 +34,8 @@ export class CritiquesComponent implements OnInit {
         isEdit: false
       }});
     dialogRef.afterClosed().subscribe((res) => {
-      console.log('addCritique', res);
       if(res !== undefined && !res) {
         this.getCritiques();
-        console.log(res);
       }
     });
   }
@@ -51,10 +49,8 @@ export class CritiquesComponent implements OnInit {
         isEdit: true,
       }});
     dialogRef.afterClosed().subscribe((res) => {
-      console.log('editCritique', res);
       if(res !== undefined && !res) {
         this.getCritiques();
-        console.log(res);
       }
     });
   }
@@ -96,7 +92,6 @@ export class CritiquesComponent implements OnInit {
 
   deleteCritique(critique: any) {
     this.critiqueService.delete(critique.id).then((res) => {
-      console.log('what is ', res);
       this.openSnackBar();
     }).catch((err) => {
       console.log(err);

@@ -19,33 +19,42 @@ export class BoardComponent implements OnInit {
 
   taskDrop(event: CdkDragDrop<string>) {
     moveItemInArray(this.board.tasks, event.previousIndex, event.currentIndex);
-    this.boardService.updateTasks(this.board.id);
+    this.boardService.updateTasks(this.board.id, this.board.tasks)
   }
 
-  openDialog(task?: Task, idx?: number): void {
-    const newTask = { label: 'purple' };
+  updateTasks(task?: Task, idx?: number): void {
+    const newTask = { description: '---', label: 'purple' };
     const dialogRef = this.dialog.open(TaskDialogComponent, {
       width: '500px',
       panelClass: 'task-modal',
-      data: task
-        ? { task: { ...task }, isNew: false, boardId: this.board.id, idx }
-        : { task: newTask, isNew: true }
+      data: task ? { task: { ...task }, isNew: false, boardId: this.board.id, idx }
+                 : { task: newTask, isNew: true }
     });
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
         if (result.isNew) {
-          this.boardService.updateTasks(this.board.id, [
-            ...this.board.tasks,
-            result.task
-          ]);
+          const currentTasks: any = [...this.board.tasks, result.task];
+          this.boardService.updateTasks(this.board.id, currentTasks).then()
+                              .catch(err => console.log(err));
         } else {
-          const update = this.board.tasks;
-          update.splice(result.idx, 1, result.task);
-          this.boardService.updateTasks(this.board.id, this.board.tasks);
+
+          const tasks = this.board.tasks;
+          tasks.splice(result.idx, 1, result.task);
+          this.boardService.updateTasks(this.board.id, this.board.tasks).then()
+                            .catch(err => console.log(err));
+
         }
       }
     });
+  }
+
+  deleteBoard() {
+    this.boardService.deleteBoard(this.board.id);
+  }
+
+  deleteTask(task) {
+    this.boardService.removeTask(this.board.id, task);
   }
 
 }

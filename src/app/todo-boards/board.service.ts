@@ -9,7 +9,7 @@ import { Board, Task } from '../models/board.model';
   providedIn: 'root'
 })
 export class BoardService {
-
+  private boardsRef = this.db.collection('boards');
   constructor(private afAuth: AngularFireAuth, private db: AngularFirestore ) { }
 
   /*
@@ -17,10 +17,10 @@ export class BoardService {
   */
   async createBoard(data: Board) {
     const user = await this.afAuth.currentUser;
-    return this.db.collection('boards').add({
+    return this.boardsRef.add({
       ...data,
       uid: user.uid,
-      tasks: [{ description: 'Hello!', label: 'yellow' }]
+      tasks: [{ description: 'insert text', label: 'gray' }]
     });
   }
 
@@ -28,18 +28,17 @@ export class BoardService {
    * Delete board
    */
    deleteBoard(boardId: string) {
-    return this.db
-      .collection('boards')
+    this.boardsRef
       .doc(boardId)
-      .delete();
+      .delete()
+      .catch((err) => console.log(err));
   }
 
   /**
    * Updates the tasks on board
    */
-  updateTasks(boardId: string, tasks: Task[]) {
-    return this.db
-      .collection('boards')
+  updateTasks(boardId: string, tasks: Task[]): Promise<void> {
+    return this.boardsRef
       .doc(boardId)
       .update({ tasks });
   }

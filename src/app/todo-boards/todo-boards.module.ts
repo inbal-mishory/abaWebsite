@@ -9,6 +9,7 @@ import { BoardsListComponent } from './boards-list/boards-list.component';
 import { BoardComponent } from './board/board.component';
 import { BoardDialogComponent } from './dialogs/board-dialog/board-dialog.component';
 import { TaskDialogComponent } from './dialogs/task-dialog/task-dialog.component'
+import { DeleteButtonComponent } from '../shared/delete-button/delete-button.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { TaskDialogComponent } from './dialogs/task-dialog/task-dialog.component
     BoardsListComponent,
     BoardComponent,
     BoardDialogComponent,
-    TaskDialogComponent
+    TaskDialogComponent,
+    DeleteButtonComponent
   ],
   imports: [
     CommonModule,

@@ -26,9 +26,7 @@ export class StorageComponent implements OnInit {
 
   ngOnInit(): void {
     this.ref = this.afStorage.ref('catalogs/images/');
-    this.ref.listAll().subscribe((res) => {
-      console.log(res)
-    });
+    this.ref.listAll().subscribe();
     // this.uploadService.getFiles(6).snapshotChanges().pipe(
     //   map(changes =>
     //     // store the key

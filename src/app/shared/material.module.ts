@@ -14,6 +14,7 @@ import {MatSortModule} from "@angular/material/sort";
 import {MatPaginatorModule} from "@angular/material/paginator";
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import {MatCardModule} from '@angular/material/card';
+import { DeleteButtonComponent } from './delete-button/delete-button.component';
 
 @NgModule({
   imports: [
@@ -49,6 +50,7 @@ import {MatCardModule} from '@angular/material/card';
     MatPaginatorModule,
     MatButtonToggleModule,
     MatCardModule
-  ]
+  ],
+  declarations: [  ]
 })
 export class MaterialModule { }

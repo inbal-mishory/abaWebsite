@@ -68,12 +68,10 @@ export class AddCatalogComponent implements OnInit {
   saveCatalog(catalog: Catalog): void {
     this.catalog = {...this.addCatalogForm?.value};
     this.catalogService.createCatalogDetails(catalog).subscribe((cat: any) => console.log(cat));
-    console.log('back rom create', this.catalogsList);
     this.dialogRef.close({data: this.catalogsList});
   }
 
   saveCat(catalog: Catalog): void {
-    // @ts-ignore
     this.catalogService.create(catalog).then((res) => {
       this.dialogRef.close({data: this.catalogsList, newId: res.id})
       this.submitted = true;
@@ -93,14 +91,6 @@ export class AddCatalogComponent implements OnInit {
       if (file) {
         this.currentFileUpload = new FileUpload(file);
         this.fileUploadService.saveFileData(this.currentFileUpload);
-        // this.fileUploadService.pushFileToStorage(this.currentFileUpload).subscribe(
-        //   percentage => {
-        //     this.percentage = Math.round(percentage ? percentage : 0);
-        //   },
-        //   error => {
-        //     console.log(error);
-        //   }
-        // );
       }
     }
   }
