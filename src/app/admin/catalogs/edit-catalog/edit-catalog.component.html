@@ -1,9 +1,9 @@
-<h3>Edit Catalog</h3>
+<h3>עריכת קטלוג</h3>
 <mat-dialog-content>
 <div *ngIf="currentCatalog" class="edit-form">
-  <form *ngIf="editCatalogForm" [formGroup]="editCatalogForm" (ngSubmit)="saveItem(editCatalogForm)">
+  <form *ngIf="editCatalogForm" [formGroup]="editCatalogForm" (ngSubmit)="saveItem()">
     <div class="submit-form" *ngIf="!submitted">
-      <div class="column">
+      <div class="column" fxFlex="50%">
         <mat-form-field appearance="fill">
         <mat-label>כותרת</mat-label>
         <input matInput formControlName="title" class="form-control" name="title" placeholder="הכנס כותרת" />
@@ -33,7 +33,7 @@
         </mat-error>
       </mat-form-field>
       </div>
-      <div class="column">
+      <div class="column" fxFlex="50%">
         <mat-form-field>
           <mat-label>image</mat-label>
           <input matInput formControlName="imgUrl" class="form-control" name="imgUrl" placeholder="הכנס imgUrl" />
@@ -66,12 +66,6 @@
           Required field
         </mat-error>
       </mat-form-field>
-        <div>
-          <mat-checkbox formControlName="published" class="form-control" name="published">published</mat-checkbox>
-          <mat-error *ngIf="editCatalogForm.controls['published'].errors?.['require']">
-            Required field
-          </mat-error>
-        </div>
       </div>
 
     </div>
@@ -92,9 +86,10 @@
 </div>
 </mat-dialog-content>
 <mat-dialog-actions>
-  <button type="submit" class="badge badge-success" (click)="updateCatalog(editCatalogForm)">
-    Update
+  <button type="submit" class="badge badge-success" (click)="updateCatalog()">
+    עדכון
   </button>
+  <button mat-button class="badge close" [mat-dialog-close]="true">סגור</button>
 </mat-dialog-actions>
 
 <!--<div *ngIf="!currentCatalog">-->

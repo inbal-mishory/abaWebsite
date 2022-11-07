@@ -34,7 +34,7 @@
       <ng-container matColumnDef="actions">
         <th mat-header-cell *matHeaderCellDef>פעולות</th>
         <td mat-cell *matCellDef="let critique" class="actions">
-          <button class="btn delete-btn" mat-icon-button (click)="deleteDialog(critique.id)">
+          <button class="btn delete-btn" mat-icon-button (click)="deleteDialog(critique.id, critique.title)">
             <mat-icon>delete</mat-icon>
           </button>
           <button class="btn edit-btn" mat-icon-button (click)="openEditCritiqueDialog(critique)">

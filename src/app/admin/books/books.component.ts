@@ -18,7 +18,6 @@ import {ConfirmModalComponent} from "../../shared/modals/confirm.modal/confirm.m
 })
 export class BooksComponent implements OnInit {
   books?:IBook[];
-  books$?: AngularFirestoreCollection<IBook>;
   constructor(private bookService: BooksService, private dialog: MatDialog, public uploadService: FileUploadService,
               private http: HttpClient, @Inject(AngularFireDatabase) private firebase: AngularFireDatabase,
               public cd: ChangeDetectorRef, private _snackBar: MatSnackBar, public afs: AngularFirestore) { }
@@ -50,7 +49,8 @@ export class BooksComponent implements OnInit {
       }
     });
     dialogRef.afterClosed().subscribe(() => {
-      this.getBooks();
+      this.dialog.closeAll();
+      // this.getBooks();
     })
   }
 
@@ -68,10 +68,10 @@ export class BooksComponent implements OnInit {
     })
   }
 
-  deleteDialog(id: string) {
+  deleteDialog(id: string, title: string) {
     const data = {
       id: id,
-      name: 'Delete Book'
+      title
     }
     const dialogRef = this.dialog.open(ConfirmModalComponent, {
       width: '25vw',

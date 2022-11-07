@@ -3,13 +3,11 @@
   <h3>בקורת תערוכות</h3>
   <div class="search">
       <mat-form-field>
-        <input type="text" #input class="search-input"
-               matInput (keyup)="applyFilter($event)" placeholder="חפש">
+        <input matInput #searchInput (keyup)="applyFilter()" placeholder="חפש">
       </mat-form-field>
   </div>
   <ng-container *ngIf="sortedData">
-    <mat-table #table [dataSource]="sortedData" [trackBy]="trackByUid" class="critiques-table mat-elevation-z4" matSort
-               [class.isMobile]="isMobile">
+    <mat-table #table matSort [dataSource]="sortedData" [trackBy]="trackByUid" class="animate" [class.isMobile]="isMobile">
       <ng-container matColumnDef="title">
         <mat-header-cell *matHeaderCellDef style="min-width:400px" mat-sort-header>כותרת</mat-header-cell>
         <mat-cell *matCellDef="let critique" style="min-width:400px">
@@ -18,19 +16,19 @@
         </mat-cell>
       </ng-container>
       <ng-container matColumnDef="museum">
-        <mat-header-cell *matHeaderCellDef>מוזיאון/גלריה</mat-header-cell>
+        <mat-header-cell *matHeaderCellDef mat-sort-header>מוזיאון/גלריה</mat-header-cell>
         <mat-cell *matCellDef="let critique">
           <span class="mobile-label">מוזיאון/גלריה:</span>
           <span>{{critique.museum}}</span> </mat-cell>
       </ng-container>
       <ng-container matColumnDef="artist">
-        <mat-header-cell *matHeaderCellDef>אמן</mat-header-cell>
+        <mat-header-cell *matHeaderCellDef mat-sort-header>אמן</mat-header-cell>
         <mat-cell *matCellDef="let critique">
           <span class="mobile-label">אמן:</span>
           <span>{{critique.artist}}</span> </mat-cell>
       </ng-container>
       <ng-container matColumnDef="paper">
-        <mat-header-cell *matHeaderCellDef>עיתון</mat-header-cell>
+        <mat-header-cell *matHeaderCellDef mat-sort-header>עיתון</mat-header-cell>
         <mat-cell *matCellDef="let critique">
           <span class="mobile-label">עיתון:</span>
           <span>{{critique.paper}}</span>
@@ -47,12 +45,12 @@
         <mat-cell *matCellDef="let critique" style="max-width: 120px">
           <ng-container *ngIf="critique.date !== ''">
             <span class="mobile-label">תאריך:</span>
-            <span>{{critique.date | date: 'dd/MM/yyyy'}}</span>
+            <span>{{critique.date}}</span>
           </ng-container>
         </mat-cell>
       </ng-container>
       <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-      <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns" class="animate"></mat-row>
     </mat-table>
 <!--    <mat-paginator [length]="200" [pageSizeOptions]="[10, 50, 100]" aria-label="Select page"></mat-paginator>-->
     <div *ngIf="listLength === 0" class="no-results">

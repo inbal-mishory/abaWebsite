@@ -30,11 +30,9 @@ export class ArticlesComponent implements OnInit {
         ),
       ),
       tap(data => {
-        // @ts-ignore
         this.sortedData = new MatTableDataSource(data.slice());
       }),
       map(changes =>
-        // @ts-ignore
         changes.map((article: Article) => {
           let articleDate = new Date(article.date);
           article.date = articleDate;
@@ -56,11 +54,5 @@ export class ArticlesComponent implements OnInit {
 
   doFilter(value: any) {
     this.sortedData.filter = value.target.value;
-    // @ts-ignore
-    this.listLength = this.sortedData.length;
   }
-}
-
-function compare(a: number | string, b: number | string, isAsc: boolean) {
-  return (a < b ? -1 : 1) * (isAsc ? 1 : -1);
 }

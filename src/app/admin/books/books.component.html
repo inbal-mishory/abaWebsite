@@ -14,13 +14,13 @@
         <h3>{{book.title}}</h3>
         <p>{{book.publisher}}, {{book.publication_year}}</p>
         <a *ngIf="book?.article" target="_blank" href="{{book.article}}">בקורת על הספר</a>
-        <a *ngIf="book?.link" target="_blank" href="{{book.link}}">קישור לביקורת</a>
+        <a *ngIf="book?.link" target="_blank" href="{{book.link}}">מידע נוסף</a>
         <div class="actions">
-          <button class="btn" (click)="deleteDialog(book.id)" mat-button>
-            <mat-icon>delete</mat-icon><span class="delete-btn"> מחיקה</span>
+          <button class="btn" (click)="deleteDialog(book.id, book.title)" mat-button>
+            <mat-icon>delete</mat-icon>
           </button>
           <button class="edit-btn" mat-button (click)="openEditBook(book)">
-            <mat-icon>edit</mat-icon><span class="edit-btn"> עריכה</span>
+            <mat-icon>edit</mat-icon>
           </button>
         </div>
       </div>

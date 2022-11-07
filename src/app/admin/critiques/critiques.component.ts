@@ -49,9 +49,7 @@ export class CritiquesComponent implements OnInit {
         isEdit: true,
       }});
     dialogRef.afterClosed().subscribe((res) => {
-      if(res !== undefined && !res) {
-        this.getCritiques();
-      }
+      this.dialog.closeAll()
     });
   }
 
@@ -70,10 +68,10 @@ export class CritiquesComponent implements OnInit {
     )
   }
 
-  deleteDialog(id: any) {
+  deleteDialog(id: any, title: string) {
     const data = {
       id: id,
-      name: 'Delete Critique'
+      title
     }
     const dialogRef = this.dialog.open(ConfirmModalComponent, {
       width: '25vw',

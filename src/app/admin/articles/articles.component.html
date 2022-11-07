@@ -36,7 +36,7 @@
     <ng-container matColumnDef="actions">
       <mat-header-cell *matHeaderCellDef class="actions"></mat-header-cell>
       <mat-cell *matCellDef="let article">
-          <button class="btn" (click)="deleteDialog(article.id)" mat-icon-button>
+          <button class="btn" (click)="deleteDialog(article.id, article.title)" mat-icon-button>
             <mat-icon>delete</mat-icon>
           </button>
           <button class="edit-btn" mat-icon-button (click)="openEditArticle(article)">

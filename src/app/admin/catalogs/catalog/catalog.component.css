@@ -38,12 +38,12 @@ h4 {
 
 .delete-btn {
   font-size:12px;
-  background: pink;
+  background: #EC6F6F;
   /*margin-top: 10px;*/
   /*margin-bottom: 10px;*/
 }
 
 .edit-btn {
-  background: #d3daaa;
+  background: #BCE0A3;
   color: #343919;
 }

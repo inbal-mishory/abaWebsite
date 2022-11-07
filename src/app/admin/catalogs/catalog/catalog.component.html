@@ -6,10 +6,10 @@
   <p *ngIf="catalog?.language">שפה: {{catalog?.language}}</p>
   <div class="actions">
     <button (click)="deleteCatalog(catalog?.catalog_id)" class="delete-btn" mat-button>
-      <mat-icon>delete</mat-icon><span class="delete-btn"> מחיקה</span>
+      <mat-icon>delete</mat-icon>
     </button>
     <button class="edit-btn" mat-button (click)="onOpenEditCat(catalog)">
-      <mat-icon>edit</mat-icon><span class="edit-btn"> עריכה</span>
+      <mat-icon>edit</mat-icon>
     </button>
   </div>
 </div>

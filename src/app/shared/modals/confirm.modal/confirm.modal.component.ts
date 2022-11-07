@@ -7,12 +7,12 @@ import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
   styleUrls: ['./confirm.modal.component.css']
 })
 export class ConfirmModalComponent {
-  public componentName: string;
+  public title: string;
   private catalogId: string;
 
   constructor(@Inject(MAT_DIALOG_DATA) readonly data: any, public dialogRef: MatDialogRef<any>, ) {
     this.catalogId = data.catalog_id;
-    this.componentName = data.name;
+    this.title = data.title;
   }
 
 

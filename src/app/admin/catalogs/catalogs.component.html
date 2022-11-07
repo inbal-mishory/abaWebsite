@@ -7,7 +7,7 @@
 <div class="catalogs-container">
   <ul class="catalog-list" *ngIf="catalogs$ | async as catalogs">
     <li class="catalog-item" fxLayout="row" *ngFor="let catalog of catalogs; let i = index">
-      <app-catalog [catalog]="catalog" (openEditCat)="openEditCatalogDialog(catalog)" (deleteCat)="deleteDialog(catalog.catalog_id)"></app-catalog>
+      <app-catalog [catalog]="catalog" (openEditCat)="openEditCatalogDialog(catalog)" (deleteCat)="deleteDialog(catalog.catalog_id, catalog.title)"></app-catalog>
     </li>
   </ul>
 </div>

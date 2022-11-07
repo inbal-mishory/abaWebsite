@@ -38,10 +38,9 @@ export class AddEditBookComponent implements OnInit {
 
   updateBook() {
     const book = this.editBookForm?.getRawValue();
-    this.booksService.updateBook(book.id, book).then(() => {
-      this.dialogRef.close({data: book });
-    })
-    .catch(err => console.log(err));
+    this.booksService.updateBook(book.id, book).then()
+      .catch(err => console.log(err));
+    this.closeModal();
   }
 
   createBook(book: IBook): void {
@@ -57,5 +56,9 @@ export class AddEditBookComponent implements OnInit {
         this.message = 'The book was updated successfully!';
       })
       .catch(err => console.log(err));
+  }
+
+  closeModal(): void {
+    this.dialogRef.close();
   }
 }

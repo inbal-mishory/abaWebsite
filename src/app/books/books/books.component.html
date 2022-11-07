@@ -18,6 +18,7 @@
       <div class="book-details">
         <h4>{{book.title}}</h4>
         <a *ngIf="book?.article" target="_blank" href="{{book.article}}">בקורת על הספר</a>
+        <a *ngIf="book?.link" target="_blank" href="{{book.link}}">מידע נוסף</a>
         <p>{{book.publisher}}, {{book.publication_year}}</p>
       </div>
     </li>

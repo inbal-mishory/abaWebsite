@@ -55,28 +55,13 @@ export class EditCatalogComponent implements OnInit {
     }
   }
 
-  updateCatalog(data?: any): void {
-    const catalog = data.value;
-    this.catalogService.update(catalog.catalog_id, {...catalog})
-                        .then(() => {
-                          this.dialogRef.close({data: catalog });
-                        })
-                        .catch(err => console.log(err));
-
+  updateCatalog(): void {
+    const catalog = this.editCatalogForm.getRawValue();
+    this.catalogService.update(catalog.catalog_id, {...catalog}).then();
+    this.dialogRef.close();
   }
 
-  deleteCatalog(): void {
-    if (this.currentCatalog.catalog_id) {
-      this.catalogService.delete(this.currentCatalog.catalog_id)
-        .then(() => {
-          this.refreshList.emit();
-          this.message = 'The catalog was updated successfully!';
-        })
-        .catch(err => console.log(err));
-    }
-  }
-
-  saveItem(form: any): void {
-    this.updateCatalog(form);
+  saveItem(): void {
+    this.updateCatalog();
   }
 }

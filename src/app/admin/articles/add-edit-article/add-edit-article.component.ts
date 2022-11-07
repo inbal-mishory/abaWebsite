@@ -37,12 +37,17 @@ export class AddEditArticleComponent implements OnInit {
     this.articleService.updateArticle(article.id, article).then(() => {
       this.dialogRef.close({data: article });
     })
-      .catch(err => console.log(err));
+    .catch(err => console.log(err));
+    this.dialogRef.close()
   }
 
   createArticle(value: IArticle) {
     this.articleService.createArticle(value).then(() => {
       this.dialogRef.close({data: value});
     });
+  }
+
+  close() {
+    this.dialogRef.close();
   }
 }

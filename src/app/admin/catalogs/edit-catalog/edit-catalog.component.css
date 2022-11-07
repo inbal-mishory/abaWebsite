@@ -1,13 +1,12 @@
 h3 {
   background: #3d6657;
   color: #fff;
-  font-size: 16px;
+  font-size: 24px;
   padding: 12px;
 }
 
 .edit-form {
   padding: 12px;
-  overflow-y: scroll;
 }
 
 .submit-form {
@@ -18,4 +17,12 @@ h3 {
 
 .btn.btn-success {
   grid-column: 1/2;
+}
+
+.badge-success {
+  background:#BCE0A3 ;
+}
+
+.badge.close {
+  background:#FFECAD ;
 }

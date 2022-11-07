@@ -11,7 +11,7 @@ import {AngularFireDatabase, AngularFireList} from "@angular/fire/compat/databas
 import {ConfirmModalComponent} from "../../shared/modals/confirm.modal/confirm.modal.component";
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {AngularFirestore} from "@angular/fire/compat/firestore";
-import {Observable} from "rxjs";
+import {Observable, Subscription} from "rxjs";
 import {AddCatalogComponent} from "./add-catalog/add-catalog.component";
 
 @Component({
@@ -26,20 +26,21 @@ export class CatalogsComponent implements OnInit {
   public fileInfos?: any[];
   public baseUrl = environment.firebase.databaseURL;
   imageDetailList?: AngularFireList<any>;
-  private baseCatalogsPath = `${this.baseUrl}/catalogs/`;
+  sub: Subscription;
 
   constructor(private catalogService: CatalogService, private dialog: MatDialog, public uploadService: FileUploadService,
-              private http: HttpClient, @Inject(AngularFireDatabase) private firebase: AngularFireDatabase,
-              public cd: ChangeDetectorRef, private _snackBar: MatSnackBar, public afs: AngularFirestore) { }
+              private http: HttpClient, public cd: ChangeDetectorRef, private _snackBar: MatSnackBar, public afs: AngularFirestore) { }
 
   ngOnInit(): void {
     this.retrieveCatalogs();
   }
 
+
+
   openAddDialog() {
     const dialogRef = this.dialog.open(AddCatalogComponent, {
-      width: '45vw',
-      height: '50vh',
+      width: '35vw',
+      height: '42vh',
       data: {
         isEdit: false,
       }});
@@ -68,22 +69,16 @@ export class CatalogsComponent implements OnInit {
       height: '50vh',
       data: catalog
     });
-    dialogRef.afterClosed().subscribe((res) => {
-      console.log(res);
-      this.retrieveCatalogs();
-    })
+    dialogRef.afterClosed().subscribe(() => {
+      this.dialog.closeAll();
+    });
   }
 
-  // getCatalogFiles(): any {
-  //   this.imageDetailList = this.firebase.list('catalog/images');
-  //   return this.imageDetailList;
-  // }
-
-  deleteDialog(id: any) {
+  deleteDialog(id: any, title: string) {
     const data = {
       id: id,
-      name: 'Delete Catalog'
-    }
+      title: title
+    };
     const dialogRef = this.dialog.open(ConfirmModalComponent, {
       width: '25vw',
       height: '25vh',

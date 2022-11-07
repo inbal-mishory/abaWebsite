@@ -2,9 +2,6 @@
 <mat-dialog-content class="mat-typography">
   <form *ngIf="addCatalogForm" [formGroup]="addCatalogForm">
     <div class="submit-form">
-      <div class="text-center">
-        <img [src]="imgSrc" width="350px" height="250px" (click)="fileUploader.click()">
-      </div>
       <div class="column">
         <mat-form-field>
           <mat-label>כותרת</mat-label>
@@ -24,16 +21,6 @@
         </mat-form-field>
       </div>
       <div class="column">
-        <div>
-          <input type="file" accept="image/*" #fileUploader formControlName="imgUrl" (change)="showPreview($event)" placeholder="upload file"/>
-        </div>
-        <div>
-          <button
-            class="btn btn-success btn-sm"
-            (click)="upload()">
-            Upload
-          </button>
-        </div>
         <mat-form-field>
           <mat-label>שפה</mat-label>
           <input formControlName="language" class="form-control" name="year" placeholder="הכנס שנה" type="text" matInput />
@@ -53,10 +40,6 @@
       </div>
     </div>
   </form>
-<!--  <div class="upload">-->
-<!--    <app-upload-file></app-upload-file>-->
-<!--    <button (click)="saveCatalog()" class="btn btn-success">הוספה</button>-->
-<!--  </div>-->
   <div *ngIf="submitted">
     <h4>You submitted successfully!</h4>
   </div>

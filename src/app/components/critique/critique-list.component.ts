@@ -1,9 +1,9 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {Critique} from "../../models/critique.model";
 import {CritiqueService} from "../../services/critique.service";
 import {MatTableDataSource} from "@angular/material/table";
 import {MatPaginator, PageEvent} from "@angular/material/paginator";
-import {Sort} from "@angular/material/sort";
+import {MatSort, Sort} from "@angular/material/sort";
 import {AngularFireDatabase} from "@angular/fire/compat/database";
 import {map, shareReplay, tap} from "rxjs";
 
@@ -12,16 +12,18 @@ import {map, shareReplay, tap} from "rxjs";
   templateUrl: './critique-list.component.html',
   styleUrls: ['./critique-list.component.css']
 })
-export class CritiqueListComponent implements OnInit {
+export class CritiqueListComponent {
   sortedData: MatTableDataSource<any>;
   listLength?: number;
   displayedColumns: string[] = ['title', 'museum', 'artist', 'paper', 'article', 'date'];
   isMobile = false;
+  @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild('searchInput') input:ElementRef;
 
   constructor(private critiqueService: CritiqueService, db: AngularFireDatabase) {  }
 
-  ngOnInit(): void {
+  ngAfterViewInit(): void {
     this.getCritiques();
   }
 
@@ -40,7 +42,7 @@ export class CritiqueListComponent implements OnInit {
         // @ts-ignore
         changes.map((critique: Critique) => {
           let critiqueDate = new Date(critique.date);
-          critique.date = critiqueDate;
+          critique.date = critiqueDate.toLocaleDateString();
         }),
       ),
       shareReplay(1)
@@ -48,11 +50,10 @@ export class CritiqueListComponent implements OnInit {
   }
 
 
-  applyFilter(event: Event) {
-    const filterValue = (event.target as HTMLInputElement).value;
+  applyFilter(filterValue?: string):void {
+    filterValue = this.input.nativeElement.value;
     this.sortedData.filter = filterValue;
   }
-
 
   trackByUid(index, item) {
     return item.uid

@@ -45,10 +45,10 @@ export class ArticlesComponent implements OnInit {
     })
   }
 
-  deleteDialog(id: string) {
+  deleteDialog(id: string, title: string) {
     const data = {
       id: id,
-      name: 'Delete Book'
+      title
     }
     const dialogRef = this.dialog.open(ConfirmModalComponent, {
       width: '25vw',
