@@ -2,16 +2,18 @@
   <h3>ספרים</h3>
   <div class="search">
     <form class="example-form">
-      <mat-form-field>
+      <mat-form-field style="width:330px">
         <input type="text" class="search-input" [(ngModel)]="term"
               matInput
               name="search"
-              placeholder="Search catalogs">
+              style="width:100%"
+              placeholder="חפש">
+        <mat-icon matSuffix>search</mat-icon>
       </mat-form-field>
     </form>
   </div>
   <ul class="books-list" *ngIf="books">
-    <li class="book-item" fxLayout="row" *ngFor="let book of books;">
+    <li class="book-item" fxLayout="row" *ngFor="let book of books; trackBy: getIdTrack">
       <div class="book-cover">
         <img *ngIf="book?.cover" src="{{book?.cover}}" alt="img" width="160">
       </div>

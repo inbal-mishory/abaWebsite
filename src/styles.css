@@ -63,9 +63,9 @@ body { margin: 0; overflow-x: hidden; }
   min-height: 23% !important;
 }
 
-.mat-form-field-flex {
+/* .mat-form-field-flex {
   width: 220px !important;
-}
+} */
 
 mat-date-range-picker.mat-datepicker-content {
   direction: ltr !important;
@@ -101,7 +101,7 @@ mat-date-range-picker.mat-datepicker-content {
   padding: 6px 0;
 }
 
-input.mat-input-element.search-input {
+/* input.mat-input-element.search-input {
   border-radius: 4px 4px 0 0;
   background: #0000000a;
   padding: 0.75em 0.75em 0 0.75em;
@@ -111,11 +111,15 @@ input.mat-input-element.search-input {
   height: 46px;
   outline: none;
   box-shadow: none !important;
-}
+} */
 
 .mat-header-cell:first-of-type, .mat-cell:first-of-type, .mat-footer-cell:first-of-type {
   padding-left: 0 !important;
   padding-right: 12px !important;
+}
+
+mat-card-header.board-header .mat-card-header-text {
+  margin: 0;
 }
 
 .mat-input-element.search-input::placeholder {

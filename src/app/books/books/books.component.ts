@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {map, tap} from "rxjs/operators";
 import {BooksService} from "../../services/books.service";
-import {IBook} from "../../models/book.model";
+import {Book, IBook} from "../../models/book.model";
 
 @Component({
   selector: 'app-books',
@@ -36,6 +36,10 @@ export class BooksComponent implements OnInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
     // @ts-ignore
     this.displayNoRecords = this.dataSource.filteredData.length === 0;
+  }
+
+  getIdTrack(index: number, item: Book) {
+    return item.id;
   }
 
 }
