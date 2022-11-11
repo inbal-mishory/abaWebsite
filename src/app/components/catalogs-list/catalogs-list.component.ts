@@ -55,4 +55,8 @@ export class CatalogsListComponent implements OnInit, OnDestroy{
   setActiveCatalog(catalog: Catalog, index: number): void {
     this.currentCatalog = catalog;
   }
+
+  getIdTrack(index: number, item: Catalog) {
+    return item.catalog_id;
+  }
 }
