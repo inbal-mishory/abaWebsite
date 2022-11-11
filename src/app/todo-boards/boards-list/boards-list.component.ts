@@ -36,8 +36,9 @@ export class BoardsListComponent implements OnInit, OnDestroy {
 
   createBoard(): void {
     const dialogRef = this.dialog.open(BoardDialogComponent, {
-      width: '400px',
-      data: {}
+      width: '35vw',
+      height: '30vh',
+      data: {isEdit: false}
     });
 
     dialogRef.afterClosed().subscribe(result => {

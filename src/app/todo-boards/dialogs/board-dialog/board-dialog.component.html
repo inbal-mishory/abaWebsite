@@ -1,15 +1,19 @@
 <div class="modal-task-container">
-<h1 mat-dialog-title>רשימה</h1>
+<h2 *ngIf="!isEdit" mat-dialog-title>יצירת רשימה</h2>
+<h2 *ngIf="isEdit">עדכון</h2>
 <div mat-dialog-content>
-  <p>כותרת</p>
+  <label>כותרת רשימה</label>
   <mat-form-field>
-    <input placeholder="title" matInput [(ngModel)]="data.title" />
+   <input matInput [(ngModel)]="data.title" />
   </mat-form-field>
 </div>
 <div mat-dialog-actions>
   <button mat-button (click)="onNoClick()">ביטול</button>
-  <button mat-button [mat-dialog-close]="data.title" cdkFocusInitial>
+  <button mat-button [mat-dialog-close]="data.title" *ngIf="!isEdit" cdkFocusInitial>
     יצירה
+  </button>
+  <button mat-button [mat-dialog-close]="data" *ngIf="isEdit">
+    עדכון
   </button>
 </div>
 </div>

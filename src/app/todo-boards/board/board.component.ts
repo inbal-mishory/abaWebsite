@@ -3,6 +3,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Board, Task } from 'src/app/models/board.model';
 import { BoardService } from '../board.service';
+import { BoardDialogComponent } from '../dialogs/board-dialog/board-dialog.component';
 import { TaskDialogComponent } from '../dialogs/task-dialog/task-dialog.component';
 
 @Component({
@@ -20,6 +21,19 @@ export class BoardComponent implements OnInit {
   taskDrop(event: CdkDragDrop<string>) {
     moveItemInArray(this.board.tasks, event.previousIndex, event.currentIndex);
     this.boardService.updateTasks(this.board.id, this.board.tasks)
+  }
+
+  updateBoardName(boardId: string, board: Board) {
+    const dialogRef = this.dialog.open(BoardDialogComponent, {
+      width: '500px',
+      panelClass: 'task-modal',
+      data: {...board,
+            isEdit: true}
+    });
+    dialogRef.afterClosed().subscribe(data => {
+      this.boardService.updateBoard(boardId, data).then(console.log).catch(err => console.log(err));
+    })
+
   }
 
   updateTasks(task?: Task, idx?: number): void {

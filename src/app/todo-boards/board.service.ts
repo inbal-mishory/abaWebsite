@@ -24,6 +24,13 @@ export class BoardService {
     });
   }
 
+  /*
+    Updates the board name
+  */
+    updateBoard(boardId: string, data: Board): Promise<void> {
+      return this.boardsRef.doc(boardId).update(data);
+    }
+
   /**
    * Delete board
    */

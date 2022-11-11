@@ -1,10 +1,37 @@
 .modal-task-container {
   padding: 24px;
   direction: ltr;
+  background: #505050;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
+
+h2 {
+  padding-right: 12px;
+  padding-top: 12px;
+  font-size: 2em;
+}
+
+.mat-dialog-content {
+  margin: 0;
+}
+
 .content {
   overflow: hidden;
   height: auto;
   padding: 20px;
   width: 100%;
+}
+
+.mat-form-field {
+  width: 75%;
+}
+
+.mat-dialog-actions {
+  margin-bottom: 0;
+  justify-content: flex-end;
+  gap:.5em;
 }

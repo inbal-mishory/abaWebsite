@@ -7,7 +7,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
   styleUrls: ['./board-dialog.component.css']
 })
 export class BoardDialogComponent implements OnInit {
-
+  isEdit = false;
   constructor( public dialogRef: MatDialogRef<BoardDialogComponent>, @Inject(MAT_DIALOG_DATA) public data: any ) {}
 
   onNoClick(): void {
@@ -15,6 +15,7 @@ export class BoardDialogComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.isEdit = this.data.isEdit;
   }
 
 }

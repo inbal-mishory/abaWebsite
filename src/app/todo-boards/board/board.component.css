@@ -9,6 +9,20 @@
 .mat-card {
   background: #424242;
   color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+mat-card-header.mat-card-header {
+  display: flex;
+  width: 100%;
+  height: 60px;
+  justify-content: space-between;
+}
+
+
+.mat-card-header .mat-icon {
+  cursor: pointer;
 }
 
 .inner-card {
@@ -18,6 +32,16 @@
 
 .cdk-drag-animating {
   transition: transform 300ms ease;
+}
+
+.cdk-drop-list.tasks {
+  display: flex;
+  flex-direction: column;
+}
+
+.actions {
+  display: flex;
+  gap: .5em
 }
 
 .tasks.cdk-drop-list-dragging .cdk-drag {

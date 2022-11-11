@@ -1,31 +1,30 @@
 <mat-card class="outer-card">
-  <mat-card-header>
+  <mat-card-header class="board-header">
     <ng-content></ng-content>
-    <mat-card-title>{{board.title}}</mat-card-title>
-    <mat-card-subtitle>
-      {{board.id}}
-    </mat-card-subtitle>
+    <mat-card-title>{{board.title}} <button (click)="updateBoardName(board.id, board)"><mat-icon>edit</mat-icon></button></mat-card-title>
   </mat-card-header>
-  <div
-    class="tasks"
+  <div class="tasks"
     cdkDropList
     cdkDropListOrientation="vertical"
-    (cdkDropListDropped)="taskDrop($event)"
-  >
-    <div
-      class="inner-card"
-      cdkDrag
-      *ngFor="let task of board.tasks; let i = index">
-      <mat-card [ngClass]="task.label"> {{ task.description }}
-        <button mat-button (click)="updateTasks(task, i)">
-          <mat-icon>edit</mat-icon>
-        </button>
-        <app-delete-button (delete)="deleteTask(task)"></app-delete-button></mat-card>
+    (cdkDropListDropped)="taskDrop($event)">
+    <div class="inner-card"
+        cdkDrag
+        *ngFor="let task of board.tasks; let i = index">
+      <mat-card [ngClass]="task.label">
+        <span>{{ task.description }}</span>
+        <div class="actions">
+          <button mat-button mat-icon-button style="font-size: 20px; line-height: 22px;" (click)="updateTasks(task, i)">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <app-delete-button (delete)="deleteTask(task)"></app-delete-button>
+        </div>
+      </mat-card>
     </div>
-
-    <button mat-stroked-button (click)="updateTasks()">
-      <mat-icon>add</mat-icon>
-    </button>
-    <app-delete-button (delete)="deleteBoard()"></app-delete-button>
+    <div class="actions">
+      <button mat-stroked-button (click)="updateTasks()">
+        <mat-icon>add</mat-icon>
+      </button>
+      <app-delete-button (delete)="deleteBoard()"></app-delete-button>
+    </div>
   </div>
 </mat-card>

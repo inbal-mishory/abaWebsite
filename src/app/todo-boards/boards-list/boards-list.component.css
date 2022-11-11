@@ -10,7 +10,8 @@
   padding: 24px;
   display: flex;
   flex-direction: row-reverse;
-  overflow-x: scroll;
+  /* overflow-x: scroll; */
+  justify-content: flex-end;
 }
 
 .boards::-webkit-scrollbar {
@@ -31,7 +32,7 @@
   border: 2px solid #555555;
 }
 
-.boards.handle {
+.handle {
   position: relative;
   top: 5px;
   left: 0;
