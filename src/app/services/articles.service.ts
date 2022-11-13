@@ -2,15 +2,17 @@ import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
 import { IArticle } from '../models/article.model';
 import {Observable} from "rxjs";
+import { FirebaseService } from './firebase.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ArticlesService {
   dbPath = '/Articles';
-  articlesRef: AngularFirestoreCollection<IArticle>
+  articlesRef: AngularFirestoreCollection<IArticle>;
+  articles: Observable<IArticle[]>;
 
-  constructor(private db: AngularFirestore) {
+  constructor(private db: AngularFirestore, private fireService: FirebaseService) {
     this.articlesRef = db.collection(this.dbPath);
    }
 
