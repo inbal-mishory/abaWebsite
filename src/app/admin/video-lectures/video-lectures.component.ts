@@ -12,7 +12,7 @@ import { AddEdditVideoComponent } from './add-eddit-video/add-eddit-video.compon
 })
 export class VideoLecturesComponent implements OnInit {
   videos: IVideo[];
-  displayedColumns: string[] = ['title', 'videoId', 'date', 'link', 'actions'];
+  displayedColumns: string[] = ['title', 'link', 'date', 'actions'];
   constructor(private videoService: VideoService, public dialog: MatDialog) { }
 
   ngOnInit(): void {
@@ -22,7 +22,7 @@ export class VideoLecturesComponent implements OnInit {
   addVideoLecture() {
     const dialogRef = this.dialog.open(AddEdditVideoComponent, {
       width: '35vw',
-      height: '40vh',
+      height: '48vh',
       data: {
         details: '',
         isEdit: false}

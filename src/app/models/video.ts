@@ -4,5 +4,6 @@ export interface IVideo {
   link: string;
   id?: string;
   videoId?: string;
+  thumbnail?: string;
   isEdit?: boolean;
 }

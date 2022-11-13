@@ -5,3 +5,15 @@
 h3 {
   font-size: 28px;
 }
+
+.cell-date {
+  max-width: 150px;
+}
+
+/* mat-header-cell.mat-header-cell {
+  width: 33.333%
+} */
+
+.cell-actions {
+  max-width: 160px;
+}

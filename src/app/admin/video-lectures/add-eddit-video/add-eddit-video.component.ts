@@ -27,6 +27,7 @@ export class AddEdditVideoComponent implements OnInit {
       title: [this.data.details.title ? this.data.details.title : '', [Validators.required]],
       id: this.data.details.id ? this.data.details.id : '',
       videoId: this.data.details.videoId ? this.data.details.videoId : '',
+      thumbnail: this.data.details.thumbnail ? this.data.details.thumbnail : '',
       link: [this.data.details.link ? this.data.details.link : '', [Validators.required]],
       date: [this.data.details.date ? this.data.details.date : '', [Validators.required]],
     });
