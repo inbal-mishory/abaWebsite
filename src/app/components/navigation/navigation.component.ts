@@ -8,6 +8,7 @@ import {NavigationStart, Router} from "@angular/router";
 })
 export class NavigationComponent implements OnInit {
   activeLink = '';
+  routeSub$ = this.router.events.subscribe();
   constructor(public router: Router) {
     router.events.subscribe((event: any) => {
       if (event instanceof NavigationStart) {
@@ -16,9 +17,9 @@ export class NavigationComponent implements OnInit {
     })
   }
 
-  // ngOnDestroy() {
-  //   this.router.events.unsubscribe()
-  // }
+  ngOnDestroy() {
+    this.routeSub$.unsubscribe();
+  }
 
   ngOnInit(): void {
   }

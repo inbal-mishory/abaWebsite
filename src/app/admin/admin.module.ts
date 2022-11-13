@@ -23,6 +23,7 @@ import {Ng2SearchPipeModule} from "ng2-search-filter";
 import { StorageComponent } from './storage/storage.component';
 import { ArticlesComponent } from './articles/articles.component';
 import { AddEditArticleComponent } from './articles/add-edit-article/add-edit-article.component';
+import { VideoLecturesComponent } from './video-lectures/video-lectures.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { AddEditArticleComponent } from './articles/add-edit-article/add-edit-ar
     AddEditBookComponent,
     StorageComponent,
     ArticlesComponent,
-    AddEditArticleComponent
+    AddEditArticleComponent,
+    VideoLecturesComponent
   ],
     imports: [
         CommonModule,

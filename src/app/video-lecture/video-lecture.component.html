@@ -1,0 +1,11 @@
+<div class="videos-container">
+  <h3>הרצאות מוקלטות</h3>
+  <ng-container *ngFor="let video of videosList">
+    <div class="video">
+      <a href="{{video.link}}" target="_blank"><img src="{{'https://img.youtube.com/vi' + video.videoId + '/0.jpg'}}" alt="{{video.title}}"/></a>
+      <div class="info">
+        {{video.title}}
+      </div>
+    </div>
+  </ng-container>
+</div>

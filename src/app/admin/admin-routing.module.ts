@@ -7,6 +7,7 @@ import {CritiquesComponent} from "./critiques/critiques.component";
 import {BooksComponent} from "./books/books.component";
 import {StorageComponent} from "./storage/storage.component";
 import { ArticlesComponent } from './articles/articles.component';
+import { VideoLecturesComponent } from './video-lectures/video-lectures.component';
 
 const routes: Routes = [
   {
@@ -31,8 +32,8 @@ const routes: Routes = [
         component: BooksComponent
       },
       {
-        path: 'storage',
-        component: StorageComponent
+        path: 'video-lectures',
+        component: VideoLecturesComponent
       }
     ]
   }

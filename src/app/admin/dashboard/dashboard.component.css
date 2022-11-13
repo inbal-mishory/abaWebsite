@@ -3,19 +3,22 @@ h2.admin-title  {
   text-align: center;
   padding-top: 1em;
 }
+
 .container {
-  width: 85vw;
   margin: 0 auto;
   padding: 24px;
+  display: flex;
+  gap: 1em;
 }
 
 .admin-actions {
-  width: 100%;
+  width: 15%;
   margin: 0 auto;
   display: flex;
+  flex-direction: column;
   gap: 1em;
-  justify-content: space-evenly;
-  margin-bottom: 1em;
+  justify-content: flex-start;
+  padding-top: 4em;
 }
 
 .btn {
@@ -24,7 +27,7 @@ h2.admin-title  {
   font-weight: bold;
   padding: 8px 6px;
   border-radius: 6px;
-  min-width: 20ch;
+  min-width: 13ch;
   min-height: 4ch;
   line-height: 23px;
   text-align: center;
@@ -34,4 +37,9 @@ h2.admin-title  {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+a.btn.mat-button.active {
+  background: aliceblue;
+  color: #64a4ce;
 }

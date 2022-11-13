@@ -1,6 +1,6 @@
 <h3>עריכת קטלוג</h3>
 <mat-dialog-content>
-<div *ngIf="currentCatalog" class="edit-form">
+<div class="edit-form">
   <form *ngIf="editCatalogForm" [formGroup]="editCatalogForm" (ngSubmit)="saveItem()">
     <div class="submit-form" *ngIf="!submitted">
       <div class="column" fxFlex="50%">
@@ -34,10 +34,10 @@
       </mat-form-field>
       </div>
       <div class="column" fxFlex="50%">
-        <mat-form-field>
-          <mat-label>image</mat-label>
-          <input matInput formControlName="imgUrl" class="form-control" name="imgUrl" placeholder="הכנס imgUrl" />
-        </mat-form-field>
+      <mat-form-field>
+        <mat-label>image</mat-label>
+        <input matInput formControlName="image" class="form-control" placeholder="הכנס תמונה" />
+      </mat-form-field>
       <mat-form-field>
         <mat-label>language</mat-label>
         <input matInput formControlName="language" class="form-control" name="language" placeholder="הכנס language" />

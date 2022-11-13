@@ -40,7 +40,7 @@ export class CatalogsComponent implements OnInit {
   openAddDialog() {
     const dialogRef = this.dialog.open(AddCatalogComponent, {
       width: '35vw',
-      height: '42vh',
+      height: '50vh',
       data: {
         isEdit: false,
       }});

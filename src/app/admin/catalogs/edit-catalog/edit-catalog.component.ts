@@ -14,12 +14,6 @@ export class EditCatalogComponent implements OnInit {
   public catalog?: Catalog;
   submitted = false;
   @Output() refreshList: EventEmitter<any> = new EventEmitter();
-
-  currentCatalog: Catalog = {
-    title: '',
-    description: '',
-    published: false
-  };
   message = '';
 
   constructor(private catalogService: CatalogService, public dialogRef: MatDialogRef<EditCatalogComponent>,
@@ -43,7 +37,7 @@ export class EditCatalogComponent implements OnInit {
         title: [this.item.title ? this.item.title : '', [Validators.required]],
         // type: [this.item.type, [Validators.required]],
         description: [this.item.description ? this.item.description : '', [Validators.required]],
-        imgUrl: [this.item.imgUrl? this.item.imgUrl : ''],
+        image: [this.item.image ? this.item.image : ''],
         artist: [this.item.artist ? this.item.artist : ''],
         gallery: [this.item.gallery ? this.item.gallery : '', [Validators.required]],
         language: this.item.language ? this.item.language : '',

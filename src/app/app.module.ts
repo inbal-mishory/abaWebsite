@@ -24,7 +24,7 @@ import {MatPaginatorModule} from "@angular/material/paginator";
 import localHe from '@angular/common/locales/he';
 import {registerLocaleData} from "@angular/common";
 import { AboutComponent } from './components/about/about.component';
-import { TodoBoardsModule } from './todo-boards/todo-boards.module';
+// import { TodoBoardsModule } from './todo-boards/todo-boards.module';
 registerLocaleData(localHe);
 
 @NgModule({
@@ -51,8 +51,7 @@ registerLocaleData(localHe);
     AngularFireStorageModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
-    Ng2SearchPipeModule,
-    TodoBoardsModule
+    Ng2SearchPipeModule
   ],
   providers: [AuthService,
     { provide: FIREBASE_OPTIONS, useValue: environment.firebase },

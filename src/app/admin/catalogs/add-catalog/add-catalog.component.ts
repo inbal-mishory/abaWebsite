@@ -37,7 +37,7 @@ export class AddCatalogComponent implements OnInit {
     this.addCatalogForm = this.formBuilder.group({
       title : ['', [Validators.required]],
       description: ['', [Validators.required]],
-      imgUrl: '',
+      image: '',
       artist: ['', [Validators.required]],
       gallery: ['', [Validators.required]],
       language: '',

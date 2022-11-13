@@ -3,6 +3,6 @@
   margin: 0 auto;
   padding-right: 6px;
   border-right: thin solid #1E475C;
-  min-height: calc(100vh - 102px);
+  min-height: 90vh;
   height: max-content;
 }

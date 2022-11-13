@@ -2,7 +2,7 @@ export class Catalog {
   catalog_id?: string | undefined;
   title?: string;
   description?: string;
-  imgUrl?: string;
+  image?: string;
   artist?: string;
   gallery?: string;
   language?: string;

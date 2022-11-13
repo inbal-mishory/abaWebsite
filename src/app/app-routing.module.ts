@@ -34,11 +34,15 @@ const routes: Routes = [
       (b) => b.TodoBoardsModule
     )
   },
+  {
+    path: 'video-lecture',
+    loadChildren: () => import('./video-lecture/video-lecture.module').then(m => m.VideoLectureModule)
+  },
+  { path: 'user', loadChildren: () => import('./user/user.module').then(m => m.UserModule) },
   { path: 'critique', component: CritiqueListComponent },
   { path: 'articles', component: ArticlesComponent },
   { path: 'about', component: AboutComponent },
   { path: 'auth', component: SignInComponent },
-  { path: 'user', loadChildren: () => import('./user/user.module').then(m => m.UserModule) }
 ];
 
 @NgModule({
