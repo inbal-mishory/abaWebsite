@@ -29,7 +29,7 @@ export class CatalogsComponent implements OnInit {
   sub: Subscription;
 
   constructor(private catalogService: CatalogService, private dialog: MatDialog, public uploadService: FileUploadService,
-              private http: HttpClient, public cd: ChangeDetectorRef, private _snackBar: MatSnackBar, public afs: AngularFirestore) { }
+              private http: HttpClient, public cd: ChangeDetectorRef, private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     this.retrieveCatalogs();

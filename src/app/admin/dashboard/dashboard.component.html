@@ -7,5 +7,7 @@
     <a routerLink="critiques" class="btn mat-button" [ngClass]="{'active' : isActive('critique')}">ביקורת תערוכות</a>
     <a routerLink="video-lectures" class="btn mat-button" [ngClass]="{'active' : isActive('video-lecture')}">הרצאות מוקלטות</a>
   </div>
-  <router-outlet></router-outlet>
+  <div class="outlet">
+    <router-outlet></router-outlet>
+  </div>
 </div>

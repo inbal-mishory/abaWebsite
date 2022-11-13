@@ -1,6 +1,6 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {Component, OnInit, ViewChild, OnDestroy, ElementRef} from '@angular/core';
 import {ArticlesService} from "../../services/articles.service";
-import {map, tap} from "rxjs";
+import {map, Subject, tap} from "rxjs";
 import {Article, IArticle} from "../../models/article.model";
 import {MatTableDataSource} from "@angular/material/table";
 import {MatPaginator} from "@angular/material/paginator";
@@ -10,16 +10,23 @@ import {MatPaginator} from "@angular/material/paginator";
   templateUrl: './articles.component.html',
   styleUrls: ['./articles.component.css']
 })
-export class ArticlesComponent implements OnInit {
-  displayedColumns: string[] = ['title', 'publication', 'link']; //, 'date'
+export class ArticlesComponent implements OnInit, OnDestroy {
+  displayedColumns: string[] = ['title', 'publication', 'link', 'date'];
   sortedData: MatTableDataSource<any>;
   isMobile = false;
   listLength: number;
+  destroy$: Subject<boolean> = new Subject<boolean>();
   @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild('searchInput') input: ElementRef;
   constructor(private articleService: ArticlesService) { }
 
   ngOnInit(): void {
     this.getArticles();
+  }
+
+  ngOnDestroy() {
+    this.destroy$.next;
+    this.destroy$.unsubscribe();
   }
 
   getArticles(): void {
@@ -31,6 +38,7 @@ export class ArticlesComponent implements OnInit {
       ),
       tap(data => {
         this.sortedData = new MatTableDataSource(data.slice());
+        this.listLength = this.sortedData.filteredData.length;
       }),
       map(changes =>
         changes.map((article: Article) => {
@@ -44,15 +52,13 @@ export class ArticlesComponent implements OnInit {
     ).subscribe();
   }
 
-  deleteDialog(id: string) {
-
-  }
-
   trackByUid(index, item) {
     return item.uid
   }
 
-  doFilter(value: any) {
-    this.sortedData.filter = value.target.value;
+  applyFilter() {
+    const filterValue = this.input.nativeElement.value;
+    this.sortedData.filter = filterValue;
+    this.listLength = this.sortedData.filteredData.length;
   }
 }

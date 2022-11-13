@@ -12,13 +12,18 @@ h2.admin-title  {
 }
 
 .admin-actions {
-  width: 15%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: 1em;
   justify-content: flex-start;
   padding-top: 4em;
+  min-width: 13%;
+  width: 15%;
+}
+
+.outlet {
+  width: 85%;
 }
 
 .btn {
