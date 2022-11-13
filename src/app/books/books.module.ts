@@ -4,6 +4,7 @@ import { BooksRoutingModule } from './books-routing.module';
 import {MaterialModule} from "../shared/material.module";
 import { BooksComponent } from './books/books.component';
 import {FormsModule} from '@angular/forms'
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import {FormsModule} from '@angular/forms'
     CommonModule,
     FormsModule,
     MaterialModule,
-    BooksRoutingModule
+    BooksRoutingModule,
+    Ng2SearchPipeModule
   ]
 })
 export class BooksModule { }

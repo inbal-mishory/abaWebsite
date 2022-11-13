@@ -24,6 +24,7 @@ import { StorageComponent } from './storage/storage.component';
 import { ArticlesComponent } from './articles/articles.component';
 import { AddEditArticleComponent } from './articles/add-edit-article/add-edit-article.component';
 import { VideoLecturesComponent } from './video-lectures/video-lectures.component';
+import { AddEdditVideoComponent } from './video-lectures/add-eddit-video/add-eddit-video.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { VideoLecturesComponent } from './video-lectures/video-lectures.componen
     StorageComponent,
     ArticlesComponent,
     AddEditArticleComponent,
-    VideoLecturesComponent
+    VideoLecturesComponent,
+    AddEdditVideoComponent
   ],
     imports: [
         CommonModule,

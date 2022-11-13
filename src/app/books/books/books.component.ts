@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import {map, tap} from "rxjs/operators";
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import {map, takeUntil, tap} from "rxjs/operators";
 import {BooksService} from "../../services/books.service";
 import {Book, IBook} from "../../models/book.model";
+import {Observable, Subject} from "rxjs";
 
 @Component({
   selector: 'app-books',
@@ -9,8 +10,10 @@ import {Book, IBook} from "../../models/book.model";
   styleUrls: ['./books.component.css']
 })
 export class BooksComponent implements OnInit {
-  books?:IBook[];
+  books$?: Observable<IBook[]>;
+  books?: Book[];
   term!: string;
+
   constructor(private bookService: BooksService) { }
 
   ngOnInit(): void {
@@ -18,7 +21,7 @@ export class BooksComponent implements OnInit {
   }
 
   getBooks(): void {
-    this.bookService.getAllBooks().snapshotChanges().pipe(
+    this.books$ = this.bookService.getAllBooks().snapshotChanges().pipe(
       map(changes =>
         changes.map(c =>
           ({ id: c.payload.doc.id, ...c.payload.doc.data() })
@@ -26,16 +29,9 @@ export class BooksComponent implements OnInit {
       ),
       tap(data => {
         data.sort((first:any, second:any) => 0 - (first.year < second.year ? -1 : 1));
-      })
-    ).subscribe((res) => this.books = res);
-  }
-
-  applyFilter(event: Event) {
-    const filterValue = (event.target as HTMLInputElement).value;
-    // @ts-ignore
-    this.dataSource.filter = filterValue.trim().toLowerCase();
-    // @ts-ignore
-    this.displayNoRecords = this.dataSource.filteredData.length === 0;
+      }),
+      tap(data => this.books = data)
+    );
   }
 
   getIdTrack(index: number, item: Book) {
