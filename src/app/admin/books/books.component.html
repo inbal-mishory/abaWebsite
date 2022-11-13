@@ -11,7 +11,7 @@
         <img *ngIf="book?.cover" src="{{book?.cover}}" alt="img" width="160">
       </div>
       <div class="book-details">
-        <h3>{{book.title}}</h3>
+        <h4>{{book.title}}</h4>
         <p>{{book.publisher}}, {{book.publication_year}}</p>
         <a *ngIf="book?.article" target="_blank" href="{{book.article}}">בקורת על הספר</a>
         <a *ngIf="book?.link" target="_blank" href="{{book.link}}">מידע נוסף</a>

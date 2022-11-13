@@ -18,9 +18,8 @@ import {ConfirmModalComponent} from "../../shared/modals/confirm.modal/confirm.m
 })
 export class BooksComponent implements OnInit {
   books?:IBook[];
-  constructor(private bookService: BooksService, private dialog: MatDialog, public uploadService: FileUploadService,
-              private http: HttpClient, @Inject(AngularFireDatabase) private firebase: AngularFireDatabase,
-              public cd: ChangeDetectorRef, private _snackBar: MatSnackBar, public afs: AngularFirestore) { }
+  constructor(private bookService: BooksService, private dialog: MatDialog, public cd: ChangeDetectorRef,
+              private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     this.getBooks();
