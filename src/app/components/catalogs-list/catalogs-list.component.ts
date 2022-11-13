@@ -10,31 +10,15 @@ import {FormControl} from "@angular/forms";
   templateUrl: './catalogs-list.component.html',
   styleUrls: ['./catalogs-list.component.css']
 })
-export class CatalogsListComponent implements OnInit, OnDestroy{
-  currentCatalog?: Catalog;
-  // currentIndex = -1;
-  title = '';
+export class CatalogsListComponent implements OnInit{
   term!: string;
   catalogs$?: Observable<Catalog[]>;
+  catalogs?: Catalog[];
   destroy$: Subject<boolean> = new Subject<boolean>();
-  control = new FormControl(null);
-  options?: string[];
-  filteredOptions?: Observable<string[]>;
-  // filteredCatalogs?: Observable<string[]>;
 
   constructor(private catalogService: CatalogService) {  }
 
   ngOnInit(): void {
-    this.retrieveCatalogs();
-  }
-
-  ngOnDestroy() {
-    this.destroy$.next(true);
-    this.destroy$.unsubscribe();
-  }
-
-  refreshList(): void {
-    this.currentCatalog = undefined;
     this.retrieveCatalogs();
   }
 
@@ -48,12 +32,9 @@ export class CatalogsListComponent implements OnInit, OnDestroy{
       ),
       tap(data => {
         data.sort((first:any, second:any) => 0 - (first.year < second.year ? -1 : 1));
-      })
+      }),
+      tap(data => this.catalogs = data)
     );
-  }
-
-  setActiveCatalog(catalog: Catalog, index: number): void {
-    this.currentCatalog = catalog;
   }
 
   getIdTrack(index: number, item: Catalog) {

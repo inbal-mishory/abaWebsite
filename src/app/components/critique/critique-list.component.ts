@@ -15,11 +15,11 @@ import {map, shareReplay, tap} from "rxjs";
 export class CritiqueListComponent {
   sortedData: MatTableDataSource<any>;
   listLength?: number;
-  displayedColumns: string[] = ['title', 'museum', 'artist', 'paper', 'article', 'date'];
+  displayedColumns: string[] = ['title', 'museum', 'artist', 'paper', 'article'];//, 'date'
   isMobile = false;
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
-  @ViewChild('searchInput') input:ElementRef;
+  @ViewChild('searchInput') input: ElementRef;
 
   constructor(private critiqueService: CritiqueService, db: AngularFireDatabase) {  }
 
@@ -37,6 +37,7 @@ export class CritiqueListComponent {
       tap(data => {
         // @ts-ignore
         this.sortedData = new MatTableDataSource(data.slice());
+        this.listLength = this.sortedData.filteredData.length;
       }),
       map(changes =>
         // @ts-ignore
@@ -53,6 +54,7 @@ export class CritiqueListComponent {
   applyFilter(filterValue?: string):void {
     filterValue = this.input.nativeElement.value;
     this.sortedData.filter = filterValue;
+    this.listLength = this.sortedData.filteredData.length;
   }
 
   trackByUid(index, item) {

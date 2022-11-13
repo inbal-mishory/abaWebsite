@@ -88,9 +88,9 @@ body { margin: 0; overflow-x: hidden; scrollbar-color: rebeccapurple green; }
   min-height: 23% !important;
 }
 
-/* .mat-form-field-flex {
-  width: 220px !important;
-} */
+.input-search {
+  width: 330px;
+}
 
 mat-date-range-picker.mat-datepicker-content {
   direction: ltr !important;
