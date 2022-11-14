@@ -6,13 +6,13 @@ import { VideoService } from 'src/app/video-lecture/video.service';
 
 @Component({
   selector: 'app-add-eddit-video',
-  templateUrl: './add-eddit-video.component.html',
-  styleUrls: ['./add-eddit-video.component.css']
+  templateUrl: './add-edit-video.component.html',
+  styleUrls: ['./add-edit-video.component.css']
 })
-export class AddEdditVideoComponent implements OnInit {
+export class AddEditVideoComponent implements OnInit {
   addEditVideoForm: FormGroup;
   isEdit?: boolean;
-  constructor(private fb: FormBuilder, private videoService: VideoService, public dialogRef: MatDialogRef<AddEdditVideoComponent>,
+  constructor(private fb: FormBuilder, private videoService: VideoService, public dialogRef: MatDialogRef<AddEditVideoComponent>,
               @Inject(MAT_DIALOG_DATA) readonly data: any) { }
 
   ngOnInit(): void {

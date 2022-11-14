@@ -3,7 +3,7 @@
 }
 .critiques-container {
   width: 100%;
-  padding: 0 0 0 24px;
+  padding: 24px 0 0 24px;
   margin: 0 auto;
 }
 
@@ -36,18 +36,18 @@ span.mat-list-item-content {
 }
 
 .btn-add {
-  background: #BCE0A3;
+  background: #d3daaa;
   font-weight: bold;
   color: #343919;
 }
 
 .btn {
-  background: #EC6F6F;
+  background: pink;
   margin-top: 10px;
   margin-bottom: 10px;
 }
 
 .edit-btn {
-  background: #BCE0A3;
+  background: #d3daaa;
   color: #343919;
 }

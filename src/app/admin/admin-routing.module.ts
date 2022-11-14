@@ -1,12 +1,7 @@
 import { NgModule } from '@angular/core';
 import {DashboardComponent} from "./dashboard/dashboard.component";
-import {CatalogsComponent} from "./catalogs/catalogs.component";
 import {AuthChildrenGuard} from "../shared/guard/auth-children.guard";
 import {RouterModule, Routes} from "@angular/router";
-import {CritiquesComponent} from "./critiques/critiques.component";
-import {BooksComponent} from "./books/books.component";
-import {StorageComponent} from "./storage/storage.component";
-import { ArticlesComponent } from './articles/articles.component';
 import { VideoLecturesComponent } from './video-lectures/video-lectures.component';
 
 const routes: Routes = [
@@ -14,28 +9,36 @@ const routes: Routes = [
     path: '',
     canActivateChild: [AuthChildrenGuard],
     component: DashboardComponent,
-    children: [
-      {
-        path: 'catalogs',
-        component: CatalogsComponent
-      },
-      {
-        path: 'critiques',
-        component: CritiquesComponent
-      },
-      {
-        path: 'articles',
-        component: ArticlesComponent
-      },
-      {
-        path: 'books',
-        component: BooksComponent
-      },
-      {
-        path: 'video-lectures',
-        component: VideoLecturesComponent
-      }
-    ]
+  },
+  {
+    path: 'articles',
+    component: DashboardComponent,
+    loadChildren: () => import('./articles/articles.module').then(
+      (m) => m.ArticlesModule)
+  },
+  {
+    path: 'books',
+    component: DashboardComponent,
+    loadChildren: () => import('./books/books.module').then(
+      (m) => m.BooksModule)
+  },
+  {
+    path: 'catalogs',
+    component: DashboardComponent,
+    loadChildren: () => import('./catalogs/catalogs.module').then(
+      (m) => m.CatalogsModule)
+  },
+  {
+    path: 'critiques',
+    component: DashboardComponent,
+    loadChildren: () => import('./critiques/critiques.module').then(
+      (m) => m.CritiquesModule)
+  },
+  {
+    path: 'video-lectures',
+    component: DashboardComponent,
+    loadChildren: () => import('./video-lectures/video-lectures.module').then(
+      (m) => m.VideoLecturesModule)
   }
 ];
 

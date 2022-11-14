@@ -3,8 +3,8 @@ export class Critique {
   title: string;
   artist?: string;
   curator?: string;
-  museum: string;
-  paper: string;
+  museum?: string;
+  paper?: string;
   date: Date | string;
   article?: string;
 
@@ -25,8 +25,8 @@ export interface ICritique {
   id: string;
   artist?: string;
   curator?: string;
-  paper: string;
-  museum: string;
+  paper?: string;
+  museum?: string;
   date: Date | string;
   article?: string;
 }

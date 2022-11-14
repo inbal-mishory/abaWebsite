@@ -22,20 +22,13 @@ import {AddCatalogComponent} from "./add-catalog/add-catalog.component";
 export class CatalogsComponent implements OnInit {
   catalogs?: Catalog[];
   catalogs$?: Observable<Catalog[]>;
-  catalogImages?: any[];
-  public fileInfos?: any[];
-  public baseUrl = environment.firebase.databaseURL;
-  imageDetailList?: AngularFireList<any>;
-  sub: Subscription;
 
-  constructor(private catalogService: CatalogService, private dialog: MatDialog, public uploadService: FileUploadService,
-              private http: HttpClient, public cd: ChangeDetectorRef, private _snackBar: MatSnackBar) { }
+  constructor(private catalogService: CatalogService, private dialog: MatDialog,
+              private http: HttpClient, private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     this.retrieveCatalogs();
   }
-
-
 
   openAddDialog() {
     const dialogRef = this.dialog.open(AddCatalogComponent, {

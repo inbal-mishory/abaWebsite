@@ -1,11 +1,11 @@
 <h2 class="admin-title">ניהול</h2>
 <div class="container">
   <div class="admin-actions">
-    <a routerLink="catalogs" class="btn mat-button" [ngClass]="{'active' : isActive('catalogs')}">קטלוגים</a>
-    <a routerLink="books" class="btn mat-button" [ngClass]="{'active' : isActive('books')}">ספרים</a>
-    <a routerLink="articles" class="btn mat-button" [ngClass]="{'active' : isActive('articles')}">מאמרים</a>
-    <a routerLink="critiques" class="btn mat-button" [ngClass]="{'active' : isActive('critique')}">ביקורת תערוכות</a>
-    <a routerLink="video-lectures" class="btn mat-button" [ngClass]="{'active' : isActive('video-lecture')}">הרצאות מוקלטות</a>
+    <a routerLink="/admin/catalogs" class="btn mat-button" (click)="activeLink = '/admin/catalogs'" [ngClass]="{'active' : isActive('/admin/catalogs')}">קטלוגים</a>
+    <a routerLink="/admin/books" class="btn mat-button" [ngClass]="{'active' : isActive('/admin/books')}">ספרים</a>
+    <a routerLink="/admin/articles" class="btn mat-button" [ngClass]="{'active' : isActive('/admin/articles')}">מאמרים</a>
+    <a routerLink="/admin/critiques" class="btn mat-button" [ngClass]="{'active' : isActive('/admin/critique')}">ביקורת תערוכות</a>
+    <a routerLink="/admin/video-lectures" class="btn mat-button" [ngClass]="{'active' : isActive('/admin/video-lecture')}">הרצאות מוקלטות</a>
   </div>
   <div class="outlet">
     <router-outlet></router-outlet>

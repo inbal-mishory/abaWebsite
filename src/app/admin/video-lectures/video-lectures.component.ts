@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 import { map, tap } from 'rxjs';
 import { VideoService } from 'src/app/video-lecture/video.service';
 import { IVideo } from '../../models/video';
-import { AddEdditVideoComponent } from './add-eddit-video/add-eddit-video.component';
+import { AddEditVideoComponent } from './add-eddit-video/add-edit-video.component';
 
 @Component({
   selector: 'app-video-lectures',
@@ -20,7 +20,7 @@ export class VideoLecturesComponent implements OnInit {
   }
 
   addVideoLecture() {
-    const dialogRef = this.dialog.open(AddEdditVideoComponent, {
+    const dialogRef = this.dialog.open(AddEditVideoComponent, {
       width: '35vw',
       height: '48vh',
       data: {
@@ -33,7 +33,7 @@ export class VideoLecturesComponent implements OnInit {
   }
 
   editVideoLecture(video: IVideo) {
-    const dialogRef = this.dialog.open(AddEdditVideoComponent, {
+    const dialogRef = this.dialog.open(AddEditVideoComponent, {
       width: '35vw',
       height: '48vh',
       data: {

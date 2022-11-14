@@ -1,11 +1,7 @@
-import {ChangeDetectorRef, Component, Inject, OnInit} from '@angular/core';
+import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
 import {IBook} from "../../models/book.model";
 import {MatDialog} from "@angular/material/dialog";
-import {FileUploadService} from "../../services/file-upload.service";
-import {HttpClient} from "@angular/common/http";
-import {AngularFireDatabase} from "@angular/fire/compat/database";
 import {MatSnackBar} from "@angular/material/snack-bar";
-import {AngularFirestore, AngularFirestoreCollection} from "@angular/fire/compat/firestore";
 import {BooksService} from "../../services/books.service";
 import {map, tap} from "rxjs/operators";
 import {AddEditBookComponent} from "./add-edit-book/add-edit-book.component";
@@ -49,7 +45,6 @@ export class BooksComponent implements OnInit {
     });
     dialogRef.afterClosed().subscribe(() => {
       this.dialog.closeAll();
-      // this.getBooks();
     })
   }
 

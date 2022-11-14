@@ -5,7 +5,6 @@ import {CritiqueService} from "../../services/critique.service";
 import {map} from "rxjs/operators";
 import {MatDialog} from "@angular/material/dialog";
 import {MatSnackBar} from "@angular/material/snack-bar";
-import {environment} from "../../../environments/environment";
 import { AddEditCritiqueComponent} from "./addEdit-critique/addEdit-critique.component";
 import {ConfirmModalComponent} from "../../shared/modals/confirm.modal/confirm.modal.component";
 
@@ -17,7 +16,6 @@ import {ConfirmModalComponent} from "../../shared/modals/confirm.modal/confirm.m
 export class CritiquesComponent implements OnInit {
   critiques?: ICritique[];
   critiques$?: Observable<Critique[]>;
-  public baseUrl = environment.firebase.databaseURL;
   displayedColumns: string[] = ['title', 'museum', 'artist', 'article', 'date', 'paper', 'actions'];
   term!: string;
   constructor(private critiqueService: CritiqueService, private dialog: MatDialog, private _snackBar: MatSnackBar,) { }
@@ -48,7 +46,7 @@ export class CritiquesComponent implements OnInit {
         details: critique,
         isEdit: true,
       }});
-    dialogRef.afterClosed().subscribe((res) => {
+    dialogRef.afterClosed().subscribe(() => {
       this.dialog.closeAll()
     });
   }
@@ -89,7 +87,7 @@ export class CritiquesComponent implements OnInit {
   }
 
   deleteCritique(critique: any) {
-    this.critiqueService.delete(critique.id).then((res) => {
+    this.critiqueService.delete(critique.id).then(() => {
       this.openSnackBar();
     }).catch((err) => {
       console.log(err);
