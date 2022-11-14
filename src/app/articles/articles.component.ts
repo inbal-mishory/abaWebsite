@@ -1,9 +1,9 @@
 import {Component, OnInit, ViewChild, OnDestroy, ElementRef} from '@angular/core';
-import {ArticlesService} from "../../services/articles.service";
 import {map, Subject, tap} from "rxjs";
-import {Article, IArticle} from "../../models/article.model";
 import {MatTableDataSource} from "@angular/material/table";
 import {MatPaginator} from "@angular/material/paginator";
+import { ArticlesService } from '../services/articles.service';
+import { Article } from '../models/article.model';
 
 @Component({
   selector: 'app-articles',
