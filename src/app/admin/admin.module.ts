@@ -25,6 +25,7 @@ import { ArticlesComponent } from './articles/articles.component';
 import { AddEditArticleComponent } from './articles/add-edit-article/add-edit-article.component';
 import { VideoLecturesComponent } from './video-lectures/video-lectures.component';
 import { AddEdditVideoComponent } from './video-lectures/add-eddit-video/add-eddit-video.component';
+import { ConfirmModalComponent } from '../shared/modals/confirm.modal/confirm.modal.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { AddEdditVideoComponent } from './video-lectures/add-eddit-video/add-edd
     ArticlesComponent,
     AddEditArticleComponent,
     VideoLecturesComponent,
-    AddEdditVideoComponent
+    AddEdditVideoComponent,
+    ConfirmModalComponent
   ],
     imports: [
         CommonModule,
