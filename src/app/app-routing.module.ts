@@ -1,17 +1,16 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import { CatalogsListComponent } from './components/catalogs-list/catalogs-list.component';
 import {HomeComponent} from "./components/home/home.component";
 import {SignInComponent} from "./auth/sign-in/sign-in.component";
 import {AuthService} from "./services/auth.service";
 import {AuthGuard} from "./shared/guard/auth.guard";
-import {CritiqueListComponent} from "./components/critique/critique-list.component";
-import { ArticlesComponent } from './components/articles/articles.component';
 import {AboutComponent} from "./components/about/about.component";
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'catalogs', component: CatalogsListComponent },
+  { path: 'catalogs', loadChildren: () => import('./catalogs/catalogs.module').then(
+                                    (b) => b.CatalogsModule)
+  },
   { path: 'home', component: HomeComponent },
   {
     path: 'admin',
@@ -39,10 +38,15 @@ const routes: Routes = [
     loadChildren: () => import('./video-lecture/video-lecture.module').then(m => m.VideoLectureModule)
   },
   { path: 'user', loadChildren: () => import('./user/user.module').then(m => m.UserModule) },
-  { path: 'critique', component: CritiqueListComponent },
-  { path: 'articles', component: ArticlesComponent },
+  { path: 'critique',
+    loadChildren: () => import('./critiques/critiques.module').then(m => m.CritiquesModule) },
+  { path: 'articles', loadChildren: () => import('./articles/articles.module').then(
+    (b) => b.ArticlesModule
+  ) },
   { path: 'about', component: AboutComponent },
   { path: 'auth', component: SignInComponent },
+  { path: 'catalogs', loadChildren: () => import('./catalogs/catalogs.module').then(m => m.CatalogsModule) },
+  { path: 'articles', loadChildren: () => import('./articles/articles.module').then(m => m.ArticlesModule) },
 ];
 
 @NgModule({
