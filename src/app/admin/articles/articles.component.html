@@ -40,21 +40,4 @@
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
     <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
   </mat-table>
-<!--  <ul class="articles-list" *ngIf="articles">-->
-<!--    <li *ngFor="let article of articles" class="article-item">-->
-<!--      <div class="article-details">-->
-<!--        <strong>{{article.title}}</strong>-->
-<!--        <p>{{article.publication}}</p>-->
-<!--        <a *ngIf="article?.link" target="_blank" href="{{article.link}}">קישור</a>-->
-<!--      </div>-->
-<!--      <div class="actions">-->
-<!--        <button class="btn" (click)="deleteDialog(article.id)" mat-icon-button>-->
-<!--          <mat-icon>delete</mat-icon>-->
-<!--        </button>-->
-<!--        <button class="edit-btn" mat-icon-button (click)="openEditArticle(article)">-->
-<!--          <mat-icon>edit</mat-icon>-->
-<!--        </button>-->
-<!--      </div>-->
-<!--    </li>-->
-<!--  </ul>-->
 </div>
