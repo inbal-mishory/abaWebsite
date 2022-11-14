@@ -1,11 +1,10 @@
-import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
-import {Critique} from "../../models/critique.model";
-import {CritiqueService} from "../../services/critique.service";
+import {Component, ElementRef, ViewChild} from '@angular/core';
 import {MatTableDataSource} from "@angular/material/table";
 import {MatPaginator, PageEvent} from "@angular/material/paginator";
 import {MatSort, Sort} from "@angular/material/sort";
 import {AngularFireDatabase} from "@angular/fire/compat/database";
 import {map, shareReplay, tap} from "rxjs";
+import { CritiqueService } from '../services/critique.service';
 
 @Component({
   selector: 'app-critique',
