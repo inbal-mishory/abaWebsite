@@ -11,7 +11,7 @@ import { Article } from '../models/article.model';
   styleUrls: ['./articles.component.css']
 })
 export class ArticlesComponent implements OnInit, OnDestroy {
-  displayedColumns: string[] = ['title', 'publication', 'link', 'date'];
+  displayedColumns: string[] = ['title', 'publication', 'date'];
   sortedData: MatTableDataSource<any>;
   isMobile = false;
   listLength: number;

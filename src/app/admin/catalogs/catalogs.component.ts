@@ -45,7 +45,6 @@ export class CatalogsComponent implements OnInit {
         isEdit: false,
       }});
     dialogRef.afterClosed().subscribe((res) => {
-      res.data[-1].catalog_id = res.id;
       this.catalogs = res.data;
     });
   }

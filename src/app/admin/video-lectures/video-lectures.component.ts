@@ -35,7 +35,7 @@ export class VideoLecturesComponent implements OnInit {
   editVideoLecture(video: IVideo) {
     const dialogRef = this.dialog.open(AddEdditVideoComponent, {
       width: '35vw',
-      height: '40vh',
+      height: '48vh',
       data: {
         details: video,
         isEdit: true}

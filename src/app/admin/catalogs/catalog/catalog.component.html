@@ -3,7 +3,8 @@
 </div>
 <div class="catalog-text">
   <h4>{{ catalog?.title }}</h4> <span>{{catalog?.gallery}} {{catalog?.year}}</span>
-  <p *ngIf="catalog?.language">שפה: {{catalog?.language}}</p>
+  <a *ngIf="catalog?.urlHeb" href="{{catalog?.urlHeb}}" target="_blank">קטלוג בעברית</a>
+  <a *ngIf="catalog?.urlEnglish" href="{{catalog?.urlEnglish}}" target="_blank">קטלוג באנגלית</a>
   <div class="actions">
     <button (click)="deleteCatalog(catalog?.catalog_id)" class="delete-btn" mat-button>
       <mat-icon>delete</mat-icon>
