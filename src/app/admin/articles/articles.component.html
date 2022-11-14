@@ -9,7 +9,8 @@
     <ng-container matColumnDef="title">
       <mat-header-cell *matHeaderCellDef class="title">כותרת</mat-header-cell>
       <mat-cell *matCellDef="let article" class="title">
-        <span>{{article.title}}</span>
+        <span *ngIf="article?.link === ''">{{article.title}}</span>
+        <a *ngIf="article?.link !== ''" target="_blank" href="{{article.link}}">{{article.title}}</a>
       </mat-cell>
     </ng-container>
     <ng-container matColumnDef="publication">
@@ -17,25 +18,17 @@
       <mat-cell *matCellDef="let article">
         <span>{{article.publication}}</span> </mat-cell>
     </ng-container>
-    <ng-container matColumnDef="link">
-      <mat-header-cell *matHeaderCellDef>כתבה</mat-header-cell>
-      <mat-cell *matCellDef="let article">
-        <ng-container *ngIf="article.link">
-          <a *ngIf="article?.link" target="_blank" href="{{article.link}}">קישור</a>
-        </ng-container>
-      </mat-cell>
-    </ng-container>
     <ng-container matColumnDef="date">
-      <mat-header-cell *matHeaderCellDef>תאריך</mat-header-cell>
-      <mat-cell *matCellDef="let article">
+      <mat-header-cell *matHeaderCellDef class="date">תאריך</mat-header-cell>
+      <mat-cell *matCellDef="let article" class="date">
         <ng-container *ngIf="article.date">
-          <span>{{article.date | date: 'dd/MM/yyyy'}}</span>
+          <span>{{article.date}}</span>
         </ng-container>
       </mat-cell>
     </ng-container>
     <ng-container matColumnDef="actions">
       <mat-header-cell *matHeaderCellDef class="actions"></mat-header-cell>
-      <mat-cell *matCellDef="let article">
+      <mat-cell *matCellDef="let article" class="actions">
           <button class="btn" (click)="deleteDialog(article.id, article.title)" mat-icon-button>
             <mat-icon>delete</mat-icon>
           </button>

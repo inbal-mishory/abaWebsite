@@ -14,7 +14,7 @@ import {MatSnackBar} from "@angular/material/snack-bar";
 })
 export class ArticlesComponent implements OnInit {
   articles: IArticle[];
-  displayedColumns: string[] = ['title', 'publication', 'link', 'date', 'actions'];
+  displayedColumns: string[] = ['title', 'publication', 'date', 'actions'];
   constructor(private articleService: ArticlesService, private dialog: MatDialog, private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {

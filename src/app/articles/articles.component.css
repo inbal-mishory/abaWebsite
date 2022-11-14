@@ -40,6 +40,16 @@ input::placeholder {
   display: none;
 }
 
+.mat-header-cell.date, .mat-cell.date {
+  display: flex;
+  gap: .5em;
+  max-width: 120px;
+}
+
+.mat-header-cell.paper, .mat-cell.paper {
+  max-width: 180px;
+}
+
 .mat-column-museum {
   min-width: 25%;
 }
