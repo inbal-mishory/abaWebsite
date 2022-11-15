@@ -27,7 +27,7 @@
         <mat-cell class="date" *matCellDef="let article">
           <ng-container *ngIf="article.date">
             <span class="mobile-label">תאריך:</span>
-            <span>{{article.date | date: 'MM/yyyy'}}</span>
+            <span>{{article.date | date: 'yyyy'}}</span>
           </ng-container>
         </mat-cell>
       </ng-container>
