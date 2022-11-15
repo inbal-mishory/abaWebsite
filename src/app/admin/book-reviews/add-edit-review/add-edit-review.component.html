@@ -1,0 +1,38 @@
+<div class="mat-dialog-title">
+  <h3 *ngIf="!isEdit" mat-dialog-title>הוספת בקורת</h3>
+  <h3 *ngIf="isEdit" mat-dialog-title>עריכת בקורת</h3>
+</div>
+<mat-dialog-content>
+  <form *ngIf="editReviewForm" [formGroup]="editReviewForm">
+    <div class="form-controls">
+      <mat-form-field appearance="fill">
+        <mat-label>כותרת</mat-label>
+        <input matInput formControlName="title" class="form-control" name="title" placeholder="הכנס כותרת" />
+        <mat-error *ngIf="editReviewForm.controls['title'].errors?.['require']">
+          Required field
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>כתב</mat-label>
+        <input matInput formControlName="writer" class="form-control" placeholder="הכנס כתב" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>עיתון</mat-label>
+        <input matInput formControlName="paper" class="form-control" placeholder="הכנס עיתון" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>קישור</mat-label>
+        <input matInput formControlName="link" class="form-control" placeholder="הכנס קישור" />
+      </mat-form-field>
+    </div>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button type="button" class="btn" (click)="closeModal()">ביטול</button>
+  <button *ngIf="isEdit" type="submit" class="badge badge-success" (click)="updateBook()">
+    עדכון
+  </button>
+  <button *ngIf="!isEdit" type="submit" class="badge badge-success" (click)="createReview(editReviewForm?.value)">
+    יצירה
+  </button>
+</mat-dialog-actions>

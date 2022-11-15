@@ -1,0 +1,23 @@
+.mat-dialog-title h3 {
+  background: #758038;
+  color: #fff;
+  line-height: 40px;
+}
+
+.mat-dialog-content {
+  display: block;
+  margin: 0;
+  padding: 24px;
+  min-height: 30vh;
+}
+
+mat-dialog-actions.mat-dialog-actions {
+  justify-content: flex-end;
+}
+
+.form-controls {
+  display: flex;
+  gap: 1em;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}

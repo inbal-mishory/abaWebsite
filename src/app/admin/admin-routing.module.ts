@@ -23,6 +23,12 @@ const routes: Routes = [
       (m) => m.BooksModule)
   },
   {
+    path: 'book-reviews',
+    component: DashboardComponent,
+    loadChildren: () => import('./book-reviews/book-reviews.module').then(
+      (m) => m.BookReviewsModule)
+  },
+  {
     path: 'catalogs',
     component: DashboardComponent,
     loadChildren: () => import('./catalogs/catalogs.module').then(

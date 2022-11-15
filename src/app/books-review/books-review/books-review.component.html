@@ -1,8 +1,13 @@
-<div class="catalogs-list" fxLayout="column">
-  <h3>בקורת ספרים</h3>
-  <ul class="reviews">
-    <li *ngFor="let review of bookReviews">
-      {{review.title}}
-    </li>
-  </ul>
+<div class="container" fxLayout="column">
+  <h3>בקורות</h3>
+  <div class="reviews-container">
+    <ul class="reviews">
+      <li *ngFor="let review of bookReviews" class="review-details">
+        <div class="review-info">
+          <p><a href="{{review.link}}" target="_blank"><strong>{{review.title}}</strong></a>, <i>{{review.paper}}</i></p>
+          <p>מאת: {{review.writer}}</p>
+        </div>
+      </li>
+    </ul>
+  </div>
 </div>

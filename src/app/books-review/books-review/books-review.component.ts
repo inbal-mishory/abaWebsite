@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {Observable, shareReplay, Subject} from "rxjs";
-import {BookReviewModel, IBookReviewModel} from "../../models/book-review.model";
+import { shareReplay} from "rxjs";
+import {BookReviewModel} from "../../models/book-review.model";
 import {BookReviewService} from "../../services/book-review.service";
-import {map, takeUntil, tap} from "rxjs/operators";
-import {AngularFirestore} from "@angular/fire/compat/firestore";
-import {MatTableDataSource} from "@angular/material/table";
+import {map} from "rxjs/operators";
 
 @Component({
   selector: 'app-books-review',
@@ -13,10 +11,8 @@ import {MatTableDataSource} from "@angular/material/table";
 })
 export class BooksReviewComponent implements OnInit {
   term!: string;
-  bookReviews$?: Observable<IBookReviewModel[]>;
   bookReviews?: BookReviewModel[];
-  destroy$: Subject<boolean> = new Subject<boolean>();
-  constructor(private db: AngularFirestore, private bookReviewsService: BookReviewService) { }
+  constructor(private bookReviewsService: BookReviewService) { }
 
   ngOnInit(): void {
     this.bookReviewsService.getAllBookReview().snapshotChanges().pipe(

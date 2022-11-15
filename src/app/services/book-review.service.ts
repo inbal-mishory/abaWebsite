@@ -18,4 +18,15 @@ export class BookReviewService {
     return this.booksRef;
   }
 
+  createReview(review: IBookReviewModel): any {
+    return this.booksRef.add({ ...review });
+  }
+
+  update(id: string, data: any): Promise<void> {
+    return this.booksRef.doc(id).update(data);
+  }
+
+  delete(id: string): Promise<void> {
+    return this.booksRef.doc(id).delete();
+  }
 }
