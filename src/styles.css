@@ -20,6 +20,8 @@
 html {
   --scrollbarBG: #CFD8DC;
   --thumbBG: #90A4AE;
+  --light-green: #BCE0A3;
+  --light-red: #EC6F6F;
 }
 
 body::-webkit-scrollbar {

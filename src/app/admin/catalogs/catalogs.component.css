@@ -46,7 +46,7 @@ h4:hover {
 }
 
 .btn-add {
-  background: #BCE0A3;
+  background: var(--light-green);
   font-weight: bold;
   color: #343919;
 }

@@ -20,7 +20,7 @@ h3 {
 }
 
 .badge-success {
-  background:#BCE0A3 ;
+  background:var(--light-green) ;
 }
 
 .badge.close {

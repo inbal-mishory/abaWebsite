@@ -59,16 +59,16 @@ ul.books-list {
 }
 
 .btn-add {
-  background: #BCE0A3;
+  background: var(--light-green);
   font-weight: bold;
   color: #343919;
 }
 
 .btn {
-  background: #EC6F6F;
+  background: var(--light-red);
 }
 
 .edit-btn {
-  background: #BCE0A3;
+  background: var(--light-green);
   color: #343919;
 }
