@@ -5,6 +5,7 @@
 /tmp
 /out-tsc
 /bazel-out
+/functions
 
 # Node
 /node_modules
@@ -39,6 +40,9 @@ yarn-error.log
 testem.log
 /typings
 package-lock.json
+.firebaserc
+firestore.indexes.json
+firestore.rules
 
 # System files
 .DS_Store
