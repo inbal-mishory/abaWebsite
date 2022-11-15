@@ -25,8 +25,8 @@ const routes: Routes = [
       (b) => b.TodoBoardsModule)
   },
   {
-    path: 'books',
-    loadChildren: () => import('./books/books.module').then(
+    path: 'my-books',
+    loadChildren: () => import('./my-books/books.module').then(
       (b) => b.BooksModule)
   },
   {
@@ -46,6 +46,9 @@ const routes: Routes = [
   },
   { path: 'user', loadChildren: () => import('./user/user.module').then(
     (m) => m.UserModule)
+  },
+  { path: 'books-review', loadChildren: () => import('./books-review/books-review.module').then(
+      (m) => m.BooksReviewModule)
   },
   { path: 'about', component: AboutComponent },
   { path: 'auth', component: SignInComponent },

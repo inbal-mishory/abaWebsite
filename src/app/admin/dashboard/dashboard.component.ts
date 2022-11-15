@@ -8,7 +8,7 @@ import {ActivatedRoute, NavigationStart, Router} from "@angular/router";
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnDestroy {
-  activeLink = '/admin/catalogs';
+  activeLink = '';
   routeSub$ = this.router.events.subscribe();
   constructor(public dialog: MatDialog, public router: Router, private route: ActivatedRoute) {
     router.events.subscribe((event: any) => {
@@ -19,7 +19,7 @@ export class DashboardComponent implements OnDestroy {
   }
 
   ngOnInit(): void {
-    this.activeLink
+    // this.activeLink
   }
 
   ngOnDestroy() {
@@ -27,9 +27,6 @@ export class DashboardComponent implements OnDestroy {
   }
 
   isActive(link: string | undefined): boolean {
-    if(this.activeLink !== undefined && this.activeLink !== '') {
-      return this.activeLink.includes(link);
-    }
-    return false;
+    return this.activeLink.includes(link);
   }
 }

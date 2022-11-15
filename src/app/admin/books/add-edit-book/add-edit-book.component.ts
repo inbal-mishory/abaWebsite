@@ -1,7 +1,7 @@
 import {Component, EventEmitter, Inject, OnInit, Output} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
-import {BooksService} from "../../../services/books.service";
+import {MyBooksService} from "../../../services/my-books.service";
 import {IBook} from "../../../models/book.model";
 
 @Component({
@@ -15,7 +15,7 @@ export class AddEditBookComponent implements OnInit {
   @Output() refreshList: EventEmitter<any> = new EventEmitter();
   message = '';
   constructor(private formBuilder: FormBuilder, @Inject(MAT_DIALOG_DATA) readonly data: any,
-              public dialogRef: MatDialogRef<AddEditBookComponent>, private booksService: BooksService) { }
+              public dialogRef: MatDialogRef<AddEditBookComponent>, private booksService: MyBooksService) { }
 
   ngOnInit(): void {
     this.isEdit = this.data.isEdit;

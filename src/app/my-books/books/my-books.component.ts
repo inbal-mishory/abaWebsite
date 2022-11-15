@@ -1,20 +1,20 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import {map, takeUntil, tap} from "rxjs/operators";
-import {BooksService} from "../../services/books.service";
+import { Component,  OnInit } from '@angular/core';
+import {map, tap} from "rxjs/operators";
+import {MyBooksService} from "../../services/my-books.service";
 import {Book, IBook} from "../../models/book.model";
-import {Observable, Subject} from "rxjs";
+import {Observable} from "rxjs";
 
 @Component({
-  selector: 'app-books',
-  templateUrl: './books.component.html',
-  styleUrls: ['./books.component.css']
+  selector: 'app-my-books',
+  templateUrl: './my-books.component.html',
+  styleUrls: ['./my-books.component.css']
 })
-export class BooksComponent implements OnInit {
+export class MyBooksComponent implements OnInit {
   books$?: Observable<IBook[]>;
   books?: Book[];
   term!: string;
 
-  constructor(private bookService: BooksService) { }
+  constructor(private bookService: MyBooksService) { }
 
   ngOnInit(): void {
     this.getBooks();

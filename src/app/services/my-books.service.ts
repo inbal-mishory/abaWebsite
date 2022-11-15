@@ -6,7 +6,7 @@ import {IBook} from "../models/book.model";
 @Injectable({
   providedIn: 'root'
 })
-export class BooksService {
+export class MyBooksService {
   private dbPath = '/Books';
   booksList?: AngularFireList<IBook>;
 

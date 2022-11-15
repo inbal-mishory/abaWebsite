@@ -2,19 +2,19 @@ import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
 import {IBook} from "../../models/book.model";
 import {MatDialog} from "@angular/material/dialog";
 import {MatSnackBar} from "@angular/material/snack-bar";
-import {BooksService} from "../../services/books.service";
+import {MyBooksService} from "../../services/my-books.service";
 import {map, tap} from "rxjs/operators";
 import {AddEditBookComponent} from "./add-edit-book/add-edit-book.component";
 import {ConfirmModalComponent} from "../../shared/modals/confirm.modal/confirm.modal.component";
 
 @Component({
-  selector: 'app-books',
+  selector: 'app-my-books',
   templateUrl: './books.component.html',
   styleUrls: ['./books.component.css']
 })
 export class BooksComponent implements OnInit {
   books?:IBook[];
-  constructor(private bookService: BooksService, private dialog: MatDialog, public cd: ChangeDetectorRef,
+  constructor(private bookService: MyBooksService, private dialog: MatDialog, public cd: ChangeDetectorRef,
               private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {

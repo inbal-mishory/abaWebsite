@@ -1,9 +1,8 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import { CatalogService } from 'src/app/services/catalog.service';
 import {map, takeUntil, tap} from 'rxjs/operators';
 import { Catalog } from 'src/app/models/catalog.model';
 import {Observable, Subject} from "rxjs";
-import {FormControl} from "@angular/forms";
 
 @Component({
   selector: 'app-catalogs-list',
