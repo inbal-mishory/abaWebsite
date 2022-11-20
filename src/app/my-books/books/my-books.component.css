@@ -2,7 +2,6 @@
   margin-bottom: 16px;
 }
 
-
 input::placeholder {
   font-size: 14px;
 }
@@ -18,12 +17,25 @@ input::placeholder {
   max-height: 205px;
 }
 
+.books-list-container {
+  overflow-y: scroll;
+}
+
 .books-list {
   list-style-type: none;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
+  /*gap: 32px;*/
   grid-template-rows: auto;
+  max-height: 700px;
+}
+
+@media only screen and (max-height: 800px) {
+  .books-list {
+    grid-template-columns: repeat(2, 1fr);
+    max-height: 560px;
+    padding-bottom: 1em;
+  }
 }
 
 h3 {
@@ -46,7 +58,14 @@ h4:hover {
 .book-item {
   display: flex;
   text-align: right;
-  gap: 1rem;
+  /*gap: 1rem;*/
+  border-left: 1px solid var(--backgroundBlack);
+}
+
+@media only screen and (max-height: 800px) {
+  .book-item {
+    padding: .5em;
+  }
 }
 
 .book-details {

@@ -13,15 +13,23 @@ import {ConfirmModalComponent} from "../../shared/modals/confirm.modal/confirm.m
   templateUrl: './critiques.component.html',
   styleUrls: ['./critiques.component.css']
 })
-export class CritiquesComponent implements OnInit {
-  critiques?: ICritique[];
+export class CritiquesComponent {
   critiques$?: Observable<Critique[]>;
   displayedColumns: string[] = ['title', 'museum', 'artist', 'article', 'date', 'paper', 'actions'];
   term!: string;
-  constructor(private critiqueService: CritiqueService, private dialog: MatDialog, private _snackBar: MatSnackBar,) { }
 
-  ngOnInit(): void {
-    this.getCritiques();
+  constructor(private critiqueService: CritiqueService, private dialog: MatDialog, private _snackBar: MatSnackBar,) {
+    this.critiques$ = this.critiqueService.getAllCritiques().snapshotChanges().pipe(
+      map(changes =>
+        // @ts-ignore
+        changes.map((c: any) => {
+          let payloadDoc = c.payload.doc;
+          let newCritique = {...payloadDoc.data()};
+          newCritique.id = payloadDoc.id;
+          return newCritique;
+        }),
+      )
+    );
   }
 
   openAddCritiqueDialog() {
@@ -52,7 +60,6 @@ export class CritiquesComponent implements OnInit {
   }
 
   getCritiques() {
-
     this.critiques$ = this.critiqueService.getAllCritiques().snapshotChanges().pipe(
       map(changes =>
         // @ts-ignore

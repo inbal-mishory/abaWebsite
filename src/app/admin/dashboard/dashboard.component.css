@@ -1,3 +1,6 @@
+:host {
+  width: 100%;
+}
 h2.admin-title  {
   font-size: 3em;
   text-align: center;

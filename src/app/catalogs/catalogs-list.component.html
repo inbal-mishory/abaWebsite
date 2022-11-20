@@ -1,4 +1,4 @@
-<div class="catalogs-list" fxLayout="column">
+<div class="catalogs-container" fxLayout="column">
   <h3>קטלוגים</h3>
   <div class="search">
       <mat-form-field  class="input-search">
@@ -10,22 +10,24 @@
           <mat-icon matSuffix>search</mat-icon>
       </mat-form-field>
   </div>
-  <ul class="catalog-list" *ngIf="catalogs$ | async as catalogs">
-    <li class="catalog-item" *ngFor="let catalog of catalogs | filter: term; trackBy: getIdTrack">
-      <div class="catalog-image">
-        <img *ngIf="catalog?.image" src="{{catalog?.image}}" alt="img" width="160">
-      </div>
-      <div class="catalog-text">
-        <h4>{{ catalog.title }}</h4>
-        <p>{{catalog.artist}}</p>
-        <span>{{catalog.gallery}} {{catalog?.year}}</span>
-      </div>
-      <div class="files" *ngIf="catalog.urlEnglish || catalog.urlHeb">
-        <a class="link-heb" *ngIf="catalog.urlHeb !== ''" href="{{catalog.urlHeb}}" target="_blank"><mat-icon>link</mat-icon>קטלוג בעברית</a>
-        <a class="link-eng" *ngIf="catalog.urlEnglish !== ''" href="{{catalog.urlEnglish}}" target="_blank" style="direction: ltr;"><mat-icon>link</mat-icon>English catalog</a>
-      </div>
-    </li>
-  </ul>
+  <div class="catalog-list-container">
+    <ul class="catalog-list" *ngIf="catalogs$ | async as catalogs">
+      <li class="catalog-item" *ngFor="let catalog of catalogs | filter: term; trackBy: getIdTrack">
+        <div class="catalog-image">
+          <img *ngIf="catalog?.image" src="{{catalog?.image}}" alt="img" width="160">
+        </div>
+        <div class="catalog-text">
+          <h4>{{ catalog.title }}</h4>
+          <p>{{catalog.artist}}</p>
+          <span>{{catalog.gallery}} {{catalog?.year}}</span>
+        </div>
+        <div class="files" *ngIf="catalog.urlEnglish || catalog.urlHeb">
+          <a class="link-heb" *ngIf="catalog.urlHeb !== ''" href="{{catalog.urlHeb}}" target="_blank"><mat-icon>link</mat-icon>קטלוג בעברית</a>
+          <a class="link-eng" *ngIf="catalog.urlEnglish !== ''" href="{{catalog.urlEnglish}}" target="_blank" style="direction: ltr;"><mat-icon>link</mat-icon>English catalog</a>
+        </div>
+      </li>
+    </ul>
+  </div>
   <div class="no-results">
     אין תוצאות
   </div>

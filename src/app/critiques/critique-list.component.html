@@ -13,7 +13,8 @@
         <mat-header-cell *matHeaderCellDef style="min-width:400px" mat-sort-header>כותרת</mat-header-cell>
         <mat-cell *matCellDef="let critique" style="min-width:400px">
           <span class="mobile-label">כותרת:</span>
-          <strong>{{critique.title}}</strong>
+          <a *ngIf="critique.article" href="{{critique.article}}" target="_blank"><strong>{{critique.title}}</strong></a>
+          <strong  *ngIf="!critique.article">{{critique.title}}</strong>
         </mat-cell>
       </ng-container>
       <ng-container matColumnDef="museum">
@@ -35,15 +36,19 @@
           <span>{{critique.paper}}</span>
         </mat-cell>
       </ng-container>
-      <ng-container matColumnDef="article">
-        <mat-header-cell *matHeaderCellDef>מאמר</mat-header-cell>
+      <ng-container matColumnDef="date">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>תאריך</mat-header-cell>
         <mat-cell *matCellDef="let critique">
-          <span class="mobile-label">מאמר:</span>
-          <a *ngIf="critique.article" href="{{critique.article}}">מאמר</a> </mat-cell>
+          <span class="mobile-label">תאריך:</span>
+          <span *ngIf="critique.date !== 'Invalid Date'">{{critique.date}}</span>
+        </mat-cell>
       </ng-container>
       <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
       <mat-row *matRowDef="let row; columns: displayedColumns" class="animate"></mat-row>
     </mat-table>
+<!--    <div class="paging-container">-->
+<!--      <mat-paginator style="direction: ltr;" [length]="pageAmount" [pageSizeOptions]="[10, 15, 20]" aria-label="Select page of users"></mat-paginator>-->
+<!--    </div>-->
 <!--    <mat-paginator [length]="200" [pageSizeOptions]="[10, 50, 100]" aria-label="Select page"></mat-paginator>-->
     <div *ngIf="listLength === 0" class="no-results">
       <h3>אין תוצאות</h3>

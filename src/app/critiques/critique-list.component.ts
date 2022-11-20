@@ -1,10 +1,11 @@
-import {Component, ElementRef, ViewChild} from '@angular/core';
+import {ChangeDetectorRef, Component, ElementRef, ViewChild} from '@angular/core';
 import {MatTableDataSource} from "@angular/material/table";
-import {MatPaginator, PageEvent} from "@angular/material/paginator";
+import {MatPaginator, MatPaginatorDefaultOptions, MatPaginatorIntl, PageEvent} from "@angular/material/paginator";
 import {MatSort, Sort} from "@angular/material/sort";
 import {AngularFireDatabase} from "@angular/fire/compat/database";
-import {map, shareReplay, tap} from "rxjs";
+import {map, shareReplay, Subject, tap} from "rxjs";
 import { CritiqueService } from '../services/critique.service';
+import {Critique} from "../models/critique.model";
 
 @Component({
   selector: 'app-critique',
@@ -12,15 +13,17 @@ import { CritiqueService } from '../services/critique.service';
   styleUrls: ['./critique-list.component.css']
 })
 export class CritiqueListComponent {
-  sortedData: MatTableDataSource<any>;
+  sortedData: any;
   listLength?: number;
-  displayedColumns: string[] = ['title', 'museum', 'artist', 'paper', 'article'];//, 'date'
+  displayedColumns: string[] = ['title', 'museum', 'artist', 'paper', 'date'];//
   isMobile = false;
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild('searchInput') input: ElementRef;
 
-  constructor(private critiqueService: CritiqueService, db: AngularFireDatabase) {  }
+  constructor(private critiqueService: CritiqueService, db: AngularFireDatabase, private cdr: ChangeDetectorRef) {
+
+  }
 
   ngAfterViewInit(): void {
     this.getCritiques();
@@ -33,6 +36,13 @@ export class CritiqueListComponent {
           ({ ...critique.payload.doc.data(), id: critique.payload.doc.id })
         ),
       ),
+      tap(data => {
+        data.sort((first:any, second:any) => 0 - (first.date < second.date ? -1 : 1));
+        // this.paginator = new MatPaginator(this.languageOptions, this.cdr, this.pagerOptions);
+        // this.pageAmount = data.length;
+        // this.paginator._intl = this.languageOptions;
+        // console.log('paginator', this.paginator.length);
+      }),
       tap(data => {
         // @ts-ignore
         this.sortedData = new MatTableDataSource(data.slice());

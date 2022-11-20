@@ -11,6 +11,11 @@
   font-size: 28px;
 }
 
+.critiques-table {
+  overflow-y: scroll;
+  max-height: 600px;
+}
+
 mat-list.mat-list.mat-list-base.critiques-list {
   gap: 1em;
   display: flex;

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DocumentChangeAction } from '@angular/fire/compat/firestore';
-import { tap, Observable, map } from 'rxjs';
+import { map } from 'rxjs';
 import { IVideo } from '../models/video';
 import { VideoService } from './video.service';
 

@@ -1,3 +1,7 @@
+:host {
+  width: 100%;
+}
+
 h3 {
   text-align: right;
   font-weight: bolder;
@@ -31,8 +35,14 @@ input::placeholder {
 }
 
 .mat-table {
-  overflow: auto;
-  max-height: none;
+  overflow-y: scroll;
+  max-height: 700px;
+}
+
+@media only screen and (max-height: 800px) {
+  .mat-table {
+    max-height: 560px;
+  }
 }
 
 .mobile-label {
@@ -41,6 +51,10 @@ input::placeholder {
 
 .mat-column-museum {
   min-width: 25%;
+}
+
+.paging-container {
+  direction: ltr;
 }
 
 @media(max-width: 600px) {

@@ -6,6 +6,15 @@ h3 {
   font-size: 28px;
 }
 
+.videos-container {
+  width:100%
+}
+
+.videos-table {
+  overflow-y: scroll;
+  max-height: 600px;
+}
+
 .cell-date {
   max-width: 150px;
 }
