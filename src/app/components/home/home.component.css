@@ -8,9 +8,9 @@
 }
 
 .wrapper {
-  width: 96vw;
-  height: calc(100vh - 60px);
-  margin: 0 auto;
-  background: url('src/assets/images/background.png') no-repeat left 190px center;
-  background-size: contain;
+  /*width: 96vw;*/
+  /*height: calc(100vh - 60px);*/
+  /*margin: 0 auto;*/
+  /*background: url('src/assets/images/background.png') no-repeat left 190px center;*/
+  /*background-size: contain;*/
 }

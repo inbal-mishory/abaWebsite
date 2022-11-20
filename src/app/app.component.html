@@ -1,4 +1,25 @@
-<app-navigation></app-navigation>
 <div class="body-container">
-  <router-outlet></router-outlet>
+  <mat-toolbar class="header page-toolbar">
+    <button mat-icon-button class="menu-mobile-btn" (click)="sidenav.toggle()"><mat-icon>menu</mat-icon></button>
+    <div class="header-text">
+      <a routerLink="/">אליק מישורי</a>, היסטוריון אמנות, אוצר, מרצה
+    </div>
+  </mat-toolbar>
+  <mat-sidenav-container class="sidenav-container">
+      <mat-sidenav [(opened)]="mobileQuery.matches ? !opened : opened" #sidenav [mode]="mobileQuery.matches ? 'over' : 'side'"
+                   position="end"
+                   [fixedInViewport]="mobileQuery.matches" fixedTopGap="99">
+      <div class="sidebar">
+        <div class="sidebar-top-border"></div>
+        <nav class="navbar navbar-expand navbar-dark">
+          <app-navigation></app-navigation>
+        </nav>
+      </div>
+      </mat-sidenav>
+      <mat-sidenav-content>
+        <div class="pages">
+          <router-outlet></router-outlet>
+        </div>
+      </mat-sidenav-content>
+  </mat-sidenav-container>
 </div>

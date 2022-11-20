@@ -15,10 +15,11 @@ import { FlexLayoutModule } from "@angular/flex-layout";
 import { Ng2SearchPipeModule } from "ng2-search-filter";
 import { NavigationComponent } from './components/navigation/navigation.component';
 import {AngularFireStorageModule} from "@angular/fire/compat/storage";
-import {MatPaginatorModule} from "@angular/material/paginator";
 import localHe from '@angular/common/locales/he';
 import {registerLocaleData} from "@angular/common";
 import { AboutComponent } from './components/about/about.component';
+import {MatSidenav, MatSidenavModule} from "@angular/material/sidenav";
+import {MatToolbarModule} from "@angular/material/toolbar";
 registerLocaleData(localHe);
 
 @NgModule({
@@ -40,12 +41,15 @@ registerLocaleData(localHe);
     BrowserAnimationsModule,
     FlexLayoutModule,
     Ng2SearchPipeModule,
+    MatSidenavModule,
+    MatToolbarModule
   ],
   providers: [AuthService,
     { provide: FIREBASE_OPTIONS, useValue: environment.firebase },
-    { provide: LOCALE_ID, useValue: 'he-IL'}
+    { provide: LOCALE_ID, useValue: 'he-IL'},
+    MatSidenavModule
   ],
-  exports: [FlexLayoutModule, Ng2SearchPipeModule, MatPaginatorModule],
+  exports: [FlexLayoutModule, Ng2SearchPipeModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

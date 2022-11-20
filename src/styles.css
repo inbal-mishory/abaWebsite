@@ -8,46 +8,52 @@
 /*  !*url("CustomFont.otf") format("opentype"),*!*/
 /*  !*url("CustomFont.svg#filename") format("svg");*!*/
 /*}*/
-/*@font-face {*/
-/*  font-family: "Rubik Bold";*/
-/*  src: url("/assets/fonts/Rubik-Bold.ttf");*/
+/* potential palette {*/
+/*  --backgroundGreen: #078a05 */
+/*  --backgroundBlack: #000000 */
+/*  --backgroundWhite: #ffffff */
+/*  --backgroundLightGreen: #cde8cd */
+/*  --backgroundGrey: #ebf1f4 */
 /*}*/
+
 * {
   direction: rtl;
   box-sizing: border-box;
 }
 
 html {
-  --scrollbarBG: #CFD8DC;
-  --thumbBG: #90A4AE;
+  --scrollbarBG: #fefefe;
+  --backgroundBlack: #000000;
   --light-green: #BCE0A3;
   --light-red: #EC6F6F;
 }
 
-body::-webkit-scrollbar {
-  width: 11px;
+::-webkit-scrollbar {
+  width: 12px;
 }
 
 html, body {
   height: 100%;
-  font-family: 'Frank Ruhl Libre', sans-serif;
+  font-family: 'David Libre', sans-serif !important;
   font-weight: 500;
-  font-size: 16px;
-  scrollbar-width: thin;
-  scrollbar-color: var(--thumbBG) var(--scrollbarBG);
+  font-size: 18px;
+  scrollbar-width: 12px;
+  scrollbar-color: var(--backgroundBlack) var(--scrollbarBG);
 }
 
-body::-webkit-scrollbar-track {
+::-webkit-scrollbar-track {
   background: var(--scrollbarBG);
 }
-body::-webkit-scrollbar-thumb {
-  background-color: var(--thumbBG) ;
-  border-radius: 6px;
-  border: 3px solid var(--scrollbarBG);
+::-webkit-scrollbar-thumb {
+  background-color: var(--backgroundBlack) ;
+  border: 2px solid var(--scrollbarBG);
 }
 
-body { margin: 0; overflow-x: hidden; scrollbar-color: rebeccapurple green; }
+body { margin: 0; overflow-x: hidden; overflow-y: scroll; scrollbar-color: black white; }
 
+a {
+  color: var(--backgroundBlack);
+}
 
 .material-icons{
   font-family: 'Material Icons', sans-serif !important;
@@ -59,7 +65,7 @@ body { margin: 0; overflow-x: hidden; scrollbar-color: rebeccapurple green; }
 
 .mat-typography,
 .mat-typography>div{
-  font-family: 'Frank Ruhl Libre', sans-serif;
+  font-family: 'David Libre', sans-serif;
 }
 
 .mat-typography h4, .mat-typography h3,
@@ -127,18 +133,6 @@ mat-date-range-picker.mat-datepicker-content {
   font-family: 'Frank Ruhl Libre', serif;
   padding: 6px 0;
 }
-
-/* input.mat-input-element.search-input {
-  border-radius: 4px 4px 0 0;
-  background: #0000000a;
-  padding: 0.75em 0.75em 0 0.75em;
-  border: none;
-  border-bottom: 1px solid #000;
-  min-width: 350px;
-  height: 46px;
-  outline: none;
-  box-shadow: none !important;
-} */
 
 .mat-header-cell:first-of-type, .mat-cell:first-of-type, .mat-footer-cell:first-of-type {
   padding-left: 0 !important;

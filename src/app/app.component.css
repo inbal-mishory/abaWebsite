@@ -1,8 +1,106 @@
 .body-container {
-  width: 85vw;
-  margin: 0 auto;
-  padding-right: 6px;
-  border-right: thin solid #1E475C;
-  min-height: 90vh;
-  height: max-content;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
+
+.header {
+  background-color: #fff;
+  display: flex;
+  position: fixed;
+  justify-content: flex-start;
+  align-items: center;
+  top: 0;
+  width: 100%;
+  z-index: 900;
+  padding-right: 32px;
+  font-size: 48px;
+  height:96px;
+  font-weight: 500;
+}
+
+@media only screen and (max-width: 915px) {
+  .header {
+    font-size: 42px;
+  }
+}
+
+@media only screen and (max-width: 805px) {
+  .header {
+    font-size: 38px;
+  }
+}
+
+@media only screen and (max-width: 735px) {
+  .header {
+    font-size: 34px;
+  }
+}
+
+.header-text {
+  font-family: "David Libre", serif;
+}
+
+.is-mobile .page-toolbar {
+  position: fixed;
+  /* Make sure the toolbar will stay on top of the content as it scrolls past. */
+  z-index: 2;
+}
+
+.menu-mobile-btn {
+  display: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .menu-mobile-btn {
+    display: block;
+  }
+}
+
+.mat-drawer.mat-drawer-end {
+  top: 99px;
+}
+
+.sidenav-container {
+  /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
+     causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
+  flex: 1;
+}
+
+.is-mobile .sidenav-container {
+  flex: 1 0 auto;
+}
+
+.mat-drawer-inner-container {
+  overflow-y: hidden;
+}
+
+@media only screen and (max-height: 800px) {
+  .mat-drawer-inner-container {
+    max-height: calc(800px - 102px);
+  }
+}
+
+.sidebar {
+  padding: 0 32px 0 0;
+  overflow-y: hidden;
+}
+
+.sidebar-top-border {
+  height: 7px;
+  background-color: #22242a;
+  width: inherit;
+  transition: opacity .1s ease-out;
+}
+
+.pages {
+  margin-top: 92px;
+  display: flex;
+  overflow-y: hidden;
+  height: calc(100vh - 94px);
+}
+
