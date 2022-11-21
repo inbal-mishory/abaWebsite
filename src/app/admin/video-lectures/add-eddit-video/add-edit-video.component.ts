@@ -17,12 +17,10 @@ export class AddEditVideoComponent implements OnInit {
 
   ngOnInit(): void {
     this.isEdit = this.data?.isEdit;
-    console.log('data: ', this.data);
     this.initForm();
   }
 
   initForm() {
-    console.log('init');
     this.addEditVideoForm = this.fb.group({
       title: [this.data.details.title ? this.data.details.title : '', [Validators.required]],
       id: this.data.details.id ? this.data.details.id : '',
@@ -34,13 +32,13 @@ export class AddEditVideoComponent implements OnInit {
   }
 
   saveVideo(video: IVideo) {
-    this.videoService.createVideo(video).subscribe(res => console.log);
+    this.videoService.createVideo(video).subscribe();
     this.dialogRef.close();
   }
 
   updateVideo() {
     const video = this.addEditVideoForm?.getRawValue();
-    this.videoService.updateVideo(video.id, video).then(() => console.log('update?', video.id))
+    this.videoService.updateVideo(video.id, video).then()
           .catch();
     this.dialogRef.close();
   }

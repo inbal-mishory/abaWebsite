@@ -31,7 +31,7 @@ export class BoardComponent implements OnInit {
             isEdit: true}
     });
     dialogRef.afterClosed().subscribe(data => {
-      this.boardService.updateBoard(boardId, data).then(console.log).catch(err => console.log(err));
+      this.boardService.updateBoard(boardId, data).then().catch(err => console.log(err));
     })
 
   }

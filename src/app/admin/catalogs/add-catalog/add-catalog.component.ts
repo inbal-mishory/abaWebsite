@@ -65,12 +65,6 @@ export class AddCatalogComponent implements OnInit {
     }
   }
 
-  saveCatalog(catalog: Catalog): void {
-    this.catalog = {...this.addCatalogForm?.value};
-    this.catalogService.createCatalogDetails(catalog).subscribe((cat: any) => console.log(cat));
-    this.dialogRef.close({data: this.catalogsList});
-  }
-
   saveCat(catalog: Catalog): void {
     this.catalogService.create(catalog).then((res) => {
       this.dialogRef.close({data: this.catalogsList, newId: res.id})

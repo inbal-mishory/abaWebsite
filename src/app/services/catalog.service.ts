@@ -14,7 +14,6 @@ export class CatalogService {
 
   constructor(private db: AngularFirestore, public afdb: AngularFireDatabase) {
     this.catalogsRef = db.collection(this.dbPath);
-    console.log(this.catalogsRef);
   }
 
   getAllCatalogs(): AngularFirestoreCollection<Catalog> {

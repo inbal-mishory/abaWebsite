@@ -16,6 +16,7 @@ export class AppComponent implements OnInit, OnDestroy{
   title = 'אליק מישורי';
   opened: boolean;
   mobileQuery: MediaQueryList;
+  pageTitle: string;
   private _mobileQueryListener: () => void;
 
   constructor(public dialog: MatDialog, changeDetectorRef: ChangeDetectorRef, media: MediaMatcher,
@@ -38,12 +39,13 @@ export class AppComponent implements OnInit, OnDestroy{
       filter((route) => route.outlet === 'primary'),
       mergeMap((route) => route.data)
     )
-      .subscribe((event) => {
-        this._seoService.updateTitle(event['title']);
-        this._seoService.updateOriginalUrl(event['ogUrl']);
-        //Updating Description tag dynamically with title
-        this._seoService.updateDescription(event['title'] + event['description'])
-      });
+    .subscribe((event) => {
+      this.pageTitle = event['title'];
+      this._seoService.updateTitle(event['title']);
+      this._seoService.updateOriginalUrl(event['ogUrl']);
+      //Updating Description tag dynamically with title
+      this._seoService.updateDescription(event['title'] + event['description'])
+    });
   }
 
   ngOnDestroy(): void {

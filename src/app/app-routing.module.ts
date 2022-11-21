@@ -15,16 +15,7 @@ const routes: Routes = [
   },
   { path: 'home',
     component: HomeComponent,
-    data: {
-      // A dynamic title that shows the current notification count!
-      title: (ctx) => {
-        let t = 'Inbox';
-        if(ctx.notificationCount > 0) {
-          t += (ctx.notificationCount);
-        }
-        return t;
-      }
-    }
+    data: { title: 'עמוד הבית' }
   },
   { path: 'catalogs',
     data: { title: 'קטלוגים' },
@@ -69,7 +60,7 @@ const routes: Routes = [
     (m) => m.UserModule)
   },
   { path: 'books-review',
-    data: { title: 'הרצאות מוקלטות', description: ' - קטעי מדיה בהשתתפות אליק מישורי' },
+    data: { title: 'בקורות', description: ' - על ספרי אליק מישורי' },
     loadChildren: () => import('./books-review/books-review.module').then(
       (m) => m.BooksReviewModule)
   },

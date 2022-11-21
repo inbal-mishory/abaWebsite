@@ -38,10 +38,6 @@ export class CritiqueListComponent {
       ),
       tap(data => {
         data.sort((first:any, second:any) => 0 - (first.date < second.date ? -1 : 1));
-        // this.paginator = new MatPaginator(this.languageOptions, this.cdr, this.pagerOptions);
-        // this.pageAmount = data.length;
-        // this.paginator._intl = this.languageOptions;
-        // console.log('paginator', this.paginator.length);
       }),
       tap(data => {
         // @ts-ignore

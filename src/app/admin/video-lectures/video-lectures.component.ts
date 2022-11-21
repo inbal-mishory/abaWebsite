@@ -57,7 +57,6 @@ export class VideoLecturesComponent implements OnInit {
       })
     ).subscribe((res) => {
       this.videos = res;
-      console.log(this.videos)
     })
   }
 

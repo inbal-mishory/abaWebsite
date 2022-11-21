@@ -19,7 +19,6 @@ export class DeleteButtonComponent {
 
   cancel () {
     this.canDelete = false;
-    console.log('cancel', this.canDelete)
   }
 
   deleteBoard() {
