@@ -18,8 +18,9 @@ import {AngularFireStorageModule} from "@angular/fire/compat/storage";
 import localHe from '@angular/common/locales/he';
 import {registerLocaleData} from "@angular/common";
 import { AboutComponent } from './components/about/about.component';
-import {MatSidenav, MatSidenavModule} from "@angular/material/sidenav";
+import {MatSidenavModule} from "@angular/material/sidenav";
 import {MatToolbarModule} from "@angular/material/toolbar";
+import {StoreRouterConnectingModule} from "@ngrx/router-store";
 registerLocaleData(localHe);
 
 @NgModule({
@@ -42,7 +43,8 @@ registerLocaleData(localHe);
     FlexLayoutModule,
     Ng2SearchPipeModule,
     MatSidenavModule,
-    MatToolbarModule
+    MatToolbarModule,
+    StoreRouterConnectingModule
   ],
   providers: [AuthService,
     { provide: FIREBASE_OPTIONS, useValue: environment.firebase },

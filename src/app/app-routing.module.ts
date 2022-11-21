@@ -7,9 +7,28 @@ import {AuthGuard} from "./shared/guard/auth.guard";
 import {AboutComponent} from "./components/about/about.component";
 
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent },
-  { path: 'catalogs', loadChildren: () => import('./catalogs/catalogs.module').then(
+  {
+    path: '',
+    redirectTo: 'home',
+    pathMatch: 'full',
+    data: { title: 'עמוד הבית' }
+  },
+  { path: 'home',
+    component: HomeComponent,
+    data: {
+      // A dynamic title that shows the current notification count!
+      title: (ctx) => {
+        let t = 'Inbox';
+        if(ctx.notificationCount > 0) {
+          t += (ctx.notificationCount);
+        }
+        return t;
+      }
+    }
+  },
+  { path: 'catalogs',
+    data: { title: 'קטלוגים' },
+    loadChildren: () => import('./catalogs/catalogs.module').then(
       (b) => b.CatalogsModule)
   },
   {
@@ -26,31 +45,37 @@ const routes: Routes = [
   },
   {
     path: 'my-books',
+    data: { title: 'ספרים', description: ' - מאת אליק מישורי' },
     loadChildren: () => import('./my-books/books.module').then(
       (b) => b.BooksModule)
   },
   {
     path: 'video-lecture',
+    data: { title: 'הרצאות מוקלטות', description: ' - קטעי מדיה בהשתתפות אליק מישורי' },
     loadChildren: () => import('./video-lecture/video-lecture.module').then(
       (m) => m.VideoLectureModule)
   },
   { path: 'critique',
+    data: { title: 'בקורת תערוכות', description: ' - בעיתונים מעריב והארץ' },
     loadChildren: () => import('./critiques/critiques.module').then(
       (m) => m.CritiquesModule)
   },
-  { path: 'articles', loadChildren: () => import('./articles/articles.module').then(
+  { path: 'articles',
+    data: { title: 'מאמרים', description: ' - מאת אליק מישורי' },
+    loadChildren: () => import('./articles/articles.module').then(
       (b) => b.ArticlesModule)
-  },
-  { path: 'catalogs', loadChildren: () => import('./catalogs/catalogs.module').then(
-      (m) => m.CatalogsModule)
   },
   { path: 'user', loadChildren: () => import('./user/user.module').then(
     (m) => m.UserModule)
   },
-  { path: 'books-review', loadChildren: () => import('./books-review/books-review.module').then(
+  { path: 'books-review',
+    data: { title: 'הרצאות מוקלטות', description: ' - קטעי מדיה בהשתתפות אליק מישורי' },
+    loadChildren: () => import('./books-review/books-review.module').then(
       (m) => m.BooksReviewModule)
   },
-  { path: 'about', component: AboutComponent },
+  { path: 'about',
+    data: { title: 'אודות', description: ' - אליק מישורי' },
+    component: AboutComponent },
   { path: 'auth', component: SignInComponent },
 ];
 

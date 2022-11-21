@@ -26,6 +26,7 @@ html {
   --backgroundBlack: #000000;
   --light-green: #BCE0A3;
   --light-red: #EC6F6F;
+  --backgroundGreen: #078a05;
 }
 
 ::-webkit-scrollbar {

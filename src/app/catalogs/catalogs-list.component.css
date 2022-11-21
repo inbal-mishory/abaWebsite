@@ -34,13 +34,6 @@ input::placeholder {
   max-height: 700px;
 }
 
-@media only screen and (max-height: 800px) {
-  .catalog-list {
-    max-height: 520px;
-    padding-bottom: 2em;
-  }
-}
-
 .catalog-list {
   list-style-type: none;
   display: grid;
@@ -50,14 +43,22 @@ input::placeholder {
   padding-inline-start: 0;
 }
 
+@media only screen and (max-height: 800px) {
+  .catalog-list {
+    max-height: 520px;
+    padding-bottom: 2em;
+  }
+}
+
 .catalog-item {
   display: flex;
   flex-direction: column;
   text-align: right;
   /*gap: 1rem;*/
   font-size: 14px;
-  max-width: 355px;
+  /*max-width: 355px;*/
   border-left: 1px solid var(--backgroundBlack);
+  padding: 1em;
 }
 
 .catalog-details {
@@ -70,8 +71,9 @@ input::placeholder {
 }
 
 .catalog-image img {
-  border: 2px solid grey;
   object-fit: cover;
+  width: initial;
+  height: initial;
 }
 
 .catalog-text {

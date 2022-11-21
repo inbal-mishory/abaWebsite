@@ -5,15 +5,12 @@
   width: 100%;
   padding: 24px 0 0 24px;
   margin: 0 auto;
+  overflow-y: scroll;
+  max-height: 600px;
 }
 
 .critiques-title {
   font-size: 28px;
-}
-
-.critiques-table {
-  overflow-y: scroll;
-  max-height: 600px;
 }
 
 mat-list.mat-list.mat-list-base.critiques-list {

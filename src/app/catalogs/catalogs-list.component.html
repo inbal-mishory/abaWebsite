@@ -14,7 +14,7 @@
     <ul class="catalog-list" *ngIf="catalogs$ | async as catalogs">
       <li class="catalog-item" *ngFor="let catalog of catalogs | filter: term; trackBy: getIdTrack">
         <div class="catalog-image">
-          <img *ngIf="catalog?.image" src="{{catalog?.image}}" alt="img" width="160">
+          <img *ngIf="catalog?.image" src="{{catalog?.image}}" title="תמונה של הקטלוג - {{catalog.title}}" alt="img"/>
         </div>
         <div class="catalog-text">
           <h4>{{ catalog.title }}</h4>

@@ -1,8 +1,8 @@
+<h3 class="critiques-title">בקורת תערוכות</h3>
+<div class="actions">
+  <button (click)="openAddCritiqueDialog()" class="btn-add">הוסף בקורת</button>
+</div>
 <div class="critiques-container">
-  <h3 class="critiques-title">בקורת תערוכות</h3>
-  <div class="actions">
-    <button (click)="openAddCritiqueDialog()" class="btn-add">הוסף בקורת</button>
-  </div>
   <ng-container *ngIf="critiques$ | async as critiques">
     <table mat-table [dataSource]="critiques" class="critiques-table mat-elevation-z4">
       <ng-container matColumnDef="title">

@@ -8,6 +8,7 @@ import {FilesService} from "../services/files.service";
 import {AngularFireStorageModule} from "@angular/fire/compat/storage";
 import { ConfirmModalComponent } from '../shared/modals/confirm.modal/confirm.modal.component';
 import {MaterialModule} from "../shared/material.module";
+import {StoreRouterConnectingModule} from "@ngrx/router-store";
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import {MaterialModule} from "../shared/material.module";
     HttpClientModule,
     AngularFireStorageModule,
     MaterialModule,
+    StoreRouterConnectingModule
   ],
   providers: [FileUploadService, FilesService]
 })
