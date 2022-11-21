@@ -45,6 +45,12 @@
   font-family: "David Libre", serif;
 }
 
+.page-title {
+  display: inline-block;
+  padding-right: 24px;
+  color: var(--backgroundGreen);
+}
+
 .is-mobile .page-toolbar {
   position: fixed;
   /* Make sure the toolbar will stay on top of the content as it scrolls past. */

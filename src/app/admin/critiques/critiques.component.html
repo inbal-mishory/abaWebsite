@@ -24,12 +24,12 @@
         </td>
       </ng-container>
       <ng-container matColumnDef="date">
-        <th mat-header-cell style="min-width: 120px"  *matHeaderCellDef>תאריך</th>
-        <td mat-cell style="min-width: 120px"  *matCellDef="let critique"> {{critique.date}} </td>
+        <th mat-header-cell *matHeaderCellDef>תאריך</th>
+        <td mat-cell *matCellDef="let critique"> {{critique.date}} </td>
       </ng-container>
       <ng-container matColumnDef="paper">
-        <th mat-header-cell style="max-width: 120px" *matHeaderCellDef>עיתון</th>
-        <td mat-cell style="max-width: 120px" *matCellDef="let critique"> {{critique.paper}} </td>
+        <th mat-header-cell *matHeaderCellDef>עיתון</th>
+        <td mat-cell *matCellDef="let critique"> {{critique.paper}} </td>
       </ng-container>
       <ng-container matColumnDef="actions">
         <th mat-header-cell *matHeaderCellDef>פעולות</th>

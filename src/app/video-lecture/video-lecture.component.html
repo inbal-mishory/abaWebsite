@@ -1,5 +1,4 @@
 <div class="page-container">
-  <h3>הרצאות מוקלטות</h3>
   <div class="videos-container">
     <div class="video" *ngFor="let video of videosList">
       <a *ngIf="video.videoId" href="{{video.link}}" target="_blank"><img src="{{'https://img.youtube.com/vi/' + video.videoId + '/0.jpg'}}" alt="{{video.title}}"/></a>

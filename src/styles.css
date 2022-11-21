@@ -72,8 +72,10 @@ a {
 .mat-typography h4, .mat-typography h3,
 .mat-typography h2, .mat-typography h1{
   font-weight: 600;
-  font-size: 1.4em;
-  color: #367CAB;
+  font-size: 2em;
+  line-height: 1.1em;
+  font-family: 'David Libre', serif;
+  color: var(--backgroundGreen);
 }
 
 .mat-list-base .mat-list-item .mat-list-item-content {
@@ -130,9 +132,10 @@ mat-date-range-picker.mat-datepicker-content {
 }
 
 .mat-cell {
-  font-size: 16px;
+  font-size: 23px;
   font-family: 'Frank Ruhl Libre', serif;
   padding: 6px 0;
+  line-height: 1.2em;
 }
 
 .mat-header-cell:first-of-type, .mat-cell:first-of-type, .mat-footer-cell:first-of-type {

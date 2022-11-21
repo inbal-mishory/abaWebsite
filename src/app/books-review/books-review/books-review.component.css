@@ -13,7 +13,7 @@ h3 {
 .reviews-container {
   width: 100%;
   margin: 0 auto;
-  padding: 1em;
+  padding: 3em 1em 1em 1em;
 }
 
 .reviews {
@@ -34,8 +34,12 @@ h3 {
 li.review-details:before {
   content: "";
   font-family: 'Material Icons';
-  font-size: 24px;
+  font-size: 42px;
   padding: 6px;
+}
+
+.review-info {
+  font-size: 23px;
 }
 
 .btn-add {

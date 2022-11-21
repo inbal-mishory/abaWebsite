@@ -53,6 +53,14 @@ input::placeholder {
   min-width: 25%;
 }
 
+.cdk-column-paper {
+  max-width: 120px;
+}
+
+.cdk-column-date {
+  max-width: 154px;
+}
+
 .paging-container {
   direction: ltr;
 }
