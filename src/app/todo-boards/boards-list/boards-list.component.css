@@ -1,8 +1,19 @@
+:host {
+  width: 100%;
+}
+
 .boards-container {
   background: #303030;
   direction:ltr;
   margin: 0 auto;
-  height: calc(100vh - 102px)
+  height: calc(100vh - 102px);
+  overflow-y: scroll;
+  width: 100%;
+}
+
+.boards-container h3 {
+  font-family: "Rubik", sans-serif;
+  margin-top: .5em;
 }
 
 .boards {
@@ -33,16 +44,17 @@
 }
 
 .handle {
-  position: relative;
-  top: 5px;
-  left: 0;
   cursor: move;
+}
+
+.edit-btn {
+  background: #b15cff;
 }
 
 
 .cdk-drag-placeholder {
   opacity: 0.2;
-  width: 350px;
+  width: 450px;
   border: 5px dashed gray;
   margin: 0 10px;
 
@@ -63,7 +75,7 @@
   align-items: center;
   justify-content: center;
   border: 5px gray dashed;
-  width: 300px;
+  width: 400px;
   padding: 32px;
   height: 350px;
 }
