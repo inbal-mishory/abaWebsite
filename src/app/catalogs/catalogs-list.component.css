@@ -54,15 +54,14 @@ input::placeholder {
   display: flex;
   flex-direction: column;
   text-align: right;
-  /*gap: 1rem;*/
+  align-items: center;
   font-size: 14px;
-  /*max-width: 355px;*/
   border-left: 1px solid var(--backgroundBlack);
   padding: 1em;
 }
 
 .catalog-details {
-  max-width: 300px;
+  max-width: 430px;
 }
 
 .catalog-image {
@@ -79,18 +78,23 @@ input::placeholder {
 .catalog-text {
   display: flex;
   flex-direction: column;
-  font-size: 16px;
+  font-size: 22px;
+  font-weight: 600;
+  min-width: 430px;
+  max-width: 430px;
 }
 
 .files {
   display: flex;
   justify-content: space-between;
-  width: 100%
+  font-size: 20px;
+  width: 430px;
+  height: 40px;
 }
 
 .files a {
   display: flex;
-  line-height: 20px;
+  align-items: center;
 }
 
 @media only screen and (max-width: 1300px) {

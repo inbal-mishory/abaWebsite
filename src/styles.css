@@ -123,10 +123,10 @@ mat-date-range-picker.mat-datepicker-content {
 
 .mat-header-cell {
   text-align: right !important;
-  font-size: 20px;
+  font-size: 26px;
   padding-right: 12px !important;
   padding-left: revert;
-  font-family: 'Rubik', serif;
+  font-family: 'David Libre', serif;
   font-weight: bolder;
   color: #41471F;
 }

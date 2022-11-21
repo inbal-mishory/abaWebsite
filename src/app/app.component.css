@@ -45,10 +45,16 @@
   font-family: "David Libre", serif;
 }
 
+.header-text a {
+  text-decoration: none;
+  font-weight: 800;
+}
+
 .page-title {
   display: inline-block;
   padding-right: 24px;
   color: var(--backgroundGreen);
+  font-weight: 800;
 }
 
 .is-mobile .page-toolbar {

@@ -1,3 +1,7 @@
+:host {
+  width: 100%;
+}
+
 .grid-container {
   display: grid;
   grid-template-columns: repeat(10, 1fr);
@@ -8,9 +12,11 @@
 }
 
 .wrapper {
-  /*width: 96vw;*/
-  /*height: calc(100vh - 60px);*/
-  /*margin: 0 auto;*/
-  /*background: url('src/assets/images/background.png') no-repeat left 190px center;*/
-  /*background-size: contain;*/
+  width:100%;
+  display: flex;
+  justify-content: center;
+}
+
+.wrapper img {
+  max-width: 640px;
 }

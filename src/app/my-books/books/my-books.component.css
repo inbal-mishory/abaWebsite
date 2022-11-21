@@ -43,23 +43,19 @@ h3 {
   font-size: 34px;
 }
 
-h4 {
+h3 {
   text-align: right;
   font-weight: bolder;
-  font-size: 22px;
-  cursor: pointer;
+  font-size: 28px;
   display: inline-block;
-}
-
-h4:hover {
-  color: #606200;
 }
 
 .book-item {
   display: flex;
   text-align: right;
-  /*gap: 1rem;*/
   border-left: 1px solid var(--backgroundBlack);
+  gap: 1em;
+  padding: 1em;
 }
 
 @media only screen and (max-height: 800px) {
@@ -72,4 +68,5 @@ h4:hover {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  font-size: 20px;
 }
