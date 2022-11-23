@@ -11,7 +11,7 @@ export class CritiqueService {
   critiquesRef: AngularFirestoreCollection<ICritique>;
 
   constructor(private db: AngularFirestore, public afdb: AngularFireDatabase) {
-    this.critiquesRef = db.collection(this.dbPath, ref => ref.orderBy('id'));
+    this.critiquesRef = db.collection(this.dbPath, ref => ref.orderBy('date'));
   }
 
   getAllCritiques(): AngularFirestoreCollection<ICritique> {

@@ -53,7 +53,7 @@
 .page-title {
   display: inline-block;
   padding-right: 24px;
-  color: var(--backgroundGreen);
+  color: var(--colorRed);
   font-weight: 800;
 }
 

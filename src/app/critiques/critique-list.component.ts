@@ -1,9 +1,9 @@
-import {ChangeDetectorRef, Component, ElementRef, ViewChild} from '@angular/core';
+import {AfterViewInit, ChangeDetectorRef, Component, ElementRef, ViewChild} from '@angular/core';
 import {MatTableDataSource} from "@angular/material/table";
-import {MatPaginator, MatPaginatorDefaultOptions, MatPaginatorIntl, PageEvent} from "@angular/material/paginator";
-import {MatSort, Sort} from "@angular/material/sort";
+import {MatPaginator} from "@angular/material/paginator";
+import {MatSort} from "@angular/material/sort";
 import {AngularFireDatabase} from "@angular/fire/compat/database";
-import {map, shareReplay, Subject, tap} from "rxjs";
+import {map, shareReplay, tap} from "rxjs";
 import { CritiqueService } from '../services/critique.service';
 import {Critique} from "../models/critique.model";
 
@@ -12,7 +12,7 @@ import {Critique} from "../models/critique.model";
   templateUrl: './critique-list.component.html',
   styleUrls: ['./critique-list.component.css']
 })
-export class CritiqueListComponent {
+export class CritiqueListComponent implements AfterViewInit {
   sortedData: any;
   listLength?: number;
   displayedColumns: string[] = ['title', 'museum', 'artist', 'paper', 'date'];//
@@ -21,12 +21,13 @@ export class CritiqueListComponent {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild('searchInput') input: ElementRef;
 
-  constructor(private critiqueService: CritiqueService, db: AngularFireDatabase, private cdr: ChangeDetectorRef) {
+  constructor(private critiqueService: CritiqueService, db: AngularFireDatabase, private cdr: ChangeDetectorRef) {}
 
-  }
-
-  ngAfterViewInit(): void {
+  ngOnInit() {
     this.getCritiques();
+  }
+  ngAfterViewInit() {
+    // this.sortedData ? this.sortedData.sort = this.sort : 'title';
   }
 
   getCritiques() {
@@ -40,19 +41,21 @@ export class CritiqueListComponent {
         data.sort((first:any, second:any) => 0 - (first.date < second.date ? -1 : 1));
       }),
       tap(data => {
-        // @ts-ignore
         this.sortedData = new MatTableDataSource(data.slice());
+        // this.sort.disableClear = true;
         this.listLength = this.sortedData.filteredData.length;
       }),
-      map(changes =>
-        // @ts-ignore
-        changes.map((critique: Critique) => {
-          let critiqueDate = new Date(critique.date);
-          critique.date = critiqueDate.toLocaleDateString();
-        }),
+      map(changes => {
+          changes.map((critique: Critique) => {
+            let critiqueDate = new Date(critique.date);
+            critique.date = critiqueDate.toDateString();
+          });
+        this.sortedData.sort = this.sort
+        }
       ),
       shareReplay(1)
-    ).subscribe();
+    ).subscribe( () => this.sortedData.sort = this.sort );
+
   }
 
 

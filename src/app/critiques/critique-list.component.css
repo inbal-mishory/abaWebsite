@@ -7,20 +7,19 @@ h3 {
   font-weight: bolder;
   font-size: 32px;
 }
+
 .critiques-list {
   width: 100%;
   padding: 1em;
   margin: 0 auto;
 }
+
 h4 {
   margin-bottom: 6px;
 }
+
 .search {
   margin-bottom: 16px;
-}
-
-.search input {
-  /*box-shadow: 2px 3px 6px #55555594;*/
 }
 
 input::placeholder {
@@ -43,6 +42,17 @@ input::placeholder {
   .mat-table {
     max-height: 560px;
   }
+}
+
+.mat-cell {
+  align-items: flex-start;
+  line-height: 1.1em;
+  min-height: 64px;
+  font-size: 24px;
+}
+
+.mat-cell a {
+  text-decoration: none;
 }
 
 .mobile-label {

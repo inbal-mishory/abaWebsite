@@ -27,6 +27,8 @@ html {
   --light-green: #BCE0A3;
   --light-red: #EC6F6F;
   --backgroundGreen: #078a05;
+  --colorRed: #ff2c2c;
+  --backgroundWhite: #ffffff;
 }
 
 ::-webkit-scrollbar {
@@ -37,7 +39,7 @@ html, body {
   height: 100%;
   font-family: 'David Libre', sans-serif !important;
   font-weight: 500;
-  font-size: 18px;
+  font-size: 24px;
   scrollbar-width: 12px;
   scrollbar-color: var(--backgroundBlack) var(--scrollbarBG);
 }
@@ -50,7 +52,7 @@ html, body {
   border: 2px solid var(--scrollbarBG);
 }
 
-body { margin: 0; overflow-x: hidden; overflow-y: scroll; scrollbar-color: black white; }
+body { margin: 0; overflow-x: hidden; overflow-y: scroll; scrollbar-color: black white; background: var(--backgroundWhite) }
 
 a {
   color: var(--backgroundBlack);
@@ -75,7 +77,7 @@ a {
   font-size: 2em;
   line-height: 1.1em;
   font-family: 'David Libre', serif;
-  color: var(--backgroundGreen);
+  /*color: var(--colorRed);*/
 }
 
 .mat-list-base .mat-list-item .mat-list-item-content {
@@ -124,7 +126,7 @@ mat-date-range-picker.mat-datepicker-content {
 .mat-header-cell {
   text-align: right !important;
   font-size: 26px;
-  padding-right: 12px !important;
+  padding-right: 0;
   padding-left: revert;
   font-family: 'David Libre', serif;
   font-weight: bolder;
@@ -133,14 +135,15 @@ mat-date-range-picker.mat-datepicker-content {
 
 .mat-cell {
   font-size: 23px;
-  font-family: 'Frank Ruhl Libre', serif;
-  padding: 6px 0;
+  font-family: 'David Libre', serif;
+  padding: 6px;
   line-height: 1.2em;
 }
 
 .mat-header-cell:first-of-type, .mat-cell:first-of-type, .mat-footer-cell:first-of-type {
   padding-left: 0 !important;
   padding-right: 12px !important;
+  font-family: "David Libre", serif;
 }
 
 mat-card-header.board-header .mat-card-header-text {

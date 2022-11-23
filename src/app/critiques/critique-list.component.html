@@ -7,9 +7,9 @@
       </mat-form-field>
   </div>
   <ng-container *ngIf="sortedData">
-    <mat-table #table matSort [dataSource]="sortedData" [trackBy]="trackByUid" class="animate" [class.isMobile]="isMobile">
+    <mat-table [dataSource]="sortedData" class="animate" [class.isMobile]="isMobile">
       <ng-container matColumnDef="title">
-        <mat-header-cell *matHeaderCellDef style="min-width:400px" mat-sort-header>כותרת</mat-header-cell>
+        <mat-header-cell *matHeaderCellDef style="min-width:400px">כותרת</mat-header-cell>
         <mat-cell *matCellDef="let critique" style="min-width:400px">
           <span class="mobile-label">כותרת:</span>
           <a *ngIf="critique.article" href="{{critique.article}}" target="_blank"><strong>{{critique.title}}</strong></a>
@@ -17,26 +17,26 @@
         </mat-cell>
       </ng-container>
       <ng-container matColumnDef="museum">
-        <mat-header-cell *matHeaderCellDef mat-sort-header>מוזיאון/גלריה</mat-header-cell>
+        <mat-header-cell *matHeaderCellDef>מוזיאון/גלריה</mat-header-cell>
         <mat-cell *matCellDef="let critique">
           <span class="mobile-label">מוזיאון/גלריה:</span>
           <span>{{critique.museum}}</span> </mat-cell>
       </ng-container>
       <ng-container matColumnDef="artist">
-        <mat-header-cell *matHeaderCellDef mat-sort-header>אמן</mat-header-cell>
+        <mat-header-cell *matHeaderCellDef>אמן</mat-header-cell>
         <mat-cell *matCellDef="let critique">
           <span class="mobile-label">אמן:</span>
           <span>{{critique.artist}}</span> </mat-cell>
       </ng-container>
       <ng-container matColumnDef="paper">
-        <mat-header-cell *matHeaderCellDef mat-sort-header>עיתון</mat-header-cell>
+        <mat-header-cell *matHeaderCellDef>עיתון</mat-header-cell>
         <mat-cell *matCellDef="let critique">
           <span class="mobile-label">עיתון:</span>
           <span>{{critique.paper}}</span>
         </mat-cell>
       </ng-container>
       <ng-container matColumnDef="date">
-        <mat-header-cell *matHeaderCellDef mat-sort-header>תאריך</mat-header-cell>
+        <mat-header-cell *matHeaderCellDef>תאריך</mat-header-cell>
         <mat-cell *matCellDef="let critique">
           <span class="mobile-label">תאריך:</span>
           <span *ngIf="critique.date !== 'Invalid Date'">{{critique.date}}</span>
