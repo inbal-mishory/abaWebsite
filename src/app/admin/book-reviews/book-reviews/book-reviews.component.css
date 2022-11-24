@@ -1,45 +1,59 @@
-h3 {
-  font-size: 28px;
-}
-
 .reviews-container {
   width: 100%;
   margin: 0 auto;
   padding: 1em;
 }
 
-.reviews {
-  list-style-type: none;
+.mat-list.mat-list-base {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 32px;
-  padding-inline-start: 0;
-  max-width: 65%;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5em;
 }
+
+/*.reviews {*/
+/*  list-style-type: none;*/
+/*  display: grid;*/
+/*  grid-template-columns: 1fr 1fr;*/
+/*  gap: 32px;*/
+/*  padding-inline-start: 0;*/
+/*  !*max-width: 65%;*!*/
+/*}*/
 
 .review-details {
   display: flex;
   align-items: flex-start;
+  justify-content: space-between;
   height: 100%;
+  font-size: 24px;
 }
 
-li.review-details:before {
-  content: "";
-  font-family: 'Material Icons';
-  font-size: 24px;
-  padding: 6px;
+.review-text {
+  display: flex;
+  gap: 1em;
+  min-width: 550px;
+}
+
+.review-text .mat-icon {
+  font-size: 32px;
+  width: 40px;
+  height: 40px;
+}
+
+.review-info {
+  width: 100%;
 }
 
 .btn-add {
   background: var(--light-green);
   font-weight: bold;
-  color: #343919;
+  color: #6c8859;
 }
 
 .actions {
   display: flex;
   gap: .5em;
   padding-right: .5em;
+  height: 64px;
 }
 
 .edit-btn {

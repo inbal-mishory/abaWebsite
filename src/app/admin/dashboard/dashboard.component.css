@@ -7,6 +7,10 @@ h2.admin-title  {
   padding-top: 1em;
 }
 
+nav.mat-tab-nav-bar {
+  min-height: 48px;
+}
+
 .container {
   margin: 0 auto;
   padding: 24px;
@@ -21,33 +25,39 @@ h2.admin-title  {
   gap: 1em;
   justify-content: flex-start;
   padding-top: 4em;
-  min-width: 13%;
-  width: 15%;
+  width: 12%;
 }
 
 .outlet {
-  width: 85%;
+  width: 88%;
 }
 
 .btn {
-  border: 1px solid #64a4ce;
-  color: #222;
+  border: 1px solid #6c8859;
+  color: #6c8859;
   font-weight: bold;
   padding: 8px 6px;
   border-radius: 6px;
-  min-width: 13ch;
+  min-width: 1ch;
   min-height: 4ch;
   line-height: 23px;
   text-align: center;
-  font-size: 18px;
+  font-size: 24px;
   text-decoration: none;
   font-family: 'Rubik', sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
+  max-width: 13ch;
+  background: #bce0a3;
+  max-font-size: 28px;
 }
 
-a.btn.mat-button.active {
+a.activeLink {
   background: aliceblue;
   color: #64a4ce;
+}
+
+a.activeLink:active, a.activeLink:current {
+  background: #fff;
 }

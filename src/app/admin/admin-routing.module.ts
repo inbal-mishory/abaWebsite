@@ -18,14 +18,14 @@ const routes: Routes = [
       (m) => m.ArticlesModule)
   },
   {
-    path: 'books',
+    path: 'my-books',
     component: DashboardComponent,
     data: { title: 'ספרים'},
     loadChildren: () => import('./books/books.module').then(
       (m) => m.BooksModule)
   },
   {
-    path: 'book-reviews',
+    path: 'books-review',
     data: { title: 'בקורות'},
     component: DashboardComponent,
     loadChildren: () => import('./book-reviews/book-reviews.module').then(

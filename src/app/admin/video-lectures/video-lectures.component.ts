@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { map, tap } from 'rxjs';
 import { VideoService } from 'src/app/video-lecture/video.service';
@@ -13,9 +13,11 @@ import { AddEditVideoComponent } from './add-eddit-video/add-edit-video.componen
 export class VideoLecturesComponent implements OnInit {
   videos: IVideo[];
   displayedColumns: string[] = ['title', 'link', 'date', 'actions'];
+  @Output() activeRoute = new EventEmitter();
   constructor(private videoService: VideoService, public dialog: MatDialog) { }
 
   ngOnInit(): void {
+    this.activeRoute.emit({activeLink: 'video-lectures'})
     this.getVideos();
   }
 

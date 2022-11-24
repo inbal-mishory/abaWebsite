@@ -1,24 +1,42 @@
-<h3>בקורות</h3>
 <div class="actions">
   <button (click)="openCreateReview()" class="btn-add">
     הוסף בקורת
   </button>
 </div>
 <div class="reviews-container">
-<ul class="reviews">
-  <li *ngFor="let review of bookReviews" class="review-details">
-    <div class="review-info">
-      <p><a href="{{review.link}}" target="_blank"><strong>{{review.title}}</strong></a>, <i>{{review.paper}}</i></p>
-      <p>מאת: {{review.writer}}</p>
-    </div>
-    <div class="actions">
-      <button class="delete-btn" (click)="deleteDialog(review.id, review.title)" mat-icon-button>
-        <mat-icon>delete</mat-icon>
-      </button>
-      <button class="edit-btn" mat-icon-button (click)="openEditReview(review)">
-        <mat-icon>edit</mat-icon>
-      </button>
-    </div>
-  </li>
-</ul>
+  <mat-list>
+    <mat-list-item *ngFor="let review of bookReviews">
+      <div class="review-text">
+        <mat-icon matListItemIcon>article</mat-icon>
+        <div matListItemTitle class="review-info">
+          <p><a href="{{review.link}}" target="_blank"><strong>{{review.title}}</strong></a>, <i>{{review.paper}}</i></p>
+          <p>מאת: {{review.writer}}</p>
+        </div>
+      </div>
+      <div class="actions">
+        <button class="delete-btn" (click)="deleteDialog(review.id, review.title)" mat-icon-button>
+          <mat-icon>delete</mat-icon>
+        </button>
+        <button class="edit-btn" mat-icon-button (click)="openEditReview(review)">
+          <mat-icon>edit</mat-icon>
+        </button>
+      </div>
+    </mat-list-item>
+  </mat-list>
+<!--<ul class="reviews">-->
+<!--  <li *ngFor="let review of bookReviews" class="review-details">-->
+<!--    <div class="review-info">-->
+<!--      <p><a href="{{review.link}}" target="_blank"><strong>{{review.title}}</strong></a>, <i>{{review.paper}}</i></p>-->
+<!--      <p>מאת: {{review.writer}}</p>-->
+<!--    </div>-->
+<!--    <div class="actions">-->
+<!--      <button class="delete-btn" (click)="deleteDialog(review.id, review.title)" mat-icon-button>-->
+<!--        <mat-icon>delete</mat-icon>-->
+<!--      </button>-->
+<!--      <button class="edit-btn" mat-icon-button (click)="openEditReview(review)">-->
+<!--        <mat-icon>edit</mat-icon>-->
+<!--      </button>-->
+<!--    </div>-->
+<!--  </li>-->
+<!--</ul>-->
 </div>

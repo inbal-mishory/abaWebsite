@@ -1,25 +1,26 @@
-import { Component, OnDestroy } from '@angular/core';
+import {ChangeDetectorRef, Component, OnDestroy, OnInit} from '@angular/core';
 import {MatDialog} from "@angular/material/dialog";
-import {ActivatedRoute, NavigationStart, Router} from "@angular/router";
+import {ActivatedRoute, NavigationStart, Router, Routes} from "@angular/router";
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
-export class DashboardComponent implements OnDestroy {
+export class DashboardComponent implements OnInit { //, OnDestroy
   activeLink = '';
+  adminLinks: any[];
   routeSub$ = this.router.events.subscribe();
-  constructor(public dialog: MatDialog, public router: Router, private route: ActivatedRoute) {
-    router.events.subscribe((event: any) => {
+  constructor(public dialog: MatDialog, private route: ActivatedRoute, private router: Router,
+              private changeDetector: ChangeDetectorRef) {  }
+
+  ngOnInit(): any {
+    // @ts-ignore
+    this.router.events.subscribe((event: any) => {
       if (event instanceof NavigationStart) {
-        this.activeLink = event.url;
+        return this.activeLink = event.url;
       };
     })
-  }
-
-  ngOnInit(): void {
-    // this.activeLink
   }
 
   ngOnDestroy() {

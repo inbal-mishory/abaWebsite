@@ -10,6 +10,12 @@ h3 {
   width:100%
 }
 
+.btn-add {
+  background: var(--light-green);
+  color: #6c8859;
+  font-weight: bold;
+}
+
 .videos-table {
   overflow-y: scroll;
   max-height: 600px;
