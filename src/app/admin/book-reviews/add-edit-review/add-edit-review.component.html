@@ -8,8 +8,8 @@
       <mat-form-field appearance="fill">
         <mat-label>כותרת</mat-label>
         <input matInput formControlName="title" class="form-control" name="title" placeholder="הכנס כותרת" />
-        <mat-error *ngIf="editReviewForm.controls['title'].errors?.['require']">
-          Required field
+        <mat-error *ngIf="editReviewForm.controls['title'].errors?.['required']">
+          שדה חובה
         </mat-error>
       </mat-form-field>
       <mat-form-field>

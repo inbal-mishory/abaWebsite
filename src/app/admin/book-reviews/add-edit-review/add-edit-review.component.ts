@@ -22,11 +22,11 @@ export class AddEditReviewComponent implements OnInit {
 
   initForm(): void {
     this.editReviewForm = this.formBuilder.group({
-      title: [this.data.details.title ? this.data.details.title : '', [Validators.required]],
-      id: this.data.details.id ? this.data.details.id : '',
-      link: this.data.details.link ? this.data.details.link : '',
-      writer: this.data.details.writer ? this.data.details.writer : '',
-      paper: this.data.details.paper ? this.data.details.paper : '',
+      title: [this.isEdit ? this.data.details.title : '', [Validators.required]],
+      id: this.isEdit ? this.data.details.id : '',
+      link: this.isEdit ? this.data.details.link : '',
+      writer: this.isEdit ? this.data.details.writer : '',
+      paper: this.isEdit ? this.data.details.paper : '',
     });
   }
 

@@ -22,12 +22,12 @@ export class AddEditVideoComponent implements OnInit {
 
   initForm() {
     this.addEditVideoForm = this.fb.group({
-      title: [this.data.details.title ? this.data.details.title : '', [Validators.required]],
-      id: this.data.details.id ? this.data.details.id : '',
-      videoId: this.data.details.videoId ? this.data.details.videoId : '',
-      thumbnail: this.data.details.thumbnail ? this.data.details.thumbnail : '',
-      link: [this.data.details.link ? this.data.details.link : '', [Validators.required]],
-      date: [this.data.details.date ? this.data.details.date : '', [Validators.required]],
+      title: [this.isEdit ? this.data.details.title : '', [Validators.required]],
+      id: this.isEdit ? this.data.details.id : '',
+      videoId: this.isEdit ? this.data.details.videoId : '',
+      thumbnail: this.isEdit ? this.data.details.thumbnail : '',
+      link: [this.isEdit ? this.data.details.link : '', [Validators.required]],
+      date: [this.isEdit ? this.data.details.date : '', [Validators.required]],
     });
   }
 

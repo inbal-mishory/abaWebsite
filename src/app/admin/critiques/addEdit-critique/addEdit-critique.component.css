@@ -1,14 +1,14 @@
 :host {
-  height: 480px;
+  height: 400px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 .mat-dialog-title {
-  background: #687231;
-  color: #222;
-  text-align: center;
-  padding: 6px;
+  background: #6c8859;
+  color: #fff;
+  font-size: 24px;
+  padding: 12px;
 }
 
 mat-dialog-content.mat-dialog-content.mat-typography {
@@ -21,21 +21,20 @@ form {
   gap: 35px;
   flex-wrap: wrap;
   height: 100%;
-  font-size: 18px;
 }
+
+.form-controls {
+  display: flex;
+  gap: 1em;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
 .actions {
   display: flex;
   gap: 6px;
 }
-.btn {
-  min-width: 16ch;
-  background: pink;
-}
 
 .btn-success {
-  background: #46a35e;
-}
-
-.critiques-table {
-  width: 100%
+  background: var(--light-green);
 }

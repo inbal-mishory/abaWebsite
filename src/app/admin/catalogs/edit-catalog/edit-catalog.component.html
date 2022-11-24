@@ -7,29 +7,29 @@
         <mat-form-field appearance="fill">
         <mat-label>כותרת</mat-label>
         <input matInput formControlName="title" class="form-control" name="title" placeholder="הכנס כותרת" />
-        <mat-error *ngIf="editCatalogForm.controls['title'].errors?.['require']">
-          Required field
+        <mat-error *ngIf="editCatalogForm.controls['title'].errors?.['required']">
+          שדה חובה
         </mat-error>
       </mat-form-field>
       <mat-form-field>
         <mat-label>תיאור</mat-label>
         <input matInput formControlName="description" class="form-control" name="description" placeholder="הכנס תיאור" />
-        <mat-error *ngIf="editCatalogForm.controls['title'].errors?.['require']">
-          Required field
+        <mat-error *ngIf="editCatalogForm.controls['title'].errors?.['required']">
+          שדה חובה
         </mat-error>
       </mat-form-field>
       <mat-form-field>
         <mat-label>אומן</mat-label>
         <input matInput formControlName="artist" class="form-control" name="artist" placeholder="הכנס אומן" />
-        <mat-error *ngIf="editCatalogForm.controls['artist'].errors?.['require']">
-          Required field
+        <mat-error *ngIf="editCatalogForm.controls['artist'].errors?.['required']">
+          שדה חובה
         </mat-error>
       </mat-form-field>
       <mat-form-field>
         <mat-label>gallery</mat-label>
         <input matInput formControlName="gallery" class="form-control" name="gallery" placeholder="הכנס gallery" />
-        <mat-error *ngIf="editCatalogForm.controls['gallery'].errors?.['require']">
-          Required field
+        <mat-error *ngIf="editCatalogForm.controls['gallery'].errors?.['required']">
+          שדה חובה
         </mat-error>
       </mat-form-field>
       </div>
@@ -40,31 +40,19 @@
       </mat-form-field>
       <mat-form-field>
         <mat-label>language</mat-label>
-        <input matInput formControlName="language" class="form-control" name="language" placeholder="הכנס language" />
-        <mat-error *ngIf="editCatalogForm.controls['language'].errors?.['require']">
-          Required field
-        </mat-error>
+        <input matInput formControlName="language" class="form-control" placeholder="הכנס language" />
       </mat-form-field>
       <mat-form-field>
         <mat-label>urlEnglish</mat-label>
-        <input matInput formControlName="urlEnglish" class="form-control" name="urlEnglish" placeholder="הכנס urlEnglish" />
-        <mat-error *ngIf="editCatalogForm.controls['urlEnglish'].errors?.['require']">
-          Required field
-        </mat-error>
+        <input matInput formControlName="urlEnglish" class="form-control" placeholder="הכנס urlEnglish" />
       </mat-form-field>
       <mat-form-field>
         <mat-label>urlHeb</mat-label>
-        <input formControlName="urlHeb" class="form-control" name="urlHeb" placeholder="הכנס urlHeb" type="text" matInput />
-        <mat-error *ngIf="editCatalogForm.controls['urlHeb'].errors?.['require']">
-          Required field
-        </mat-error>
+        <input formControlName="urlHeb" class="form-control" placeholder="הכנס urlHeb" type="text" matInput />
       </mat-form-field>
       <mat-form-field>
         <mat-label>year</mat-label>
-        <input formControlName="year" class="form-control" name="year" placeholder="הכנס year" type="text" matInput />
-        <mat-error *ngIf="editCatalogForm.controls['year'].errors?.['require']">
-          Required field
-        </mat-error>
+        <input formControlName="year" class="form-control" placeholder="הכנס year" type="text" matInput />
       </mat-form-field>
       </div>
 

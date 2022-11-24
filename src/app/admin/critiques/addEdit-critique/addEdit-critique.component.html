@@ -3,38 +3,40 @@
 <mat-dialog-content class="mat-typography">
   <ng-container *ngIf="addCritiqueForm">
     <form [formGroup]="addCritiqueForm">
-      <mat-form-field>
-        <mat-label>כותרת</mat-label>
-        <input formControlName="title" class="form-control" name="title" placeholder="כותרת" type="text" matInput />
-      </mat-form-field>
-      <mat-form-field>
-        <mat-label>אוצר</mat-label>
-        <input formControlName="curator" class="form-control" name="curator" placeholder="אוצר" type="text" matInput />
-      </mat-form-field>
-      <mat-form-field>
-        <mat-label>אומן</mat-label>
-        <input formControlName="artist" class="form-control" name="artist" placeholder="אומן" type="text" matInput />
-      </mat-form-field>
-      <mat-form-field>
-        <mat-label>מוזיאון</mat-label>
-        <input formControlName="museum" class="form-control" name="museum" placeholder="מוזיאון/גלריה" type="text" matInput />
-      </mat-form-field>
-      <mat-form-field>
-        <mat-label>מאמר</mat-label>
-        <input formControlName="article" class="form-control" name="article" placeholder="מאמר" type="text" matInput />
-      </mat-form-field>
-      <mat-form-field>
-        <mat-label>תאריך</mat-label>
-        <input formControlName="date" class="date-input" matInput/>
-      </mat-form-field>
-      <mat-form-field>
+      <div class="form-controls">
+        <mat-form-field>
+          <mat-label>כותרת</mat-label>
+          <input formControlName="title" class="form-control" name="title" placeholder="כותרת" type="text" matInput />
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>אוצר</mat-label>
+          <input formControlName="curator" class="form-control" name="curator" placeholder="אוצר" type="text" matInput />
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>אומן</mat-label>
+          <input formControlName="artist" class="form-control" name="artist" placeholder="אומן" type="text" matInput />
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>מוזיאון</mat-label>
+          <input formControlName="museum" class="form-control" name="museum" placeholder="מוזיאון/גלריה" type="text" matInput />
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>מאמר</mat-label>
+          <input formControlName="article" class="form-control" name="article" placeholder="מאמר" type="text" matInput />
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>תאריך</mat-label>
+          <input formControlName="date" class="date-input" matInput/>
+        </mat-form-field>
+        <mat-form-field>
         <mat-label>עיתון</mat-label>
         <input matInput formControlName="paper" class="form-control" name="paper" placeholder="עיתון" />
       </mat-form-field>
+      </div>
     </form>
   </ng-container>
 </mat-dialog-content>
-<mat-dialog-actions align="end">
+<mat-dialog-actions class="actions" align="end">
   <button *ngIf="!isEdit" type="submit" mat-button class="btn btn-success" (click)="saveCritique(addCritiqueForm?.value)">הוספה</button>
   <button *ngIf="isEdit" type="submit" mat-button class="btn btn-success" (click)="updateCritique(addCritiqueForm?.value)">עדכון</button>
   <button mat-button [mat-dialog-close]="true">סגור</button>

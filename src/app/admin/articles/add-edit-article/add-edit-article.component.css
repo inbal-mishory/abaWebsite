@@ -1,9 +1,8 @@
 .mat-dialog-title h3 {
-  background: #758038;
+  background: #6c8859;
   color: #fff;
-  text-align: center;
-  line-height: 40px;
-  font-size:24px
+  font-size: 24px;
+  padding: 12px;
 }
 
 .mat-dialog-content {

@@ -43,10 +43,10 @@
 </mat-dialog-content>
 <mat-dialog-actions>
   <button type="button" class="btn" (click)="closeModal()">ביטול</button>
-  <button *ngIf="isEdit" type="submit" class="badge badge-success" (click)="updateBook()">
+  <button *ngIf="isEdit" type="submit" class="btn" (click)="updateBook()">
     עדכון
   </button>
-  <button *ngIf="!isEdit" type="submit" class="badge badge-success" (click)="createBook(editBookForm?.value)">
+  <button *ngIf="!isEdit" type="submit" class="btn" (click)="createBook(editBookForm?.value)">
     יצירה
   </button>
 </mat-dialog-actions>

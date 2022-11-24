@@ -34,8 +34,8 @@ export class CritiquesComponent {
 
   openAddCritiqueDialog() {
     const dialogRef = this.dialog.open(AddEditCritiqueComponent, {
-      width: '45vw',
-      height: '50vh',
+      width: '35vw',
+      height: '45vh',
       data: {
         isEdit: false
       }});
@@ -48,8 +48,8 @@ export class CritiquesComponent {
 
   openEditCritiqueDialog(critique: any) {
     const dialogRef = this.dialog.open(AddEditCritiqueComponent, {
-      width: '45vw',
-      height: '50vh',
+      width: '35vw',
+      height: '45vh',
       data: {
         details: critique,
         isEdit: true,

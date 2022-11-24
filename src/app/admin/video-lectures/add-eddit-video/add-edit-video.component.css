@@ -1,5 +1,31 @@
+.mat-dialog-title {
+  background: #6c8859;
+  color: #fff;
+  font-size: 24px;
+  padding: 6px;
+  margin-bottom: 0;
+}
+
 form {
   display: flex;
   flex-direction: column;
   padding: 12px;
+}
+
+.form-controls {
+  display: flex;
+  gap: .25em;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.actions {
+  display: flex;
+  gap: 6px;
+}
+
+.btn {
+  background: var(--light-green);
+  font-size: 14px;
 }

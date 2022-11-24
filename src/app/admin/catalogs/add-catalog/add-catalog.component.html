@@ -5,19 +5,31 @@
       <div class="column">
         <mat-form-field>
           <mat-label>כותרת</mat-label>
-          <input formControlName="title" class="form-control" name="title" placeholder="הכנס כותרת" type="text" matInput />
+          <input formControlName="title" class="form-control" placeholder="הכנס כותרת" type="text" matInput />
+          <mat-error *ngIf="addCatalogForm.controls['title'].errors?.['required']">
+            שדה חובה
+          </mat-error>
         </mat-form-field>
         <mat-form-field>
           <mat-label>תיאור</mat-label>
-          <input formControlName="description" class="form-control" name="description" placeholder="הכנס תיאור" type="text" matInput />
+          <input formControlName="description" class="form-control" placeholder="הכנס תיאור" type="text" matInput />
+          <mat-error *ngIf="addCatalogForm.controls['description'].errors?.['required']">
+            שדה חובה
+          </mat-error>
         </mat-form-field>
         <mat-form-field>
           <mat-label>אומן</mat-label>
           <input formControlName="artist" class="form-control" name="artist" placeholder="הכנס אומן" type="text" matInput />
+          <mat-error *ngIf="addCatalogForm.controls['artist'].errors?.['required']">
+            שדה חובה
+          </mat-error>
         </mat-form-field>
         <mat-form-field>
           <mat-label>גלרייה</mat-label>
           <input formControlName="gallery" class="form-control" name="gallery" placeholder="הכנס gallery" type="text" matInput />
+          <mat-error *ngIf="addCatalogForm.controls['gallery'].errors?.['required']">
+            שדה חובה
+          </mat-error>
         </mat-form-field>
       </div>
       <div class="column">
@@ -49,6 +61,6 @@
   </div>
 </mat-dialog-content>
 <mat-dialog-actions align="end">
-  <button type="submit" mat-button class="btn btn-success" [disabled]="!addCatalogForm?.valid" (click)="saveCat(addCatalogForm?.value)">הוספה</button>
   <button mat-button [mat-dialog-close]="true">סגור</button>
+  <button type="submit" mat-button class="btn btn-success" [disabled]="!addCatalogForm?.valid" (click)="saveCat(addCatalogForm?.value)">הוספה</button>
 </mat-dialog-actions>

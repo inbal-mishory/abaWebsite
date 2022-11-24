@@ -38,7 +38,7 @@ export class EditCatalogComponent implements OnInit {
         // type: [this.item.type, [Validators.required]],
         description: [this.item.description ? this.item.description : '', [Validators.required]],
         image: [this.item.image ? this.item.image : ''],
-        artist: [this.item.artist ? this.item.artist : ''],
+        artist: [this.item.artist ? this.item.artist : '', [Validators.required]],
         gallery: [this.item.gallery ? this.item.gallery : '', [Validators.required]],
         language: this.item.language ? this.item.language : '',
         urlEnglish: this.item.urlEnglish ? this.item.urlEnglish : '',

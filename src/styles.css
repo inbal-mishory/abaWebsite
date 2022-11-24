@@ -97,9 +97,9 @@ a {
   overflow: hidden !important;
 }
 
-.mat-dialog-actions {
-  min-height: 23% !important;
-}
+/*.mat-dialog-actions {*/
+/*  min-height: 23% !important;*/
+/*}*/
 
 .input-search {
   width: 330px;

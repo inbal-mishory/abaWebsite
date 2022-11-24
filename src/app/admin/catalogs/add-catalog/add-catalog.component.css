@@ -10,7 +10,7 @@
 }
 
 h3 {
-  background: #3d6657;
+  background: #6c8859;
   color: #fff;
   font-size: 24px;
   padding: 12px;
@@ -36,6 +36,12 @@ h3 {
 }
 
 button {
-  background: #c0ecd7;
+  background: var(--light-green);
+  color: #6c8859;
   border-radius: 12px;
+  font-weight: bold;
+}
+
+.btn.btn-success.mat-button.mat-button-disabled {
+  background: lightgray;
 }

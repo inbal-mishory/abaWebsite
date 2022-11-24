@@ -4,35 +4,37 @@
 </div>
 <mat-dialog-content class="mat-typography">
   <form *ngIf="addEditVideoForm" [formGroup]="addEditVideoForm">
-    <mat-form-field>
-      <mat-label>כותרת</mat-label>
-      <input formControlName="title" class="form-control" placeholder="הכנס כותרת" type="text" matInput />
-      <mat-error *ngIf="addEditVideoForm.controls['title'].errors?.['require']">
-        Required field
-      </mat-error>
-    </mat-form-field>
-    <mat-form-field>
-      <mat-label>קישור</mat-label>
-      <input formControlName="link" class="form-control" placeholder="הכנס קישור" type="text" matInput />
-      <mat-error *ngIf="addEditVideoForm.controls['link'].errors?.['require']">
-        Required field
-      </mat-error>
-    </mat-form-field>
-    <mat-form-field>
-      <mat-label>תאריך</mat-label>
-      <input formControlName="date" class="form-control" placeholder="הכנס תאריך" type="text" matInput />
-      <mat-error *ngIf="addEditVideoForm.controls['date'].errors?.['require']">
-        Required field
-      </mat-error>
-    </mat-form-field>
-    <mat-form-field>
-      <mat-label>מזהה וידיאו</mat-label>
-      <input formControlName="videoId" class="form-control" type="text" matInput />
-    </mat-form-field>
-    <mat-form-field>
+    <div class="form-controls">
+      <mat-form-field>
+        <mat-label>כותרת</mat-label>
+        <input formControlName="title" class="form-control" placeholder="הכנס כותרת" type="text" matInput />
+        <mat-error *ngIf="addEditVideoForm.controls['title'].errors?.['require']">
+          Required field
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>קישור</mat-label>
+        <input formControlName="link" class="form-control" placeholder="הכנס קישור" type="text" matInput />
+        <mat-error *ngIf="addEditVideoForm.controls['link'].errors?.['require']">
+          Required field
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>תאריך</mat-label>
+        <input formControlName="date" class="form-control" placeholder="הכנס תאריך" type="text" matInput />
+        <mat-error *ngIf="addEditVideoForm.controls['date'].errors?.['require']">
+          Required field
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>מזהה וידיאו</mat-label>
+        <input formControlName="videoId" class="form-control" type="text" matInput />
+      </mat-form-field>
+      <mat-form-field>
       <mat-label>תמונה</mat-label>
       <input formControlName="thumbnail" class="form-control" type="text" matInput />
     </mat-form-field>
+    </div>
   </form>
   <!-- <div *ngIf="submitted">
     <h4>You submitted successfully!</h4>
@@ -40,10 +42,10 @@
 </mat-dialog-content>
 <mat-dialog-actions>
   <button type="button" class="btn" (click)="closeModal()">ביטול</button>
-  <button *ngIf="isEdit" type="submit" class="badge badge-success" (click)="updateVideo()">
+  <button *ngIf="isEdit" class="btn" type="submit" (click)="updateVideo()">
     עדכון
   </button>
-  <button *ngIf="!isEdit" type="submit" class="badge badge-success" (click)="saveVideo(addEditVideoForm?.value)">
+  <button *ngIf="!isEdit" class="btn" type="submit" (click)="saveVideo(addEditVideoForm?.value)">
     יצירה
   </button>
 </mat-dialog-actions>

@@ -37,7 +37,7 @@ export class BooksComponent implements OnInit {
   openEditBook(book: any) {
     const dialogRef = this.dialog.open(AddEditBookComponent, {
       width: '35vw',
-      height: '50vh',
+      height: '45vh',
       data: {
         details: book,
         isEdit: true
@@ -51,7 +51,7 @@ export class BooksComponent implements OnInit {
   openCreateBook() {
     const dialogRef = this.dialog.open(AddEditBookComponent, {
       width: '35vw',
-      height: '50vh',
+      height: '45vh',
       data: {
         details: '',
         isEdit: false

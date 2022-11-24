@@ -37,7 +37,7 @@ export class ArticlesComponent implements OnInit {
   createArticle() {
     const dialogRef = this.dialog.open(AddEditArticleComponent, {
       width: '35vw',
-      height: '50vh',
+      height: '45vh',
       data: {isEdit: false}
     });
     dialogRef.afterClosed().subscribe(() => {
@@ -68,7 +68,7 @@ export class ArticlesComponent implements OnInit {
   openEditArticle(article: IArticle) {
     const dialogRef = this.dialog.open(AddEditArticleComponent, {
       width: '35vw',
-      height: '50vh',
+      height: '45vh',
       data: {
         details: article,
         isEdit: true
