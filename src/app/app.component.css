@@ -102,16 +102,7 @@
   overflow-y: hidden;
   background: url("../assets/images/flourish.webp") no-repeat;
   background-position: center top 1em;
-  /*border-top: 1px var(--backgroundBlack);*/
-  /*border-top-style: double;*/
 }
-
-/*.sidebar-top-border {*/
-/*  height: 5px;*/
-/*  background-color: #22242a;*/
-/*  width: inherit;*/
-/*  transition: opacity .1s ease-out;*/
-/*}*/
 
 .pages {
   margin-top: 92px;

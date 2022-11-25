@@ -32,8 +32,9 @@ export class AddEditVideoComponent implements OnInit {
   }
 
   saveVideo(video: IVideo) {
-    this.videoService.createVideo(video).subscribe();
-    this.dialogRef.close();
+    this.videoService.createVideo(video).then(() => {
+      this.dialogRef.close();
+    });
   }
 
   updateVideo() {

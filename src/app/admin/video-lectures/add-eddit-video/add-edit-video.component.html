@@ -8,22 +8,22 @@
       <mat-form-field>
         <mat-label>כותרת</mat-label>
         <input formControlName="title" class="form-control" placeholder="הכנס כותרת" type="text" matInput />
-        <mat-error *ngIf="addEditVideoForm.controls['title'].errors?.['require']">
-          Required field
+        <mat-error *ngIf="addEditVideoForm.controls['title'].errors?.['required']">
+          שדה חובה
         </mat-error>
       </mat-form-field>
       <mat-form-field>
         <mat-label>קישור</mat-label>
         <input formControlName="link" class="form-control" placeholder="הכנס קישור" type="text" matInput />
-        <mat-error *ngIf="addEditVideoForm.controls['link'].errors?.['require']">
-          Required field
+        <mat-error *ngIf="addEditVideoForm.controls['link'].errors?.['required']">
+          שדה חובה
         </mat-error>
       </mat-form-field>
       <mat-form-field>
         <mat-label>תאריך</mat-label>
         <input formControlName="date" class="form-control" placeholder="הכנס תאריך" type="text" matInput />
         <mat-error *ngIf="addEditVideoForm.controls['date'].errors?.['require']">
-          Required field
+          שדה חובה
         </mat-error>
       </mat-form-field>
       <mat-form-field>
