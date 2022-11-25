@@ -1,0 +1,12 @@
+<div class="book-container" *ngIf="bookDetails as book">
+  <h3>{{ book.title }}</h3>
+  <div class="book-content">
+    <div class="book-image">
+      <img src="{{book?.cover}}" title="תמונה של הקטלוג - {{book.title}}"/>
+    </div>
+    <div class="book-text">
+      <p>{{book.link}}</p>
+    </div>
+  </div>
+  <p><a href="/books/list">חזור</a></p>
+</div>

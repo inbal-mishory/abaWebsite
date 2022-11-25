@@ -12,6 +12,7 @@ export class BookReviewModel {
   paper?: string;
   writer?: string;
   id?: string;
+
   constructor(data: IBookReviewModel) {
     this.title = data.title;
     this.link = data.link;

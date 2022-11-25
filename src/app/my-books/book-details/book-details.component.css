@@ -1,0 +1,19 @@
+.book-container {
+  padding: 1em;
+}
+.book-image img {
+  width: 320px;
+  height: 430px;
+}
+
+.book-content {
+  display: flex;
+  max-width: 1200px;
+  gap: 1em;
+}
+
+.book-text {
+  font-size: 22px;
+  line-height: 28px;
+  text-align: justify;
+}

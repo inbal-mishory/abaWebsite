@@ -8,19 +8,32 @@
 .mat-dialog-content {
   display: block;
   margin: 0;
-  padding: 24px;
-  min-height: 30vh;
+  padding: 0 24px;
+  height: 287px;
+  overflow-y: hidden;
 }
 
 mat-dialog-actions.mat-dialog-actions {
   justify-content: flex-end;
+  height: 52px;
+  gap: 1em;
+  padding-left: 1em;
 }
 
 .form-controls {
   display: flex;
   gap: 1em;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: flex-start;
+}
+
+.more-info {
+  min-width: 400px;
+  min-height: 150px;
+}
+
+.more-info textarea {
+  min-height: 88px;
 }
 
 button.btn {
@@ -28,4 +41,5 @@ button.btn {
   font-weight: bold;
   color: #6c8859;
   font-size: 14px;
+  margin: 0;
 }

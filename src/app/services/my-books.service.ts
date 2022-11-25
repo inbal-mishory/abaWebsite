@@ -19,6 +19,10 @@ export class MyBooksService {
     return this.booksRef;
   }
 
+  getBookById(bookId: string) {
+    return this.booksRef.doc(bookId);
+  }
+
   updateBook(id: string | undefined, data: any) {
     return this.booksRef.doc(id).update(data);
   }

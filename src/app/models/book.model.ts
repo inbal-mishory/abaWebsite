@@ -5,6 +5,7 @@ export interface IBook {
   publisher: string;
   title: string;
   article?: string;
+  article2?: string;
   link?: string;
 }
 
@@ -15,6 +16,7 @@ export class Book {
   publisher: string;
   title: string;
   article?: string;
+  article2?: string;
   link?: string;
 
   constructor(data:IBook) {
@@ -24,6 +26,7 @@ export class Book {
     this.publisher = data.publisher;
     this.title = data.title;
     this.article = data.article;
+    this.article2 = data.article2;
     this.link = data.link;
   }
 

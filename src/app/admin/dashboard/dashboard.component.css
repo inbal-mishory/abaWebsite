@@ -30,6 +30,8 @@ nav.mat-tab-nav-bar {
 
 .outlet {
   width: 88%;
+  max-height: 710px;
+  overflow-y: scroll;
 }
 
 .btn {

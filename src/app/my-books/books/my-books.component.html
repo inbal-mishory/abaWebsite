@@ -13,13 +13,11 @@
     <ul class="books-list" *ngIf="books$ | async as books">
       <li class="book-item" fxLayout="row" *ngFor="let book of books | filter: term; trackBy: getIdTrack">
         <div class="book-cover">
-          <img *ngIf="book?.cover" src="{{book?.cover}}" alt="img" width="160">
+          <img *ngIf="book?.cover" src="{{book?.cover}}" class="book-img" matTooltip="{{book.title}} {{book.publisher}}, {{book.publication_year}}"/>
         </div>
         <div class="book-details">
-          <h3>{{book.title}}</h3>
           <a *ngIf="book?.article" target="_blank" href="{{book.article}}">בקורת על הספר</a>
-          <a *ngIf="book?.link" target="_blank" href="{{book.link}}">מידע נוסף</a>
-          <p>{{book.publisher}}, {{book.publication_year}}</p>
+          <a *ngIf="book.link !== ''" [routerLink]="['../book/', book.id]" class="list-group-item">מידע נוסף</a>
         </div>
       </li>
     </ul>

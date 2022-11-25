@@ -5,11 +5,11 @@ import {Book, IBook} from "../../models/book.model";
 import {Observable} from "rxjs";
 
 @Component({
-  selector: 'app-my-books',
+  selector: 'app-my-books-list',
   templateUrl: './my-books.component.html',
   styleUrls: ['./my-books.component.css']
 })
-export class MyBooksComponent implements OnInit {
+export class MyBooksListComponent implements OnInit {
   books$?: Observable<IBook[]>;
   books?: Book[];
   term!: string;

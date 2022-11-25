@@ -24,20 +24,21 @@ export class AddEditBookComponent implements OnInit {
 
   initForm() {
     this.editBookForm = this.formBuilder.group({
-      title: [this.data.details.title ? this.data.details.title : '', [Validators.required]],
-      id: this.data.details.id ? this.data.details.id : '',
-      cover: [this.data.details.cover ? this.data.details.cover : '', [Validators.required]],
-      publisher: [this.data.details.publisher ? this.data.details.publisher : '', [Validators.required]],
-      publication_year: [this.data.details.publication_year ? this.data.details.publication_year : ''],
-      article: this.data.details.article ? this.data.details.article : '',
-      link: this.data.details.link ? this.data.details.link : '',
+      title: [this.isEdit ? this.data.details.title : '', [Validators.required]],
+      id: this.isEdit ? this.data.details.id : '',
+      cover: [this.isEdit ? this.data.details.cover : '', [Validators.required]],
+      publisher: [this.isEdit ? this.data.details.publisher : '', [Validators.required]],
+      publication_year: [this.isEdit ? this.data.details.publication_year : ''],
+      article: this.isEdit ? this.data.details.article : '',
+      article2: this.isEdit ? this.data.details.article2 : '',
+      link: this.isEdit ? this.data.details.link : '',
     });
   }
 
   updateBook() {
     const book = this.editBookForm?.getRawValue();
     this.booksService.updateBook(book.id, book).then()
-      .catch(err => console.log(err));
+                     .catch(err => console.log(err));
     this.closeModal();
   }
 
