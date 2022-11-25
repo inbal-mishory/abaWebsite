@@ -12,10 +12,9 @@
 }
 
 .wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   width:100%;
-  display: flex;
-  justify-content: center;
-  position: relative;
 }
 
 .carousel-pic {
@@ -24,9 +23,6 @@
 
 .wrapper > img {
   animation: 9s fading infinite linear;
-  position: absolute;
-  top: calc(((100vh - 92px) / 2) - 385px);
-  left: calc((100vw/2) - 300px);
   opacity: 0.0;
 }
 
