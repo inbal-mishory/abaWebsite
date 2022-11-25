@@ -13,15 +13,12 @@
     <ul class="catalog-list" *ngIf="catalogs$ | async as catalogs">
       <li class="catalog-item" *ngFor="let catalog of catalogs | filter: term; trackBy: getIdTrack">
         <div class="catalog-image">
-          <a [routerLink]="['/catalogs', catalog.catalog_id]" class="list-group-item list-group-item-action">
             <img src="{{catalog?.image}}" #tooltip="matTooltip"
                 matTooltip="{{catalog.title}}, {{catalog.artist}}, {{catalog.gallery}} {{catalog?.year}}"
                 matTooltipPositionAtOrigin/>
-          </a>
         </div>
         <div class="catalog-text">
           <h3>{{ catalog.title }}</h3>
-<!--          <span>{{catalog.gallery}} {{catalog?.year}}</span>-->
         </div>
         <div class="files" *ngIf="catalog.urlEnglish || catalog.urlHeb">
           <span *ngIf="catalog.urlHeb !== ''"><mat-icon class="download">download</mat-icon> <a class="link-heb" href="{{catalog.urlHeb}}" target="_blank">קטלוג</a></span>
