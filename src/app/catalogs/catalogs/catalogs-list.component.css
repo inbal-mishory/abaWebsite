@@ -32,6 +32,7 @@ input::placeholder {
 .catalog-list-container {
   overflow-y: scroll;
   max-height: 700px;
+  padding-left: 1em;
 }
 
 .catalog-list {
@@ -55,7 +56,7 @@ input::placeholder {
   flex-direction: column;
   text-align: right;
   align-items: center;
-  font-size: 14px;
+  font-size: 24px;
   border-left: 1px solid var(--backgroundBlack);
   padding: 1em;
 }
@@ -78,23 +79,37 @@ input::placeholder {
 .catalog-text {
   display: flex;
   flex-direction: column;
-  font-size: 22px;
+  font-size: 24px;
   font-weight: 600;
   min-width: 430px;
   max-width: 430px;
+  height:82px
 }
 
 .files {
   display: flex;
   justify-content: space-between;
-  font-size: 20px;
+  font-size: 24px;
   width: 430px;
   height: 40px;
 }
 
-.files a {
+.files span {
   display: flex;
   align-items: center;
+}
+
+.download {
+  font-size: 36px;
+  width:42px;
+  height:42px;
+}
+
+.files a {
+  display: flex;
+  text-decoration: none;
+  align-items: center;
+  font-weight: bold;
 }
 
 @media only screen and (max-width: 1300px) {

@@ -1,0 +1,16 @@
+<div class="catalog-container" *ngIf="catalogDetails as catalog">
+  <div class="catalog-image">
+    <img src="{{catalog?.image}}" title="תמונה של הקטלוג - {{catalog.title}}" alt="img"/>
+  </div>
+  <div class="catalog-text">
+    <h3>{{ catalog.title }}</h3>
+    <p>{{catalog.artist}}</p>
+    <span>{{catalog.gallery}} {{catalog?.year}}</span>
+  </div>
+  <div class="files" *ngIf="catalog.urlEnglish || catalog.urlHeb">
+    <a class="link-heb" *ngIf="catalog.urlHeb !== ''" href="{{catalog.urlHeb}}" target="_blank"><mat-icon>link</mat-icon>קטלוג בעברית</a>
+    <a class="link-eng" *ngIf="catalog.urlEnglish !== ''" href="{{catalog.urlEnglish}}" target="_blank" style="direction: ltr;"><mat-icon>link</mat-icon>English catalog</a>
+  </div>
+  <p></p>
+  <p><a href="/catalogs/list">חזור</a></p>
+</div>

@@ -28,6 +28,10 @@ export class CatalogService {
     return this.catalogsList?.push(catalog);
   }
 
+  getCatalogById(catalog_id: string) {
+    return this.catalogsRef.doc(catalog_id);
+  }
+
   update(id: string, data: any): Promise<void> {
     return this.catalogsRef.doc(id).update(data);
   }

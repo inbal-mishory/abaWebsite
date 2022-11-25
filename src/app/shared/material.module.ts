@@ -7,13 +7,14 @@ import {MatListModule} from "@angular/material/list";
 import {MatIconModule} from "@angular/material/icon";
 import {MatSnackBarModule} from "@angular/material/snack-bar";
 import {MatAutocompleteModule} from "@angular/material/autocomplete";
-import {MAT_DATE_FORMATS, MAT_DATE_LOCALE, MatNativeDateModule} from "@angular/material/core";
+import { MatNativeDateModule} from "@angular/material/core";
 import {MatDatepickerModule} from "@angular/material/datepicker";
 import {MatTableModule} from "@angular/material/table";
 import {MatSortModule} from "@angular/material/sort";
 import {MatPaginatorModule} from "@angular/material/paginator";
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import {MatCardModule} from '@angular/material/card';
+import {MatTooltipModule} from "@angular/material/tooltip";
 
 @NgModule({
   imports: [
@@ -31,7 +32,8 @@ import {MatCardModule} from '@angular/material/card';
     MatSortModule,
     MatPaginatorModule,
     MatButtonToggleModule,
-    MatCardModule
+    MatCardModule,
+    MatTooltipModule
   ],
   exports: [
     MatDialogModule,
@@ -48,7 +50,8 @@ import {MatCardModule} from '@angular/material/card';
     MatSortModule,
     MatPaginatorModule,
     MatButtonToggleModule,
-    MatCardModule
+    MatCardModule,
+    MatTooltipModule
   ],
   declarations: [  ]
 })

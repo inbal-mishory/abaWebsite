@@ -6,11 +6,11 @@
     </div>
   </mat-toolbar>
   <mat-sidenav-container class="sidenav-container">
-      <mat-sidenav [(opened)]="mobileQuery.matches ? !opened : opened" #sidenav [mode]="mobileQuery.matches ? 'over' : 'side'"
-                   position="end"
+      <mat-sidenav [(opened)]="mobileQuery.matches ? !opened : opened" #sidenav
+                   [mode]="mobileQuery.matches ? 'over' : 'side'" position="end"
                    [fixedInViewport]="mobileQuery.matches" fixedTopGap="99">
       <div class="sidebar">
-        <div class="sidebar-top-border"></div>
+<!--        <div class="sidebar-top-border"></div>-->
         <nav class="navbar navbar-expand navbar-dark">
           <app-navigation></app-navigation>
         </nav>

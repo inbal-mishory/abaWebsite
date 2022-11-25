@@ -13,21 +13,21 @@
     <ul class="catalog-list" *ngIf="catalogs$ | async as catalogs">
       <li class="catalog-item" *ngFor="let catalog of catalogs | filter: term; trackBy: getIdTrack">
         <div class="catalog-image">
-          <img *ngIf="catalog?.image" src="{{catalog?.image}}" title="תמונה של הקטלוג - {{catalog.title}}" alt="img"/>
+          <a [routerLink]="['/catalogs', catalog.catalog_id]" class="list-group-item list-group-item-action">
+            <img src="{{catalog?.image}}" #tooltip="matTooltip"
+                matTooltip="{{catalog.title}}, {{catalog.artist}}, {{catalog.gallery}} {{catalog?.year}}"
+                matTooltipPositionAtOrigin/>
+          </a>
         </div>
         <div class="catalog-text">
           <h3>{{ catalog.title }}</h3>
-          <p>{{catalog.artist}}</p>
-          <span>{{catalog.gallery}} {{catalog?.year}}</span>
+<!--          <span>{{catalog.gallery}} {{catalog?.year}}</span>-->
         </div>
         <div class="files" *ngIf="catalog.urlEnglish || catalog.urlHeb">
-          <a class="link-heb" *ngIf="catalog.urlHeb !== ''" href="{{catalog.urlHeb}}" target="_blank"><mat-icon>link</mat-icon>קטלוג בעברית</a>
-          <a class="link-eng" *ngIf="catalog.urlEnglish !== ''" href="{{catalog.urlEnglish}}" target="_blank" style="direction: ltr;"><mat-icon>link</mat-icon>English catalog</a>
+          <span *ngIf="catalog.urlHeb !== ''"><mat-icon class="download">download</mat-icon> <a class="link-heb" href="{{catalog.urlHeb}}" target="_blank">קטלוג</a></span>
+          <span *ngIf="catalog.urlEnglish !== ''"><a class="link-eng" href="{{catalog.urlEnglish}}" target="_blank" style="direction: ltr;">catalog</a> <mat-icon class="download">download</mat-icon></span>
         </div>
       </li>
     </ul>
-  </div>
-  <div class="no-results">
-    אין תוצאות
   </div>
 </div>

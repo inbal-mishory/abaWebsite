@@ -9,10 +9,11 @@ import {AddCatalogComponent} from "./add-catalog/add-catalog.component";
 import {EditCatalogComponent} from "./edit-catalog/edit-catalog.component";
 import {CatalogComponent} from "./catalog/catalog.component";
 import {FlexLayoutModule} from "@angular/flex-layout";
+import { AddEditCatalogComponent } from './add-edit-catalog/add-edit-catalog.component';
 
 
 @NgModule({
-  declarations: [CatalogsComponent, AddCatalogComponent, EditCatalogComponent, CatalogComponent ],
+  declarations: [CatalogsComponent, AddCatalogComponent, EditCatalogComponent, CatalogComponent, AddEditCatalogComponent ],
   imports: [
     CommonModule,
     MaterialModule,
