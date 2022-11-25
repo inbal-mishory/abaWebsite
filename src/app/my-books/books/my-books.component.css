@@ -24,15 +24,16 @@ input::placeholder {
 
 .books-list-container {
   overflow-y: scroll;
+  padding-left: 2em;
 }
 
 .books-list {
   list-style-type: none;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  /*gap: 32px;*/
   grid-template-rows: auto;
   max-height: 700px;
+  padding-inline-start: 0;
 }
 
 @media only screen and (max-height: 800px) {
@@ -61,6 +62,7 @@ h3 {
   border-left: 1px solid var(--backgroundBlack);
   gap: 1em;
   padding: 1em;
+  align-items: center;
 }
 
 @media only screen and (max-height: 800px) {
