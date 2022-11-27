@@ -13,12 +13,13 @@
 
 .wrapper {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   width:100%;
+  height: calc(100vh - 96px);
 }
 
 .carousel-pic {
-  max-width: 640px;
+
 }
 
 .wrapper > img {
