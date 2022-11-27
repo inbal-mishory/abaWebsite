@@ -112,6 +112,23 @@ input::placeholder {
   font-weight: bold;
 }
 
+.more-info {
+  width: 430px;
+  justify-content: flex-start;
+}
+
+.info {
+  font-size: 32px;
+  width:32px;
+  height:32px;
+}
+
+.more-info span {
+  display: flex;
+  gap:.5em;
+  align-items: center;
+}
+
 @media only screen and (max-width: 1300px) {
   .catalog-list {
     grid-template-columns: 1fr 1fr;

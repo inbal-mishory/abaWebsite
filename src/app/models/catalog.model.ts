@@ -5,10 +5,11 @@ export class Catalog {
   image?: string;
   artist?: string;
   gallery?: string;
-  language?: string;
+  // language?: string;
   urlEnglish?: string;
   urlHeb?: string;
   year?: number
   published?: boolean;
+  moreInfo?: string;
 }
 

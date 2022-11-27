@@ -1,0 +1,35 @@
+h3 {
+  background: #6c8859;
+  color: #fff;
+  font-size: 24px;
+  padding: 12px;
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.edit-form {
+  padding: 12px;
+}
+
+.mat-dialog-actions {
+  justify-content: flex-end;
+  padding: 0;
+  padding-left: 1em;
+}
+
+.btn.btn-success {
+  grid-column: 1/2;
+}
+
+.badge-success {
+  background:var(--light-green);
+  color: #6c8859;
+  font-weight: bold;
+}
+
+.badge.close {
+  background:var(--light-green);
+}

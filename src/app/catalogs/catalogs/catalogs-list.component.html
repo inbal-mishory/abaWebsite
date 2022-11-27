@@ -24,6 +24,9 @@
           <span *ngIf="catalog.urlHeb !== ''"><mat-icon class="download">download</mat-icon> <a class="link-heb" href="{{catalog.urlHeb}}" target="_blank">קטלוג</a></span>
           <span *ngIf="catalog.urlEnglish !== ''"><a class="link-eng" href="{{catalog.urlEnglish}}" target="_blank" style="direction: ltr;">catalog</a> <mat-icon class="download">download</mat-icon></span>
         </div>
+        <div class="more-info">
+          <span *ngIf="catalog.moreInfo"><mat-icon class="info">info</mat-icon> <a class="link-heb" [routerLink]="['/catalogs', catalog.catalog_id]">מידע נוסף</a></span>
+        </div>
       </li>
     </ul>
   </div>

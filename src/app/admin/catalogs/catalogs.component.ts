@@ -1,18 +1,13 @@
-import {ChangeDetectorRef, Component, Inject, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {map, tap} from "rxjs/operators";
 import {CatalogService} from "../../services/catalog.service";
 import {Catalog} from "../../models/catalog.model";
 import {MatDialog} from "@angular/material/dialog";
-import {EditCatalogComponent} from "./edit-catalog/edit-catalog.component";
-import {FileUploadService} from "../../services/file-upload.service";
 import {HttpClient} from "@angular/common/http";
-import {environment} from "../../../environments/environment";
-import {AngularFireDatabase, AngularFireList} from "@angular/fire/compat/database";
 import {ConfirmModalComponent} from "../../shared/modals/confirm.modal/confirm.modal.component";
 import {MatSnackBar} from "@angular/material/snack-bar";
-import {AngularFirestore} from "@angular/fire/compat/firestore";
-import {Observable, Subscription} from "rxjs";
-import {AddCatalogComponent} from "./add-catalog/add-catalog.component";
+import {Observable} from "rxjs";
+import {AddEditCatalogComponent} from "./add-edit-catalog/add-edit-catalog.component";
 
 @Component({
   selector: 'app-catalogs',
@@ -31,7 +26,7 @@ export class CatalogsComponent implements OnInit {
   }
 
   openAddDialog() {
-    const dialogRef = this.dialog.open(AddCatalogComponent, {
+    const dialogRef = this.dialog.open(AddEditCatalogComponent, {
       width: '35vw',
       height: '50vh',
       data: {
@@ -56,10 +51,10 @@ export class CatalogsComponent implements OnInit {
   }
 
   openEditCatalogDialog(catalog: Catalog) {
-    const dialogRef = this.dialog.open(EditCatalogComponent, {
+    const dialogRef = this.dialog.open(AddEditCatalogComponent, {
       width: '35vw',
       height: '50vh',
-      data: catalog
+      data: {isEdit: true, details: catalog}
     });
     dialogRef.afterClosed().subscribe(() => {
       this.dialog.closeAll();

@@ -1,1 +1,71 @@
-<p>add-edit-catalog works!</p>
+<div class="mat-dialog-title">
+  <h3 *ngIf="!isEdit" mat-dialog-title>הוספת קטלוג</h3>
+  <h3 *ngIf="isEdit" mat-dialog-title>עריכת קטלוג</h3>
+</div>
+<mat-dialog-content>
+  <div class="edit-form">
+    <form *ngIf="addEditCatalogForm" [formGroup]="addEditCatalogForm">
+      <div class="column" fxFlex="50%">
+        <mat-form-field appearance="fill">
+          <mat-label>כותרת</mat-label>
+          <input matInput formControlName="title" class="form-control" name="title" placeholder="הכנס כותרת" />
+          <mat-error *ngIf="addEditCatalogForm.controls['title'].errors?.['required']">
+            שדה חובה
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>תיאור</mat-label>
+          <input matInput formControlName="description" class="form-control" name="description" placeholder="הכנס תיאור" />
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>אומן</mat-label>
+          <input matInput formControlName="artist" class="form-control" name="artist" placeholder="הכנס אומן" />
+          <mat-error *ngIf="addEditCatalogForm.controls['artist'].errors?.['required']">
+            שדה חובה
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>גלריה</mat-label>
+          <input matInput formControlName="gallery" class="form-control" name="gallery" placeholder="הכנס gallery" />
+          <mat-error *ngIf="addEditCatalogForm.controls['gallery'].errors?.['required']">
+            שדה חובה
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="column" fxFlex="50%">
+        <mat-form-field>
+          <mat-label>תמונה</mat-label>
+          <input matInput formControlName="image" class="form-control" placeholder="הכנס תמונה" />
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>urlEnglish</mat-label>
+          <input matInput formControlName="urlEnglish" class="form-control" placeholder="הכנס urlEnglish" />
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>urlHeb</mat-label>
+          <input formControlName="urlHeb" class="form-control" placeholder="הכנס urlHeb" type="text" matInput />
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>שנה</mat-label>
+          <input formControlName="year" class="form-control" placeholder="הכנס שנה" type="text" matInput />
+        </mat-form-field>
+      </div>
+      <div class="moreInfo" fxFlex="100%">
+        <mat-form-field>
+          <mat-label>מידע נוסף</mat-label>
+          <textarea matInput formControlName="moreInfo" class="textarea" placeholder="הכנס מידע נוסף"></textarea>
+        </mat-form-field>
+      </div>
+    </form>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button *ngIf="isEdit" type="submit" class="badge badge-success" (click)="updateCatalog()">
+    עדכון
+  </button>
+  <button *ngIf="!isEdit" type="submit" class="badge badge-success" (click)="saveCat(addEditCatalogForm.getRawValue())">
+    יצירה
+  </button>
+  <button mat-button class="badge close" [mat-dialog-close]="true">סגור</button>
+</mat-dialog-actions>
+

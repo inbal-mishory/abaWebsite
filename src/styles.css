@@ -86,7 +86,6 @@ a {
 .mat-typography h4, .mat-typography h3,
 .mat-typography h2, .mat-typography h1{
   font-weight: 600;
-  font-size: 2em;
   line-height: 1.1em;
   font-family: 'Alef', serif;
   /*color: var(--colorRed);*/

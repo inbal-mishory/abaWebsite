@@ -5,6 +5,7 @@
   <h4>{{ catalog?.title }}</h4> <span>{{catalog?.gallery}} {{catalog?.year}}</span>
   <a *ngIf="catalog?.urlHeb" href="{{catalog?.urlHeb}}" target="_blank">קטלוג בעברית</a>
   <a *ngIf="catalog?.urlEnglish" href="{{catalog?.urlEnglish}}" target="_blank">קטלוג באנגלית</a>
+  <a *ngIf="catalog?.moreInfo" target="_blank">מידע נוסף</a>
   <div class="actions">
     <button (click)="deleteCatalog(catalog?.catalog_id)" class="delete-btn" mat-button>
       <mat-icon>delete</mat-icon>
