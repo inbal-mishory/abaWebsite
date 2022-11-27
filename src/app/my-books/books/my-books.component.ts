@@ -28,7 +28,7 @@ export class MyBooksListComponent implements OnInit {
         ),
       ),
       tap(data => {
-        data.sort((first:any, second:any) => 0 - (first.year < second.year ? -1 : 1));
+        data.sort((first:any, second:any) => 0 - (parseInt(first.publication_year) > parseInt(second.publication_year) ? -1 : 1));
       }),
       tap(data => this.books = data)
     );
