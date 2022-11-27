@@ -43,6 +43,18 @@
 
 .header-text {
   font-family: "Rubik", sans-serif;
+  display: flex;
+  gap: 2em;
+  align-items: flex-end;
+  position: relative;
+}
+
+.header-icon {
+  width: 40px;
+  height: 40px;
+  font-size: 40px;
+  position: absolute;
+  top: 6px;
 }
 
 .header-text a {
@@ -50,11 +62,14 @@
   font-weight: 800;
 }
 
+.vocations {
+  line-height: 40px;
+}
+
 .page-title {
   display: inline-block;
   padding-right: 24px;
   color: var(--colorRed);
-  font-weight: 800;
 }
 
 .is-mobile .page-toolbar {

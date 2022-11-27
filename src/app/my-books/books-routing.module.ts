@@ -8,8 +8,15 @@ const routes: Routes = [
   {
     path: '', component: MyBooksComponent,
     children: [
-      { path: 'list', component: MyBooksListComponent},
-      { path: 'book/:id', component: BookDetailsComponent}
+      {
+        path: 'list',
+        component: MyBooksListComponent,
+        data:{title: 'ספרים'}},
+      {
+        path: 'book/:id',
+        component: BookDetailsComponent,
+        data:{title: 'ספר'}
+      }
     ]}
 ];
 

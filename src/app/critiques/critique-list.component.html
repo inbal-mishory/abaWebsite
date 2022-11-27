@@ -42,7 +42,7 @@
           <span *ngIf="critique.date">{{critique.date | date: 'dd/MM/yyyy'}}</span>
         </mat-cell>
       </ng-container>
-      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></mat-header-row>
       <mat-row *matRowDef="let row; columns: displayedColumns" class="animate"></mat-row>
     </mat-table>
 <!--    <div class="paging-container">-->

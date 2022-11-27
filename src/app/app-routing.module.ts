@@ -60,7 +60,7 @@ const routes: Routes = [
     (m) => m.UserModule)
   },
   { path: 'books-review',
-    data: { title: 'בקורות', description: ' - על ספרי אליק מישורי' },
+    data: { title: 'כתבו עליי', description: ' - בקורות ספרים וראיונות' },
     loadChildren: () => import('./books-review/books-review.module').then(
       (m) => m.BooksReviewModule)
   },
