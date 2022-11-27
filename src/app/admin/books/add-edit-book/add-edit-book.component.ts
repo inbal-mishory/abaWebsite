@@ -12,7 +12,7 @@ import {IBook} from "../../../models/book.model";
 export class AddEditBookComponent implements OnInit {
   editBookForm?: FormGroup;
   isEdit?: boolean;
-  @Output() refreshList: EventEmitter<any> = new EventEmitter();
+  // @Output() refreshList: EventEmitter<any> = new EventEmitter();
   message = '';
   constructor(private formBuilder: FormBuilder, @Inject(MAT_DIALOG_DATA) readonly data: any,
               public dialogRef: MatDialogRef<AddEditBookComponent>, private booksService: MyBooksService) { }
@@ -46,15 +46,6 @@ export class AddEditBookComponent implements OnInit {
     this.booksService.createBook(book).then(() => {
       this.dialogRef.close({data: book});
     });
-  }
-
-  deleteCatalog(bookId: string): void {
-    this.booksService.delete(bookId)
-      .then(() => {
-        this.refreshList.emit();
-        this.message = 'The book was updated successfully!';
-      })
-      .catch(err => console.log(err));
   }
 
   closeModal(): void {

@@ -8,21 +8,21 @@
     <mat-form-field appearance="fill">
       <mat-label>כותרת</mat-label>
       <input matInput formControlName="title" class="form-control" name="title" placeholder="הכנס כותרת" />
-      <mat-error *ngIf="editBookForm.controls['title'].errors?.['require']">
+      <mat-error *ngIf="editBookForm.controls['title'].errors?.['required']">
         Required field
       </mat-error>
     </mat-form-field>
     <mat-form-field>
       <mat-label>עטיפה</mat-label>
       <input matInput formControlName="cover" class="form-control" name="cover" placeholder="הכנס עטיפה" />
-      <mat-error *ngIf="editBookForm.controls['cover'].errors?.['require']">
+      <mat-error *ngIf="editBookForm.controls['cover'].errors?.['required']">
         Required field
       </mat-error>
     </mat-form-field>
     <mat-form-field>
       <mat-label>מוציא לאור</mat-label>
       <input matInput formControlName="publisher" class="form-control" name="publisher" placeholder="הכנס מוציא לאור" />
-      <mat-error *ngIf="editBookForm.controls['publisher'].errors?.['require']">
+      <mat-error *ngIf="editBookForm.controls['publisher'].errors?.['required']">
         Required field
       </mat-error>
     </mat-form-field>

@@ -76,4 +76,15 @@ h3 {
   flex-direction: column;
   justify-content: space-between;
   font-size: 20px;
+  width: 320px;
+}
+
+.review {
+  display: flex;
+  justify-content: space-between;
+}
+
+.link {
+  display: flex;
+  gap: 4px;
 }

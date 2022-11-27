@@ -16,8 +16,11 @@
           <img *ngIf="book?.cover" src="{{book?.cover}}" class="book-img" matTooltip="{{book.title}} {{book.publisher}}, {{book.publication_year}}"/>
         </div>
         <div class="book-details">
-          <a *ngIf="book?.article" target="_blank" href="{{book.article}}">בקורת על הספר</a>
-          <a *ngIf="book.link !== ''" [routerLink]="['../book/', book.id]" class="list-group-item">מידע נוסף</a>
+          <div class="review">
+            <a *ngIf="book?.article" class="link" target="_blank" href="{{book.article}}"><mat-icon>article</mat-icon>בקורת על הספר</a>
+            <a *ngIf="book?.article2" class="link" target="_blank" href="{{book.article2}}"><mat-icon>article</mat-icon>בקורת נוספת</a>
+          </div>
+          <a *ngIf="book.link !== ''" class="link" [routerLink]="['../book/', book.id]"><mat-icon>info</mat-icon>מידע נוסף</a>
         </div>
       </li>
     </ul>
