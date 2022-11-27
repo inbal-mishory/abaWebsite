@@ -23,3 +23,11 @@ export interface IArticle {
   paper?: string;
   date: Date | string;
 }
+
+export interface IChildArticle {
+  id?: string;
+  title: string;
+  link: string;
+  magazine?: string;
+  year: string;
+}

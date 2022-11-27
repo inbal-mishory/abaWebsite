@@ -1,8 +1,8 @@
 import {Component, EventEmitter, Inject, OnInit, Output} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
-import {ArticlesService} from "../../../services/articles.service";
-import {IArticle} from "../../../models/article.model";
+import {ArticlesService} from "../../../../services/articles.service";
+import {IArticle} from "../../../../models/article.model";
 
 @Component({
   selector: 'app-add-edit-article',
@@ -12,7 +12,6 @@ import {IArticle} from "../../../models/article.model";
 export class AddEditArticleComponent implements OnInit {
   editArticleForm: FormGroup;
   isEdit?: boolean;
-  @Output() refreshList: EventEmitter<any> = new EventEmitter();
   message = '';
   constructor(private formBuilder: FormBuilder, @Inject(MAT_DIALOG_DATA) readonly data,
               public dialogRef: MatDialogRef<AddEditArticleComponent>, private articleService: ArticlesService) { }

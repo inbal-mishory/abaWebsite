@@ -1,0 +1,15 @@
+.search {
+  padding-top: 1em;
+}
+.mat-table.articles-table {
+  overflow-y: scroll;
+  min-height: 650px;
+  max-height: 650px;
+}
+
+.results {
+  display: flex;
+  justify-content: flex-end;
+  padding-left: 1em;
+}
+

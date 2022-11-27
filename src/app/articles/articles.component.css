@@ -10,7 +10,6 @@ h3 {
 .articles-container {
   width: 100%;
   padding: 1em;
-  margin: 0 auto;
 }
 
 h4 {
@@ -28,16 +27,10 @@ input::placeholder {
   font-size: 14px;
 }
 
-.critiques-table {
-  display: flex;
-  flex-direction: column;
-  max-height: none;
-  min-width: 300px;
-}
-
-.mat-table {
+.mat-table.articles-table {
   overflow-y: scroll;
-  max-height: 700px;
+  max-height: 250px;
+  border: 1px solid black;
 }
 
 @media only screen and (max-height: 800px) {

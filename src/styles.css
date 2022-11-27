@@ -129,6 +129,16 @@ mat-date-range-picker.mat-datepicker-content {
   flex-wrap: wrap;
 }
 
+.mat-tab-label {
+  font-size: 1.85em;
+  font-family: 'Rubik', sans-serif;
+  color: black;
+}
+
+.mat-tab-group.mat-primary .mat-ink-bar, .mat-tab-nav-bar.mat-primary .mat-ink-bar {
+  background: var(--colorRed);
+}
+
 .mat-table {
   /* background: #eff6fa59; */
   width: 100%;

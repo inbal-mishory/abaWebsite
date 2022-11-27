@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { map, tap } from 'rxjs';
-import { IArticle } from 'src/app/models/article.model';
+import {IArticle, IChildArticle} from 'src/app/models/article.model';
 import { ArticlesService } from 'src/app/services/articles.service';
 import {MatDialog} from "@angular/material/dialog";
-import {AddEditArticleComponent} from "./add-edit-article/add-edit-article.component";
-import {ConfirmModalComponent} from "../../shared/modals/confirm.modal/confirm.modal.component";
+import {AddEditArticleComponent} from "./articles-list/add-edit-article/add-edit-article.component";
 import {MatSnackBar} from "@angular/material/snack-bar";
+import {
+  AddEditChildArticleComponent
+} from "./articles-for-children/add-edit-child-article/add-edit-child-article.component";
 
 @Component({
   selector: 'app-articles',
@@ -14,11 +16,12 @@ import {MatSnackBar} from "@angular/material/snack-bar";
 })
 export class ArticlesComponent implements OnInit {
   articles: IArticle[];
-  displayedColumns: string[] = ['title', 'publication', 'date', 'actions'];
+  childrenArticles: IChildArticle[];
   constructor(private articleService: ArticlesService, private dialog: MatDialog, private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     this.getArticles();
+    this.getAllChildArticles();
   }
 
   getArticles(): void {
@@ -34,6 +37,19 @@ export class ArticlesComponent implements OnInit {
     ).subscribe((res) => this.articles = res);
   }
 
+  getAllChildArticles(): void {
+    this.articleService.getAllChildrenArticles().snapshotChanges().pipe(
+      map(changes =>
+        changes.map(article =>
+          ({ ...article.payload.doc.data(), id: article.payload.doc.id })
+        ),
+      ),
+      tap(data => {
+        data.sort((first:any, second:any) => 0 - (first.year > second.year ? -1 : 1));
+      })
+    ).subscribe((res) => this.childrenArticles = res);
+  }
+
   createArticle() {
     const dialogRef = this.dialog.open(AddEditArticleComponent, {
       width: '35vw',
@@ -45,52 +61,14 @@ export class ArticlesComponent implements OnInit {
     })
   }
 
-  deleteDialog(id: string, title: string) {
-    const data = {
-      id: id,
-      title
-    }
-    const dialogRef = this.dialog.open(ConfirmModalComponent, {
-      width: '25vw',
-      height: '25vh',
-      data
-    } );
-
-    dialogRef.afterClosed().subscribe((res) => {
-      if (res) {
-        this.deleteArticle(id);
-      } else {
-        console.log('something went wrong')
-      }
-    });
-  }
-
-  openEditArticle(article: IArticle) {
-    const dialogRef = this.dialog.open(AddEditArticleComponent, {
+  createChildArticle() {
+    const dialogRef = this.dialog.open(AddEditChildArticleComponent, {
       width: '35vw',
       height: '45vh',
-      data: {
-        details: article,
-        isEdit: true
-      }
+      data: {isEdit: false}
     });
     dialogRef.afterClosed().subscribe(() => {
-      this.getArticles();
+      this.getAllChildArticles();
     })
-  }
-
-  deleteArticle(bookId: string) {
-    this.articleService.delete(bookId).then((res) => {
-      this.openSnackBar();
-    }).catch((err) => {
-      console.log(err);
-    });
-  }
-
-  openSnackBar(): void {
-    this._snackBar.open('Book deleted successfully', 'close', {
-      horizontalPosition: "center",
-      verticalPosition: "top",
-    });
   }
 }
