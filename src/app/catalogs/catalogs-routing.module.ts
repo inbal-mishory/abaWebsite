@@ -8,8 +8,16 @@ const routes: Routes = [
   { path: '',
     component: CatalogsComponent,
     children: [
-      { path: 'list', component: CatalogsListComponent},
-      { path: ':catalogId', component: CatalogComponent}
+      {
+        path: 'list',
+        component: CatalogsListComponent,
+        data: {title: 'קטלוגים'}
+      },
+      {
+        path: ':catalogId',
+        component: CatalogComponent,
+        data: {title: 'קטלוג'}
+      }
     ]
   }
 ];

@@ -16,10 +16,11 @@
   grid-template-columns: repeat(3, 1fr);
   width:100%;
   height: calc(100vh - 96px);
+  padding-top: 7em;
 }
 
 .carousel-pic {
-
+  margin-right: 2em;
 }
 
 .wrapper > img {
